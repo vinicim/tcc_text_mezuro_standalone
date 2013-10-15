@@ -1,0 +1,95 @@
+\chapter{Arquitetura de Software}
+
+%Contexto
+%Definições - principais (i.e Garlan and Shaw; Krutchen; IEEE)
+%Conceitos fundamentais (comuns na literatura)
+%Atributos de qualidade
+%Decisões arquiteturais
+%Papéis
+%Visões arquiteturais
+%Estilos arquiteturais
+
+O desenvolvimento de um sistema de software não é uma tarefa simples por conta da complexidade envolvida no seu processo de desenvolvimento. Além de lidar com a complexidade inerente ao problema a ser resolvido, devemos nos preocupar em como o software resolve esse mesmo problema. Por esse motivo muitos softwares fracassam, seja por custar muito acima do orçamento, estarem imcompletos ou não solucionarem os problemas como deveriam. Assim um software além de resolver o problema, deve resolvê-lo da forma esperada, satisfazendo atributos de qualidade \cite{germoglio2010fundamentos}.
+
+Conforme a complexidade dos softwares aumentam os problemas de design vão além de algorítmos e estruturas de dados. A especificação da estrutura geral do sistema surge como um novo tipo de problema \cite{garlan1993introduction}. Visando amenizar problemas como esse, a arquitetura de software tem recebido grande atenção  desde a década passada, já que ela tem auxiliado na obtenção de ótimos resultados quanto ao atendimento de atributos de qualidade \cite{tese_prof_fabricio}. 
+
+
+%De um modo geral, quando há um problema a ser solucionado, podem existir várias soluções para resolvê-lo. Existem fatores como custo, tempo, eficiência da solução, que irão definir se determinada solução é melhor ou pior.
+
+%Do ponto de vista da Engenharia de Software, um problema pode ser derivado em requisitos, para os quais também podem existir diversas soluções computacionais. Uma forma de representar essas soluções é através da Arquitetura de Software.----
+
+Desde a primeira referência em um relatório técnico intitulado Software Engineering Tecnhiques \cite{buxton1970software}, na década de 1970, diversos autores buscaram definir o termo engenharia de software. Abaixo se encontram algumas das definições de alguns dos autores que se destacaram na área.
+
+Baseados no trabalho de Mary Shaw e David Garlan (Shaw and Garlan 1996), Philippe Kruchten, Grady Booch, Kurt Bittner, e Rich Reitman construíram a seguinte definição para Arquitetura de software:
+
+ “Arquitetura de Software engloba o conjunto de decisões significativas sobre a organização de um sistema de software incluindo a seleção de elementos estruturais e suas interfaces pelos quais um sistema é composto, o comportamento como especificado em colaboração entre aqueles elementos, composição desses elementos estruturais e comportamentais dentro de um subsistema maior, além de um estilo arquitetural que orienta essa organização. Arquitetura de Software também envolve funcionalidade, usabilidade, flexibilidade, desempenho, reuso, compreensibilidade, restrições econômicas e tecnológicas, vantagens e desvantagens, além de preocupações estéticas.”
+
+De acordo com as definições acima é percebido que não há um consenso ou padrão entre os autores tanto do ponto de vista conceitual como a forma de representar uma arquitetura de software \cite{buschmann2007pattern}.  Essa foi a principal motivação para a criação da ISO/IEEE 1471-2000. Com o intuito de estabelecer um consenso entre autores, profissionais, professores e estudantes da área sobre o que é e para que serve a arquitetura de software, esse padrão não só define o termo mas também introduz um conjunto de conceitos relacionados a arquitetura. Esse padrão define arquitetura de software como: 
+
+“Arquitetura é a organização fundamental de um sistema incorporada em seus componentes, seus relacionamentos com o ambiente, e os princípios que conduzem seu design e evolução.”
+
+Embora exista falta de consenso, há três conceitos citados por todos os autores quando se trata de arquitetura de software \cite{dias2000software}. São eles:
+
+\begin{itemize}
+\item Elementos estruturais ou de software, também chamados de módulos ou componentes, são as abstrações responsáveis por representar as entidades que implementam funcionalidades especificadas.
+\item Interfaces ou relacionamentos, também chamados de conectores, são as abstrações responsáveis por representar as entidades que facilitam a comunicação entre os elementos de software.
+\item Organização ou configuração que consiste na forma como os elementos de software e conectores estão organizados.
+\end{itemize}
+
+Analisando o ciclo de desenvolvimento de software, é observado que a arquitetura é uma abordagem empregada desde as fases iniciais do processo. Neste instante o nível de abstração da arquitetura é bastante elevado, tendo o objetivo de definir e apresentar a solução computacional que será implementada, auxiliando a tomada de decisões dos stakeholders ou envolvidos no processo de desenvolvimento. Contudo, ao longo do desenvolvimento do software, a arquitetura sofre refinamentos que diminuem o nível de abstração e permitem, por exemplo, a representação dos relacionamentos entre os elementos arquiteturais e os arquivos de código fonte responsáveis por implementá-los \cite{clements2002documenting}.
+
+Para que os stakeholders possam visualizar e utilizar a arquitetura como entrada para demais atividades do processo, ou para a tomada de decisões, é necessário que ela esteja representada, ou documentada, de forma que seja possível utiliza-la para esses fins. A essa representação é dado o nome de documento arquitetural, o qual é composto por um conjunto de modelos e informações que descrevem principalmente a estrutura do software especificado para atender aos requisitos \cite{hilliard2000ieee}.
+
+Qualquer software possui arquitetura, independente dela ser documentada ou projetada. Porém tendo apenas uma arquitetura implementada, ou seja, arquitetura sem projeto, deixa-se de obter os benefícios ou vantagens que uma arquitetura projetada e bem documentada pode oferecer. Entre os benefícios da documentação da arquitetura estão a possibiblidade dela se tornar uma ferramenta de comunicação entre os stakeholders do projeto, um método ou modelo para a análise antecipada do sistema a ser desenvolvido, assim como uma ferramenta que permite a rastreabilidade entre os requisitos e os elementos que compõem o sistema.
+
+Como ferramenta de comunicação, a arquitetura de um software deve servir aos principais envolvidos, já que para cada um, a arquitetura do software é utilizada com diferentes propósitos \cite{gacek1995definition, xavier2001criaccao, clements2002documenting}:
+
+\begin{itemize}
+\item Cliente. O cliente é a pessoa ou empresa que contrata uma equipe de desenvolvimento para a construção de um sistema de sua necessidade. Na fase inicial do projeto, ele necessita de uma estimativa de certos fatores, normalmente econômicos, que podem ser obtidos após a definição da estrutura principal do software. O cliente, por exemplo, tem interesse em estimativas de custo, confiabilidade e manutenibilidade do software que podem ser obtidos principalmente através de uma análise da arquitetura. Portanto, é de extrema importância para o cliente que a arquitetura atenda os requisitos do software de forma a representar suas reais expectativas em relação ao que foi especificado.
+\item Gerentes. A arquitetura permite aos gerentes tomarem certas decisões de projeto por possibilitar a sumarização das diversas características do sistema. Um gerente pode, por exemplo, usar a arquitetura como base para definir as equipes de desenvolvimento de acordo com os elementos arquiteturais que estão identificados e que devem ser construídos.
+\item Desenvolvedor. Da arquitetura de um software, o desenvolvedor busca uma especificação que escreva a solução com detalhes suficientes e que satisfaça os requisitos do cliente, mas que não seja tão restritiva a ponto de limitar a escolha das abordagens para a sua implementação. Os desenvolvedores usam a arquitetura como uma referência para a composição e o desenvolvimento dos elementos do sistema, e para a identificação e reutilização de elementos arquiteturais já construídos.
+\item Testadores. A arquitetura fornece, numa visão de caixa preta, informações aos testadores relacionadas ao correto comportamento dos elementos arquiteturais que se integram. Sendo assim, este artefato pode ser um dos artefatos base utilizados durante o planejamento e execução de testes de integração e de sistema.
+\item Mantenedor. A descrição arquitetural do software fornece aos mantenedores uma estrutura central da aplicação que idealmente não deve ser violada. Qualquer mudança deve preservá-la, buscando, se possível, uma modificação puramente dos elementos arquiteturais e não da forma como estão organizados.
+\end{itemize}
+
+[Porque utilizar multiplas visões? Utilizar livro do Guilherme Germoglio como referência]
+
+[Descrever Atributos de Qualidade, e como são alcançados. --> Link para decisões arquiteturais]
+
+%---------------------------------------------------------------------------------------%
+
+\section{O Framework Ruby on Rails}
+
+O Ruby on Rails é um framework open-source criado em 2003 por David Heinemeier Hansson, extraído de um software, um gerenciador de projetos conhecido como Basecamp.
+Hansson lançou o Rails pela primeira vez ao público em 2004, e desde então seu desenvolvimento e utilização são cada vez maiores. Diversos programadores e empresas em todo mundo utilizam esse o Rails para construirem suas aplicações. Entre as mais conhecidas estão o Twitter, GitHub e Groupon. 
+
+O Rails utiliza a linguagem de programação Ruby, criada no Japão em 1995 por Yukihiro "Matz" Matsumoto. A linguagem Ruby é interpretada, multiparadigma, com tipagem dinâmica e gerenciamento de memória automático. O Rails é basicamente uma biblioteca Ruby ou \textit{gem} e é construído utilizando o padrão arquitetural MVC.
+
+
+
+%---------------------------------------------------------------------------------------%
+
+\subsection{Padrao Arquitetural MVC}
+
+O padrão MVC começou como um framework desenvolvido por Trygve Reenskaug para a plataforma SmallTalk no final dos anos 70. Desde então ele exerce grande influencia sobre diversos frameworks que promovem interação com usuário.
+
+O MVC visa separar a representação da informação da interação com o usuário. Para atingir esse objetivo são utilizados três papéis. O modelo (model) que representa informações do domínio, como dados da aplicação, regras de negócio, lógica e funções. A visão (view) que são saídas de representação dos dados do modelo ao usuário. Um exemplo comum de visão é uma pagína HTML contendo dados presentes no modelo. O útimo papel, o controlador (controller) é responsável por receber requisições da visão, manipula-las, utilizando dados do modelo, e atualizar a visão para satisfazer as requisições do usuário.
+
+[Inserir figura que represente esse padrão]
+
+[Inserir parágrafo exemplificando o funcionamento do padrão - requisição http simples com um browser qualquer]
+
+%---------------------------------------------------------------------------------------%
+
+\subsection{Arquiterura do Rails}
+
+[Inserir elementos estáticos e dinâmicos presentes no Rails]
+
+%---------------------------------------------------------------------------------------%
+
+\subsection{Evolução do Ruby on Rails}
+
+
+%---------------------------------------------------------------------------------------%
+
+\subsection{Plugins no Ruby on Rails}
