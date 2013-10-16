@@ -68,16 +68,26 @@ O Mezuro utiliza um web service chamado Kalibro Metrics. Isso permite ao Mezuro:
 \item Interpretação dos resultados com inteface mais amigável aos usuarios com a utilização de cores nos intervalos das métricas.
 \end{itemize}
 
-
-
 %----------------------------------------------------------------------------%
-
 \section{Mezuro como aplicação independente}
 
 %Motivos para evolução
 
   %Evolução do framework rails: novos recursos para o desenvolvimento e gerenciamento das dependências, em especial da "gems" para visualização dos resultados. Além do suporte da comunidade Rails, que é global, para as últimas versões do Raisl e o Ruby. O que tem de novo no Rails 3 e 4 em relação ao Rails 2?
-O framework Rails sofre frequentes alterações, e com isso novas versões são lançadas constantemente. Muitos desenvolvedores enxergam essas constantes mudanças como um ponto negativo, ao passo que há incompatibilidade de algumas "gems" de uma versão para outra. Por outro lado, outros aprovam essa característica pois a cada atualização há melhora no produto, com adição de novos recursos, além de ser um incentivo aos desenvolvedores para a implementar de testes, já que eles auxiliam a manter a integridade da aplicação a cada atualização.
+O framework Rails, desde seu lançamento, sofre frequentes alterações, e com isso novas versões são lançadas constantemente. Muitos desenvolvedores enxergam essas constantes mudanças como um ponto negativo, ao passo que há incompatibilidade de algumas "gems" de uma versão para outra. Por outro lado, outros aprovam essa característica pois a cada atualização há melhora no produto, com adição de novos recursos, além de ser um incentivo para a implementação de testes, já que eles auxiliam a manter a integridade da aplicação a cada atualização.
+
+Acompanhando a evolução do framework, a equipe de desenvolvimento da plataforma Mezuro decidiu atualiza-la para as novas versões oferecidas do Ruby on Rails e da linguagem Ruby, as quais possuem atualmente as versões 4 e 2, respectivamente. Um dos motivos para essa atualização é aproveitar os novos recursos oferecidos, além do suporte da comunidade\footnote{\url{http://rubyonrails.org/}}, que favorece a utilização das versões mais novas.
+
+Entre os novos recursos oferecidos pela versão 4 do rails estão:
+
+\begin{itemize}
+\item Páginas mais rápidas através da utilização de Turbolinks. Ao invés de deixar o navegador recompilar o JavaScript e CSS entre cada mudança de página, a instância da página atual é mantida, substituindo apenas o conteúdo e o título.
+\item Suporte para a expiração de cache baseado em chave, que automatiza a invalidação do cache e deixa mais fácil a implementação de estruturas de cache sofisticadas.
+\item Streaming de vídeo ao vivo em conexões persistentes.
+\item Melhorias no ActiveRecord para aprimorar a consistência do escopo e da estrutura das queries.
+\item Padrões de segurança locked-down.
+\item Threads seguras por padrão e a eliminação da necessidade de configurar servidores com thread.
+\end{itemize}
 
   %Recursos desnecessários do Noosfero para o Mezuro: O Mezuro precisou se moldar mais ao Kalibro ao invés de se adaptar mais ao Noosfero como plugins (uma integração entre o Mezuro e o Noosfero continuará, mas como duas aplicações independentes). O Mezuro não precisa de todos os recursos de um rede social, como amigos e relacionamentos entre amigos, entre outras funcionalidades providas pelo Noosfero (blgo, fórum, upload de arquivos, CMS, chat, etc). Dessa forma, pensando no desempenho e na evolução do desenvolvimento do Mezuro, com o objetivo de formatar um comunidade de software livre para atrair desenvolvedores, resolveu-se retirar o Mezuro como um plugin do Noosfero, para não mais o limitar ao andamento do desenvolvimento do Noosfero. Em suma, o Mezuro ser um serviço na Web com foco apenas no monitoramento de código-fonte, podemos se integrar e complementar outros serviços disponíveis com o Olhoh /footnote{/url{http://ohloh.net}}. Em particular, o projeto Mezuro surgiu antes do CodeClimate /footnote{/url{http://codeclimate.com}}, que provê serviço similares aos pretendidos pelo Mezuro, mas monitorando 3 métricas para códigos Ruby.
   
