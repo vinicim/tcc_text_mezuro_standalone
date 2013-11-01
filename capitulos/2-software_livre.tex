@@ -14,15 +14,81 @@ Um software é constituído por um conjunto de procedimentos, dados, possível d
 %Diferenciar software livre de software proprietario
 O entendimento desses quatro pontos é o que diferencia softwares ditos proprietários dos softwares livres, além de definir o que é conhecido como ecossitema do software livre. O princípio básico desse ecossistema é promover a liberdade do usuário, sem discriminar quem tem permissão para usar um software e seus limites de uso, baseado na colaboração e num processo de desenvolvimento aberto \cite{meirelles2013metrics}.
 
+Ao contrário do software proprietário, o software livre tem a característica do compartilhamento do seu código-fonte. Essa característica oferece vantagens em relação ao software proprietário. O compartilhamento permite a simplificação de aplicações personalizadas, já que não necessitam serem codificadas do zero, podendo se basear em soluções existentes. Outra vantagem é a melhoria da qualidade \cite{Raymond, 1999}, por conta da grande quantidade de colaboradores, que com diferentes perspectivas e necessidades, propõem melhorias para o sistema, além de identificar e corrgir bugs com mais rapidez.
+
 Software livre representa uma classe de sistemas de software, os quais são distribuídos sob licenças cujos termos permitem aos seus usuários utilizar, estudar e modificar e redistribuir o software \cite{terceiro2012freesoftware}. 
 
 \section{Processo de Desenvolvimento de Software Livre}
 
 O aspecto mais importante de um software livre, sob a perspectiva da Engenharia de Software é o seu processo de desenvolvimento. Um projeto de software livre começa quando um desenvolvedor individual ou uma organização decidem tornar um produto de software acessível ao público. Seu código-fonte é licenciado de forma a permitir seu acesso e alterações subsequentes por qualquer pessoa. Tipicamente, este tipo de projeto recebe a colaboração de pessoas geograficamente distantes que se organizam ao redor de um ou mais líderes \cite{corbucci2011freemethods}. 
 
-Mesmo com características presentes no software livre, que a princípio tornam incompatível a aplicação de métodos ágeis nesses projetos. Entre essas características estão a distância entre os desenvolvedores e a diversidade entre suas culturas que dificultam a comunicação, um dos principais valores dos métodos ágeis. Porém projetos de software livre compartilham princípios e valores presentes no manifesto ágil \footnote{Manifesto Ágil}. Esses princípios compartilhados e a crescente adoção de metodologias ágeis resulta no sucesso de vários projetos de software livre, como é o caso do desenvolvimento do kernel do Linux \footnote{\url{https://www.kernel.org/}}. %Por esse motivo, é normal procurar reunir fatores de sucesso de cada caso, assim como 
+Há características presentes no software livre que, a princípio, tornam incompatível a aplicação de métodos ágeis em seu desenvolvimento. Entre essas características estão a distância entre os desenvolvedores e a diversidade entre suas culturas, que dificultam a comunicação, um dos principais valores dos métodos ágeis. Porém o sucesso resultante de alguns projetos de software livre como é o caso do Kernel do Linux \footnote{\url{https://www.kernel.org/}} fizeram surgir estudos com foco na união dessas duas vertentes. Analisando um pouco melhor projetos de software livre, é possível notar que esses compartilham princípios e valores presentes no manifesto ágil \footnote{Manifesto Ágil}. Adaptação a mudanças, trabalhar com feedback contínuo, entregar funcionalidades reais, respeitar colaboradores e usuários e enfrentar desafios, são qualidades esperadas em desenvolvedores que utilizam métodos ágeis e são naturalmente encontradas em projetos de software livre.
 
-Um software livre tem a característica do compartilhamento do seu código-fonte. Essa característica oferece vantagens em relação ao software proprietário, que não disponibiliza seu código-fonte. O compartilhamento permite a simplificação de aplicações personalizadas, já que não necessitam serem codificadas do zero, podendo se basear em soluções existentes. Outra vantagem é a melhoria da qualidade \cite{Raymond, 1999}, por conta da grande quantidade de colaboradores, que com diferentes perspectivas e necessidades, propõem melhorias para o sistema, além de identificar e corrgir bugs com mais rapidez.
+Num trabalho realizado, Corbucci \cite{corbucci2011freemethods} analisa semelhanças entre projetos de software livre e métodos ágeis através de uma relação entre os quatro valores enunciados no manifesto ágil e práticas realizadas em projetos livres. Abaixo se encontra o texto principal do manifesto:
+
+"Estamos descobrindo maneiras melhores de desenvolver software, fazendo-o nós mesmos
+e ajudando outros a fazerem o mesmo. Através deste trabalho, passamos a valorizar:
+
+\begin{itemize}
+\item \textbf{Indivíduos e interações} mais que processos e ferramentas;
+\item \textbf{Software em funcionamento} mais que documentação abrangente;
+\item \textbf{Colaboração com o cliente} mais que negociação de contratos e
+\item \textbf{Responder a mudanças} mais que seguir um plano.
+\end{itemize}
+
+Ou seja, mesmo havendo valor nos itens da direita, valorizamos mais os itens da esquerda."
+
+%[Terminar - descrever relação entre valores do manifesto ágil e práticas de projetos de software livre]
+
+\section{Padrões de Software Livre}
+
+Um software livre é concebido através de um processo de contribuições, o qual possui características especiais que promovem o surgimento de diversas práticas influenciadas por diversas forças. Tais práticas são conhecidas como padrões de software livre. Para simplificar, nessa seção o termo padrão está associado a padrões de software livre. Esses padrões estão organizados dentro de três grupos:
+
+\begin{itemize}
+\item \textbf{Padrões de seleção} auxiliam prováveis colaboradores a selecionar projetos adequados.
+	\begin{itemize}
+\item O primeiro padrão de seleção recomenda colaboradores novatos a "caminhar sobre terreno conhecido", ou seja, se deseja contribuir,  começar por algum software que seja familiar, como por exemplo, um browser, editor de texto, IDE\footnote{Integrated Development Environment, um ambiente integrado para desenvolvimento de software}, ou qualquer outro software que já se utiliza.
+\item O segundo padrão é similar ao primeiro, porém ao invés da ferramenta ser familiar, esse padrão recomenda que o colaborador tenha conhecimentos na linguagem ou tecnologia utilizada no projeto.
+\item Já o terceiro padrão desse grupo motiva colaboradores a procurar por projetos de software livre que ofereçam fucionalidades atrativas, mesmo que o novo colaborador não tenha familiaridade com a ferramenta nem com a tecnologia utilizada em seu desenvolvimento.
+\end{itemize}
+
+O terceiro padrão é o que melhor se encaixa ao contexto desse trabalho, já que o Mezuro não era uma ferramenta utilizada no cotidiano e tão pouco familiar. Além disso, as tecnologias utilizadas em seu desenvolvimento não eram as de maior conhecimento. Porém as funcionalidades providas por essa plataforma foi determinante para essa contribuição.
+
+\item \textbf{Padrões de envolvimento} lidam com os primeiros passos para que o colaborador se familiarize e se envolva com o projeto selecionado.
+	\begin{itemize}
+	\item Entrar em contato com mantenedores para aprender sobre o contexto histórico e político no qual aquele projeto está inserido.
+	\item Realizar instalação e checar se todo o ambiente do projeto está corretamente configurado em um período limitado de tempo (máximo um dia)
+	\item Durante uma apresentação do sistema,  por parte de algum mantenedor, interagir para se familiarizar melhor com funcionalidades e cenários presentes no sistema.
+	\item Avaliar o estado do sistema através de uma breve, mas intensa revisão de código. Isso ajuda a ter uma primeira impressão sobre a qualidade do código-fonte.
+	\item Através da leitura, avaliar a relevancia da documentação em um período limitado de tempo.
+	\item Checar a lista de tarefas a serem feitas. Ela pode conter bons pontos de partida para começar uma contribuição.
+	\item Relacionado ao padrão mencionado acima, está o padrão que recomenda novos colaboradores iniciarem por tarefas mais fáceis. Começar uma tarefa e termina-la é importante para manter colaboradores motivados, e conforme ganharem mais experiencia e familiaridade com o software avançam para tarefas mais complexas.
+	\end{itemize}
+	No contexto deste trabalho, muitos dos padrões desse grupo foram inseridos ao processo de contribuição, mesmo que incoscientemente. Por exemplo, o orientador deste trabalho e também mantenedor da plataforma Mezuro, auxiliou durante o processo de envolvimento, apresentando funcionalidades e principais cenários do sistema, além de fornecer documentação necessaŕia para o entendimento do histórico e contexto no qual o Mezuro está inserido.
+	
+\item \textbf{Padrões de contribuição} documenta as melhores práticas para contribuições a softwares livres. Os grupos anteriores tratavam como iniciar e se familiarizar com um projeto de software livre. Esse grupo contem padrões que auxiliam o fornecimento de insumos para projetos de software livre, seja codigo-fonte ou outros artefatos presentes no processo de desenvolvimento.
+	\begin{itemize}
+	\item Uma boa contribuição para projetos de software em geral, é a escrita de documentação. Isso pois o código-fonte muitas vezes não é o suficiente para muitos envolvidos que não possuem conhecimento técnico mas ajudam a promover o software em questão. Além disso, documentação do projeto auxilia na manutenção e evolução do produto.
+	\item Muitos softwares livres não suportam o idioma de diversos colaboradores. Um bom ponto de partida seria a internacionalização do sistema, incluindo a própria linguagem no sistema.
+	\item Reportar bugs 
+	\item Manter-se atualizado com o estado atual do projeto, ajudando a evitar duplicação de esforços e identificar oportunidades de colaboração. Isso é importante pois um projeto de software livre é um esforço coletivo, mas às vezes é difícil coordenar o esforço de pessoas com diferentes horários e prioridades.
+	\end{itemize}
+\end{itemize}
+
+
+
+
+
+
+%Lembrando que esses padrões não são regras, apenas indicam um bom caminho para contribuições. Por exemplo, o software tratado neste trabalho não era familiar no início do processo de contribuição
+
+
+
+
+
+
+
+
 
 
 
