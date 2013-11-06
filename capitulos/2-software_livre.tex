@@ -1,6 +1,6 @@
 \chapter{Software Livre}
 
-Como este trabalho visa contribuir diretamente com um software livre, neste capítulo serão apresentados os principais conceitos relacionados com esse tipo de software. Em um primeiro momento serão apresentadas definições básicas sobre software livre. Na seção...%descrição das seções deste capitulo: padroes contribuição, metodologias ageis e software livre
+Como este trabalho visa contribuir diretamente com um software livre, neste capítulo serão apresentados os principais conceitos relacionados com esse tipo de software. Em um primeiro momento serão apresentadas definições básicas sobre software livre, já na seção 2.1 processos de desenvolvimento relacionados a esse tipo de software são introduzidos, e finalmente na seção 2.2 são apresentados padrões de software livre.
 
 Um software é constituído por um conjunto de procedimentos, dados, possível documentação, e satisfaz necessidades específicas de determinados usuários. O software é um componente de um sistema computacional de interesse geral, uma vez que vários aspectos relacionados a ele ultrapassam questões técnicas \cite{meirelles2013metrics}, como por exemplo: 
 
@@ -20,7 +20,7 @@ Software livre representa uma classe de sistemas de software, os quais são dist
 
 \section{Processo de Desenvolvimento de Software Livre}
 
-O aspecto mais importante de um software livre, sob a perspectiva da Engenharia de Software é o seu processo de desenvolvimento. Um projeto de software livre começa quando um desenvolvedor individual ou uma organização decidem tornar um produto de software acessível ao público. Seu código-fonte é licenciado de forma a permitir seu acesso e alterações subsequentes por qualquer pessoa. Tipicamente, este tipo de projeto recebe a colaboração de pessoas geograficamente distantes que se organizam ao redor de um ou mais líderes \cite{corbucci2011freemethods}. 
+O aspecto mais importante de um software livre, sob a perspectiva da Engenharia de Software é o seu processo de desenvolvimento. Um projeto de software livre começa quando um desenvolvedor individual ou uma organização decidem tornar um projeto de software acessível ao público. Seu código-fonte é licenciado de forma a permitir seu acesso e alterações subsequentes por qualquer pessoa. Tipicamente, qualquer pessoa pode contribuir com o desenvolvimento, mas mantenedores ou líderes decidem quais contribuições podem fazer parte da release oficial ou não. Não é uma regra, mas projetos de software livre, muitas vezes, recebem colaboração de pessoas geograficamente distantes que se organizam ao redor de um ou mais líderes \cite{corbucci2011freemethods}. 
 
 Há características presentes no software livre que, a princípio, tornam incompatível a aplicação de métodos ágeis em seu desenvolvimento. Entre essas características estão a distância entre os desenvolvedores e a diversidade entre suas culturas, que dificultam a comunicação, um dos principais valores dos métodos ágeis. Porém o sucesso resultante de alguns projetos de software livre como é o caso do Kernel do Linux \footnote{\url{https://www.kernel.org/}} fizeram surgir estudos com foco na união dessas duas vertentes. Analisando um pouco melhor projetos de software livre, é possível notar que esses compartilham princípios e valores presentes no manifesto ágil \footnote{Manifesto Ágil}. Adaptação a mudanças, trabalhar com feedback contínuo, entregar funcionalidades reais, respeitar colaboradores e usuários e enfrentar desafios, são qualidades esperadas em desenvolvedores que utilizam métodos ágeis e são naturalmente encontradas em projetos de software livre.
 
@@ -66,17 +66,18 @@ O terceiro padrão é o que melhor se encaixa ao contexto desse trabalho, já qu
 	\end{itemize}
 	No contexto deste trabalho, muitos dos padrões desse grupo foram inseridos ao processo de contribuição, mesmo que incoscientemente. Por exemplo, o orientador deste trabalho e também mantenedor da plataforma Mezuro, auxiliou durante o processo de envolvimento, apresentando funcionalidades e principais cenários do sistema, além de fornecer documentação necessaŕia para o entendimento do histórico e contexto no qual o Mezuro está inserido.
 	
-\item \textbf{Padrões de contribuição} documenta as melhores práticas para contribuições a softwares livres. Os grupos anteriores tratavam como iniciar e se familiarizar com um projeto de software livre. Esse grupo contem padrões que auxiliam o fornecimento de insumos para projetos de software livre, seja codigo-fonte ou outros artefatos presentes no processo de desenvolvimento.
+\item \textbf{Padrões de contribuição} documenta as melhores práticas para se contribuir com softwares livres. Os grupos anteriores tratavam como iniciar e se familiarizar com um projeto de software livre. Esse grupo, por sua vez, contem padrões que auxiliam o fornecimento de insumos para projetos de software livre, seja codigo-fonte ou outros artefatos presentes no processo de desenvolvimento.
 	\begin{itemize}
-	\item Uma boa contribuição para projetos de software em geral, é a escrita de documentação. Isso pois o código-fonte muitas vezes não é o suficiente para muitos envolvidos que não possuem conhecimento técnico mas ajudam a promover o software em questão. Além disso, documentação do projeto auxilia na manutenção e evolução do produto.
+	\item Uma boa contribuição para projetos de software em geral, é a escrita de documentação. O código-fonte muitas vezes não é o suficiente para que todos os envolvidos entendam o andamento do projeto, pois apesar de promoverem o software não possuem conhecimento técnico suficiente. Além disso, documentação do projeto auxilia na manutenção e evolução do produto.
 	\item Muitos softwares livres não suportam o idioma de diversos colaboradores. Um bom ponto de partida seria a internacionalização do sistema, incluindo a própria linguagem no sistema.
-	\item Reportar bugs 
+	\item Reportar bugs eficientemente, pois é comum que colaboradores identifiquem bugs mas ao reporta-los não são claros com respeito ao seu contexto, dificultado sua correção.
+	\item Utilizar a versão correta para tarefas. Durante o desenvolvimento de software há diferentes versões, onde há no mínimo uma versão estável e uma versão desenvolvimento. É recomendado utiliar a versão estável para reportar bugs e a versão de desenvolvimento para implementar novas funcionalidades e tudo que não está relacionado com correção de defeitos existentes.
+	\item Separar alterações não relacionadas. Se tratando de sistemas de controle de versão\footnote{SCM - Source Code Management - GIT, SVN, Baazar, Mercurial, entre outros} há uma ação conhecida como commit, onde as alterações realizadas são agrupadas e gravadas. É recomendado que num mesmo commit as alterações sejam relacionadas.
+	\item Mensagens de commit explicativas para facilitar o entendimento e identificação do que foi desenvolvido ou alterado para o restante dos colaboradores.
+	\item Documentar as próprias modificações. Desenvolvedores, geralmente, alteram o código, corrigem bugs, adicionam novas funcioanlidades, mas não atualizam a documentação, a qual se torna desatualizada. Por isso é recomendado documentar as alterações antes de submete-as ao repositório.
 	\item Manter-se atualizado com o estado atual do projeto, ajudando a evitar duplicação de esforços e identificar oportunidades de colaboração. Isso é importante pois um projeto de software livre é um esforço coletivo, mas às vezes é difícil coordenar o esforço de pessoas com diferentes horários e prioridades.
 	\end{itemize}
 \end{itemize}
-
-
-
 
 
 
