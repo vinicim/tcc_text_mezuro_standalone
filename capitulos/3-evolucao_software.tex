@@ -20,7 +20,7 @@ A evolução de software foi identificada pela primeira vez no final dos anos 60
 %\cite{Artigo IBM}.
 
 Durante esses estudos, Lehman formulou as três primeiras, de um total de oito leis, conhecidas atualmente como leis de Lehman. O restante foi formulado em estudos posteriores, conforme a relevancia desse campo aumentava. O conjunto dessas oito leis estão listadas abaixo:
-
+\begin{table}[H]
 \begin{center}
     \begin{tabular}{ | l | p{4cm} | p{9cm} |}
     \hline
@@ -34,7 +34,10 @@ Durante esses estudos, Lehman formulou as três primeiras, de um total de oito l
     7 (1996) & Qualidade decrescente & A qualidade do software será entendida como declinante a menos que o software seja rigorosamente adaptado às mudanças no ambiente operacional. \\ \hline
     8 (1971/96) & Sistema de Retro-alimentação & Processos de evolução de software são sistemas de retro-alimentação em múltiplos níves, em múltiplos laços (loops) e envolvendo múltiplos agentes. \\ \hline
     \end{tabular}
+    \caption{Leis de Lehman, extraído de \cite{fernandez2008empirical}}
+    \label{tab-leis-lehman}
 \end{center}
+\end{table}
 
 Ao contrário das engenharias tradicionais, a engenharia de software tem em mãos um produto abstrato e intangível, o que resulta em alguns desafios inerentes aos processo de desenvolvimento. A evolução de software busca amenizar ou solucionar alguns desses desafios \cite{mens2005challenges}, entre eles:
 
@@ -51,6 +54,25 @@ Ao contrário das engenharias tradicionais, a engenharia de software tem em mão
 Quando inserida ou considerada nos processos de desenvolvimento ela resulta numa excelente alternativa para evitar os sintomas do envelhecimento e inconsistencias entre o próprio software e o ambinte onde está inserido \cite{mens2005challenges}.
 
 \section{Evolução de Software Livre}
+
+%grande crescimento dos softwares livres em geral, a exemplo do linux
+Não restam dúvidas que o desenvolvimento de softwares livres tem produzido softwares de alta qualidade com grande número de funcionalidades. Um exemplo disso é o sistema operacional Linux, que últimamente tem experimentado um grande sucesso comercial.
+
+Em geral sistemas desenvolvidos por meio de projetos de software livre tendem a crescer com o passar do tempo, após sucessivas releases. Esse comportamento sugere consistência com a sexta lei de Lehman, que se refere ao crescimento contínuo. Nesse sentido, além de um comportamento necessário para manter a satisfação do usuário, o crescimento contínuo de um software livre é importante para manter a motivação da comunidade estabelecida ao seu redor.
+
+Para avaliar esse comportamento de contínuo crescimento em softwares livres Godfray \cite{godfrey2000evolution} e Mockus \cite{mockus2000case}, realizaram estudos, do tipo estudo de caso, baseados no sistema operacinal Linux e no servidor de aplicação Apache, respectivamente.
+
+\graphicspath{{figuras/}}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=6\textwidth]{linux-evolution-releases}
+\caption{Evolução do sistema operacional Linux}
+\label{Rotulo}
+\end{figure}
+
+
+
+
 
 
 
