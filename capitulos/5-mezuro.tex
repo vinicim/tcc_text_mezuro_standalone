@@ -61,13 +61,13 @@ Após a primeira versão do Kalibro integrada ao Analizo, decidiu-se separar a c
 \section{Mezuro como Plugin do Noosfero}
 
 %O que é o Noosfero
-O Mezuro foi concebido como instância de uma plataforma web conhecida como Noosfero com o plugin Mezuro ativado. O Noosfero é um software livre para criação de redes sociais desenvolvido pela Cooperativa de Tecnologias Livres - Coolivre sob licença AGPL v.3 com o intuito de permitir com que os usuários criem sua própria rede social livre e personalizada de acordo com suas necessidades.
+O Mezuro foi concebido como instância de uma plataforma web conhecida como Noosfero com o plugin Mezuro ativado. O Noosfero é um software livre para criação de redes sociais desenvolvido pela Cooperativa de Tecnologias Livres - Coolivre \footnote{\url{http://colivre.coop.br/}} sob licença AGPL v.3 com o intuito de permitir que os usuários criem sua própria rede social livre e personalizada de acordo com suas necessidades.
 
 %Arquitetura do Noosfero
-A linguagem de programação Ruby versão 1.8.7 e o framework MVC Ruby on Rails foram utilizados para desenvolver o Noosfero. Essas tecnologias foram escolhidas pois a linguagem Ruby possui uma sintaxe simples, que facilita a manunbilidade do sistema, característica importante em projetos de software livre que tendem a atrair colaboradores externos a equipe. Já o framework Ruby on Rails influencia em maior produtividade graças a conceitos como \textit{convention over configuration} e DRY [baseado TCC Daniel].
+A linguagem de programação Ruby e o framework MVC Ruby on Rails foram utilizados para desenvolver o Noosfero. Essas tecnologias foram escolhidas pois a linguagem Ruby possui uma sintaxe simples, que facilita a manunbilidade do sistema, característica importante em projetos de software livre que tendem a atrair colaboradores externos a equipe. Já o framework Ruby on Rails influencia em maior produtividade graças a conceitos como \textit{convention over configuration} e DRY [baseado TCC Daniel].
 
 %Arquitetura de plugins do Noosfero
-A arquitetura do Noosfero permite a adição de novas funcionalidades através de plugins. Essa característica é interessante pois colaboradores podem implementar novas funcionalidades sem entender ou interagir com o código-fonte do Noosfero, já que os plugins possuem o código isolado, mantendo o baixo acoplamento e alta coesão dos módulos do sistema. Embora plugins sejam totalmente independentes do sistema alvo, no Noosfero os plugins são mantidos com o código principal para auxiliar no controle de qualidade do ambiente. Pensando nisso os plugins devem ter testes automatizados para quando houver a necessidade de alterar o código do Noosfero, os testes dos plugins devem ser executados para verificar se as mudanças não afetaram seu funcionamento \cite{noosfero2013plugins}.
+A arquitetura do Noosfero permite a adição de novas funcionalidades através de plugins. Essa característica é interessante pois colaboradores podem implementar novas funcionalidades sem entender ou interagir com o código-fonte do Noosfero, já que os plugins possuem o código isolado, mantendo o baixo acoplamento e alta coesão dos módulos do sistema. Embora plugins sejam totalmente independentes do sistema alvo, no Noosfero os plugins são mantidos com o código principal para auxiliar no controle de qualidade do ambiente. Pensando nisso os plugins devem ter testes automatizados. Quando houver a necessidade de alterar o código do Noosfero, os testes dos plugins são executados para verificar se as mudanças não afetaram seu funcionamento \cite{noosfero2013plugins}.
 
 \graphicspath{{figuras/}}
 \begin{figure}[!htb]
@@ -83,10 +83,10 @@ O Mezuro como plugin do Noosfero foi construído utilizando o recurso de plugins
 O Mezuro utiliza um web service chamado Kalibro Metrics. Isso permite ao Mezuro: 
 
 \begin{itemize}
-\item Baixa códigos-fonte de repositórios dos tipos GIT, Subversion, Baazar e CVS
-\item Criação de configuraçções as quais são conjuntos pré-definidos de métricas relacionadas para serem utilizadas na avaliação de projetos de software.
+\item Baixar códigos-fonte de repositórios dos tipos GIT, Subversion, Baazar e CVS
+\item Criação de configurações as quais são conjuntos pré-definidos de métricas relacionadas para serem utilizadas na avaliação de projetos de software.
 \item Criação de intervalos relacionados com a métricas e avaliações qualitativas.
-\item Criação de novas métricas de acordo com aquelas fornecidas pelos coletores do Kalibro.
+\item Criação de novas métricas compostas, de acordo com aquelas fornecidas pelos coletores do Kalibro.
 \item Cálculo de resultados estatísticos para módulos com alta granularidade.
 \item Possibilidade de exportar arquivos com os resultados gerados.
 \item Interpretação dos resultados com inteface mais amigável aos usuarios com a utilização de cores nos intervalos das métricas.

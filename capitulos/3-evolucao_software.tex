@@ -56,19 +56,23 @@ Quando inserida ou considerada nos processos de desenvolvimento ela resulta numa
 \section{Evolução de Software Livre}
 
 %grande crescimento dos softwares livres em geral, a exemplo do linux
-Não restam dúvidas que o desenvolvimento de softwares livres tem produzido softwares de alta qualidade com grande número de funcionalidades. Um exemplo disso é o sistema operacional Linux, que últimamente tem experimentado um grande sucesso comercial.
+Não restam dúvidas que o desenvolvimento de softwares livres tem produzido softwares de alta qualidade com grande número de funcionalidades. Um exemplo disso é o sistema operacional Linux, que ultimamente tem experimentado um grande sucesso comercial.
 
 Em geral sistemas desenvolvidos por meio de projetos de software livre tendem a crescer com o passar do tempo, após sucessivas releases. Esse comportamento sugere consistência com a sexta lei de Lehman, que se refere ao crescimento contínuo. Nesse sentido, além de um comportamento necessário para manter a satisfação do usuário, o crescimento contínuo de um software livre é importante para manter a motivação da comunidade estabelecida ao seu redor.
 
-Para avaliar esse comportamento de contínuo crescimento em softwares livres Godfray \cite{godfrey2000evolution} e Mockus \cite{mockus2000case}, realizaram estudos, do tipo estudo de caso, baseados no sistema operacinal Linux e no servidor de aplicação Apache, respectivamente.
+Para avaliar esse comportamento de contínuo crescimento em softwares livres Godfray \cite{godfrey2000evolution} e Mockus \cite{mockus2000case}, realizaram pesquisas, do tipo estudo de caso, baseados no sistema operacinal Linux e no servidor de aplicação Apache, respectivamente.
+
+A \ref{Figura1} mostra o crescimento do operacional Linux desde sua primeira release, no ano de 1994. Desde então, ele é mantido por centenas de desenvolvedores que o desenvolvem em dois ramos paralelos: stable releases contendo as principais atualizações e correções de defeitos, e development releases com funcionalidades experimentais e porções de código não testado.
 
 \graphicspath{{figuras/}}
-\begin{figure}[!htb]
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.6\textwidth]{linux-evolution-releases}
-\caption{Evolução do sistema operacional Linux}
-\label{Rotulo}
+\includegraphics[width=0.6\textwidth]{linux-evolution}
+\caption{Evolução do sistema operacional Linux, extraído de \cite{godfrey2000evolution}}
+\label{Figura1}
 \end{figure}
+
+Os dados presentes no gráfico, até o início dos anos 2000, vão de encontro à quinta lei de Lehman, citada na \ref{tab-leis-lehman}. No gráfico, o número de linhas de código (LOC) do kernel do sistema, possui taxa de crescimento positiva, enquanto a lei afirma que ao longo do tempo a taxa de crescimento tende a diminuir.%Lehman e Turski tinham a hipótese da taxa do quadrado inverso do crescimento ao longo do tempo.
 
 
 

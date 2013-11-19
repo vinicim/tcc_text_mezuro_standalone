@@ -1,6 +1,6 @@
 \chapter{Arquitetura de Software}
 
-%Contexto
+
 %Definições - principais (i.e Garlan and Shaw; Krutchen; IEEE)
 %Conceitos fundamentais (comuns na literatura)
 %Atributos de qualidade
@@ -9,26 +9,30 @@
 %Visões arquiteturais
 %Estilos arquiteturais
 
-O desenvolvimento de um sistema de software não é uma tarefa simples por conta da complexidade envolvida no seu processo de desenvolvimento. Além de lidar com a complexidade inerente ao problema a ser resolvido, devemos nos preocupar em como o software resolve esse mesmo problema. Por esse motivo muitos softwares fracassam, seja por custar muito acima do orçamento, estarem imcompletos ou não solucionarem os problemas como deveriam. Assim um software além de resolver o problema, deve resolvê-lo da forma esperada, satisfazendo atributos de qualidade \cite{germoglio2010fundamentos}.
+%Contexto
+O desenvolvimento de um sistema de software não é uma tarefa simples por conta da complexidade envolvida no processo. Além de lidar com a complexidade inerente ao problema a ser resolvido, devemos nos preocupar em como o software resolve esse mesmo problema. Por esse motivo muitos softwares fracassam, seja por custar muito acima do orçamento, estarem imcompletos ou não solucionarem os problemas como deveriam. Assim um software além de resolver o problema, deve resolvê-lo da forma esperada, satisfazendo atributos de qualidade \cite{germoglio2010fundamentos}.
 
-Conforme a complexidade dos softwares aumentam os problemas de design vão além de algorítmos e estruturas de dados. A especificação da estrutura geral do sistema surge como um novo tipo de problema \cite{garlan1993introduction}. Visando amenizar problemas como esse, a arquitetura de software tem recebido grande atenção  desde a década passada, já que ela tem auxiliado na obtenção de ótimos resultados quanto ao atendimento de atributos de qualidade \cite{tese_prof_fabricio}. 
+%Contexto
+Conforme a complexidade dos softwares aumentam surgem adversidades. Os problemas de design vão além de algorítmos e estruturas de dados, onde a especificação da estrutura geral do sistema surge como um novo obstáculo \cite{garlan1993introduction}. Visando amenizar problemas como esse, a arquitetura de software tem recebido grande atenção  desde a década passada, já que ela tem auxiliado na obtenção de ótimos resultados quanto ao atendimento de atributos de qualidade \cite{tese_prof_fabricio}. 
 
+Neste capítulo serão apresentados aspectos da arquitetura, relevantes durante a evolução de um sistema de software. Na seção 4.1 são apresentados os principais conceitos sobre arquitetura do ponto de vista da engenharia de software. Já a seção 4.2 expõe elementos da arquitetura do Ruby on Rails, framework utilizado para o desenvolvimento da plataforma Mezuro.
 
-%De um modo geral, quando há um problema a ser solucionado, podem existir várias soluções para resolvê-lo. Existem fatores como custo, tempo, eficiência da solução, que irão definir se determinada solução é melhor ou pior.
+\section{Arquitetura na Engenharia de Software}
 
-%Do ponto de vista da Engenharia de Software, um problema pode ser derivado em requisitos, para os quais também podem existir diversas soluções computacionais. Uma forma de representar essas soluções é através da Arquitetura de Software.----
+%Definição
+Desde a primeira referência em um relatório técnico intitulado Software Engineering Tecnhiques \cite{buxton1970software}, na década de 1970, diversos autores buscaram definir o termo arquitetura de software de software. Abaixo se encontra uma das definições de autores que se destacaram área.
 
-Desde a primeira referência em um relatório técnico intitulado Software Engineering Tecnhiques \cite{buxton1970software}, na década de 1970, diversos autores buscaram definir o termo engenharia de software. Abaixo se encontram algumas das definições de alguns dos autores que se destacaram na área.
+Baseados no trabalho de Mary Shaw e David Garlan \cite{shaw1996software}, Philippe Kruchten, Grady Booch, Kurt Bittner, e Rich Reitman construíram a seguinte definição para Arquitetura de software:
 
-Baseados no trabalho de Mary Shaw e David Garlan (Shaw and Garlan 1996), Philippe Kruchten, Grady Booch, Kurt Bittner, e Rich Reitman construíram a seguinte definição para Arquitetura de software:
+ “Arquitetura de Software engloba o conjunto de decisões significativas sobre a organização de um sistema de software incluindo: i) seleção de elementos estruturais e suas interfaces pelos quais um sistema é composto; ii) comportamento como especificado em colaboração entre esses elementos; iii) composição dos elementos estruturais e comportamentais dentro de um subsistema maior; iv) um estilo arquitetural que orienta essa organização. Arquitetura de Software também envolve funcionalidade, usabilidade, flexibilidade, desempenho, reuso, compreensibilidade, restrições econômicas e tecnológicas, vantagens e desvantagens, além de preocupações estéticas.”
 
- “Arquitetura de Software engloba o conjunto de decisões significativas sobre a organização de um sistema de software incluindo a seleção de elementos estruturais e suas interfaces pelos quais um sistema é composto, o comportamento como especificado em colaboração entre aqueles elementos, composição desses elementos estruturais e comportamentais dentro de um subsistema maior, além de um estilo arquitetural que orienta essa organização. Arquitetura de Software também envolve funcionalidade, usabilidade, flexibilidade, desempenho, reuso, compreensibilidade, restrições econômicas e tecnológicas, vantagens e desvantagens, além de preocupações estéticas.”
-
-De acordo com as definições acima é percebido que não há um consenso ou padrão entre os autores tanto do ponto de vista conceitual como a forma de representar uma arquitetura de software \cite{buschmann2007pattern}.  Essa foi a principal motivação para a criação da ISO/IEEE 1471-2000. Com o intuito de estabelecer um consenso entre autores, profissionais, professores e estudantes da área sobre o que é e para que serve a arquitetura de software, esse padrão não só define o termo mas também introduz um conjunto de conceitos relacionados a arquitetura. Esse padrão define arquitetura de software como: 
+%Motivação e Definição da ISO 1471
+Essa é uma, entre diversas, definições que surgiram desde o início dos estudos relacionados a arquitetura de software. Com tantas definições é perceptível uma falta de consenso entre os autores, tanto do ponto de vista conceitual como a forma de representar uma arquitetura \cite{buschmann2007pattern}.  A falta de conformidade foi a principal motivação para a criação da ISO/IEEE 1471-2000. Com o intuito de estabelecer um padrão sobre o que é e para que serve a arquitetura de software, esse padrão não só define o termo mas também introduz um conjunto de conceitos relacionados a arquitetura. Sua definição sobre o termo é: 
 
 “Arquitetura é a organização fundamental de um sistema incorporada em seus componentes, seus relacionamentos com o ambiente, e os princípios que conduzem seu design e evolução.”
 
-Embora exista falta de consenso, há três conceitos citados por todos os autores quando se trata de arquitetura de software \cite{dias2000software}. São eles:
+%Elementos básicos
+Apesar da falta de concordância, há três conceitos citados por todos os autores quando se trata de arquitetura de software \cite{dias2000software}. São eles:
 
 \begin{itemize}
 \item Elementos estruturais ou de software, também chamados de módulos ou componentes, são as abstrações responsáveis por representar as entidades que implementam funcionalidades especificadas.
@@ -36,25 +40,32 @@ Embora exista falta de consenso, há três conceitos citados por todos os autore
 \item Organização ou configuração que consiste na forma como os elementos de software e conectores estão organizados.
 \end{itemize}
 
-Analisando o ciclo de desenvolvimento de software, é observado que a arquitetura é uma abordagem empregada desde as fases iniciais do processo. Neste instante o nível de abstração da arquitetura é bastante elevado, tendo o objetivo de definir e apresentar a solução computacional que será implementada, auxiliando a tomada de decisões dos stakeholders ou envolvidos no processo de desenvolvimento. Contudo, ao longo do desenvolvimento do software, a arquitetura sofre refinamentos que diminuem o nível de abstração e permitem, por exemplo, a representação dos relacionamentos entre os elementos arquiteturais e os arquivos de código fonte responsáveis por implementá-los \cite{clements2002documenting}.
+%Atributos de qualidade
+Durante a especificação da arquitetura é importante prestar atenção nos relacionamentos entre seus elementos. Essas relações especificam a comunicação, o controle da informação e o comportamento do sistema. Consequentemente, essas relações impactam nos atributos de qualidade, sejam os percebidos pelos usuários, ou apenas pelos desenvolvedores \cite{germoglio2010fundamentos}.
 
-Para que os stakeholders possam visualizar e utilizar a arquitetura como entrada para demais atividades do processo, ou para a tomada de decisões, é necessário que ela esteja representada, ou documentada, de forma que seja possível utiliza-la para esses fins. A essa representação é dado o nome de documento arquitetural, o qual é composto por um conjunto de modelos e informações que descrevem principalmente a estrutura do software especificado para atender aos requisitos \cite{hilliard2000ieee}.
-
-Qualquer software possui arquitetura, independente dela ser documentada ou projetada. Porém tendo apenas uma arquitetura implementada, ou seja, arquitetura sem projeto, deixa-se de obter os benefícios ou vantagens que uma arquitetura projetada e bem documentada pode oferecer. Entre os benefícios da documentação da arquitetura estão a possibiblidade dela se tornar uma ferramenta de comunicação entre os stakeholders do projeto, um método ou modelo para a análise antecipada do sistema a ser desenvolvido, assim como uma ferramenta que permite a rastreabilidade entre os requisitos e os elementos que compõem o sistema.
-
-Como ferramenta de comunicação, a arquitetura de um software deve servir aos principais envolvidos, já que para cada um, a arquitetura do software é utilizada com diferentes propósitos \cite{gacek1995definition, xavier2001criaccao, clements2002documenting}:
+Os atributos de qualidade são uma das principais preocupações da arquitetura. Eles representam a maneira que o sistema executará suas funcionalidades e são impostos pelos diversos envolvidos no sistema. Podem ser de três tipos:
 
 \begin{itemize}
-\item Cliente. O cliente é a pessoa ou empresa que contrata uma equipe de desenvolvimento para a construção de um sistema de sua necessidade. Na fase inicial do projeto, ele necessita de uma estimativa de certos fatores, normalmente econômicos, que podem ser obtidos após a definição da estrutura principal do software. O cliente, por exemplo, tem interesse em estimativas de custo, confiabilidade e manutenibilidade do software que podem ser obtidos principalmente através de uma análise da arquitetura. Portanto, é de extrema importância para o cliente que a arquitetura atenda os requisitos do software de forma a representar suas reais expectativas em relação ao que foi especificado.
-\item Gerentes. A arquitetura permite aos gerentes tomarem certas decisões de projeto por possibilitar a sumarização das diversas características do sistema. Um gerente pode, por exemplo, usar a arquitetura como base para definir as equipes de desenvolvimento de acordo com os elementos arquiteturais que estão identificados e que devem ser construídos.
-\item Desenvolvedor. Da arquitetura de um software, o desenvolvedor busca uma especificação que escreva a solução com detalhes suficientes e que satisfaça os requisitos do cliente, mas que não seja tão restritiva a ponto de limitar a escolha das abordagens para a sua implementação. Os desenvolvedores usam a arquitetura como uma referência para a composição e o desenvolvimento dos elementos do sistema, e para a identificação e reutilização de elementos arquiteturais já construídos.
-\item Testadores. A arquitetura fornece, numa visão de caixa preta, informações aos testadores relacionadas ao correto comportamento dos elementos arquiteturais que se integram. Sendo assim, este artefato pode ser um dos artefatos base utilizados durante o planejamento e execução de testes de integração e de sistema.
-\item Mantenedor. A descrição arquitetural do software fornece aos mantenedores uma estrutura central da aplicação que idealmente não deve ser violada. Qualquer mudança deve preservá-la, buscando, se possível, uma modificação puramente dos elementos arquiteturais e não da forma como estão organizados.
+\item Atributos de produto ditam como o sistema irá se comportar. Exemplos clássicos são: desempenho, disponibilidade, manutenbilidade, escalabilidade, disponibilidade e portabilidade;
+\item Atributos organizacionais são padrões ou regras impostas por organizações envolvidas para satisfazer determinados requisitos. 
+\item Atributos externos são leis impostas sobre softwares ou requisitos de interoperabilidade entre sistemas.
 \end{itemize}
 
-[Porque utilizar multiplas visões? Utilizar livro do Guilherme Germoglio como referência]
+%Decisões Arquiteturais
+Para satisfazer esses atributos a arquitetura não pode ter suas estruturas definidas aleatoriamente. É necessário que o arquiteto opte por alternativas, divida o sistema em elementos e defina seus relacionamentos para alcançar os atributos de qualidade desejados. Esse conjunto de decisões é conhecido por decisões arquiteturais. Uma decisão arquitetural possui basicamente três características, descrição, objetivos e fundamentação.
 
-[Descrever Atributos de Qualidade, e como são alcançados. --> Link para decisões arquiteturais]
+%Rastreabilidade
+
+Qualquer software possui arquitetura, independente dela ser documentada ou projetada. Porém uma arquitetura apenas implementada, ou seja, arquitetura sem projeto, não fornece benefícios ou vantagens que uma arquitetura projetada e bem documentada pode oferecer. Entre os benefícios da documentação da arquitetura estão: i) arquitetura como ferramenta de comunicação entre os stakeholders do projeto; ii) um método ou modelo para a análise antecipada do sistema a ser desenvolvido; iii) ferramenta de rastreabilidade entre os requisitos e os elementos que compõem o sistema, o que é de grande relevância dada a volatilidade dos requisitos durante o processo de desenvolvimento.
+
+Por relacionar atributos de qualidade (requisitos não-funcionais) a elementos arquiteturais as decisões auxiliam o rastreameto de requisitos.
+
+
+
+%-----------------------parágrafos desconexos---------------------------------------%
+Analisando o ciclo de desenvolvimento de software, é observado que a arquitetura é uma abordagem empregada desde as fases iniciais do processo. Neste instante o nível de abstração da arquitetura é bastante elevado, tendo o objetivo de definir e apresentar a solução computacional que será implementada, auxiliando a tomada de decisões dos stakeholders ou envolvidos no processo de desenvolvimento. Contudo, ao longo do desenvolvimento do software, a arquitetura sofre refinamentos que diminuem o nível de abstração e permitem, por exemplo, a representação dos relacionamentos entre os elementos arquiteturais e os arquivos de código fonte responsáveis por implementá-los \cite{clements2002documenting}.
+
+
 
 %---------------------------------------------------------------------------------------%
 
@@ -65,8 +76,35 @@ Hansson lançou o Rails pela primeira vez ao público em 2004, e desde então se
 
 O Rails utiliza a linguagem de programação Ruby, criada no Japão em 1995 por Yukihiro "Matz" Matsumoto. A linguagem Ruby é interpretada, multiparadigma, com tipagem dinâmica e gerenciamento de memória automático. O Rails é basicamente uma biblioteca Ruby ou \textit{gem} e é construído utilizando o padrão arquitetural MVC.
 
-%Evolução do framework
+A tabela abaixo contem todas as versões do Rails até sua última versão, assim como as datas de lançamento de cada uma.
+
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{ | l | l |}
+    \hline
+    Versão & Data \\ \hline
+    1.0 & 13/12/2005 \\ \hline
+    1.2 & 19/01/2007 \\ \hline
+    2.0 & 7/12/2007 \\ \hline
+    2.1 & 01/06/2008 \\ \hline
+    2.2 & 21/11/2008 \\ \hline
+    2.3 & 16/03/2009 \\ \hline
+    3.0 & 29/08/2010 \\ \hline
+    3.1 & 31/08/2011 \\ \hline
+    3.2 & 20/01/2012 \\ \hline
+    4.0 & 25/06/2013 \\ \hline
+    \end{tabular}
+    \caption{Versões do Rails}
+    \label{rails_versions}
+\end{center}
+\end{table}
+
+%---------------------------------------------------------------------------------------%
+
+\subsection{Evolução do Ruby on Rails}
+
 O framework Rails, desde seu lançamento, sofre frequentes alterações, e com isso novas versões são lançadas constantemente. Muitos desenvolvedores enxergam essas constantes mudanças como um ponto negativo, ao passo que há incompatibilidade de algumas "gems" de uma versão para outra. Por outro lado, outros aprovam essa característica pois a cada atualização há melhora no produto, com adição de novos recursos, além de ser um incentivo para a implementação de testes, já que eles auxiliam a manter a integridade da aplicação a cada atualização.
+
 
 Entre os novos recursos oferecidos pela versão 4 do rails estão:
 \begin{itemize}
@@ -79,7 +117,6 @@ Entre os novos recursos oferecidos pela versão 4 do rails estão:
 \end{itemize}
 
 
-
 %---------------------------------------------------------------------------------------%
 
 \subsection{Padrao Arquitetural MVC}
@@ -88,21 +125,34 @@ O padrão MVC começou como um framework desenvolvido por Trygve Reenskaug para 
 
 O MVC visa separar a representação da informação da interação com o usuário. Para atingir esse objetivo são utilizados três papéis. O modelo (model) que representa informações do domínio, como dados da aplicação, regras de negócio, lógica e funções. A visão (view) que são saídas de representação dos dados do modelo ao usuário. Um exemplo comum de visão é uma pagína HTML contendo dados presentes no modelo. O útimo papel, o controlador (controller) é responsável por receber requisições da visão, manipula-las, utilizando dados do modelo, e atualizar a visão para satisfazer as requisições do usuário.
 
-[Inserir figura que represente esse padrão]
+\graphicspath{{figuras/}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{mvc}
+\caption{Representação do padrão MVC}
+\label{mvc}
+\end{figure}
 
-[Inserir parágrafo exemplificando o funcionamento do padrão - requisição http simples com um browser qualquer]
+O exempo abaixo ilustra um cenário de execução de uma funcionalidade com o padrão MVC.
+
+\begin{mdframed}[frametitle={Exemplo},roundcorner=5pt, backgroundcolor=lightgray]
+Um usuário navega em um site de vendas de veículos. Ao pressionar o botão para visualizar determinado veículo, o navegador carrega a página de detalhes devolve ao usuário. Esse processo começa quando na VIEW o usuário pressiona o botão de visualização. A URL gerada é processada por um método da CONTROLLER de veículos. Esse método solicita ao MODEL o veículo correspondente a URL, então a VIEW é renderizada com os dados do veículo correspondente, obtidos pela CONTROLLER.
+\end{mdframed}
 
 %---------------------------------------------------------------------------------------%
 
 \subsection{Arquiterura do Rails}
 
+Entre os elementos da arquitetura de software, há elementos estáticos e dinâmicos. Elementos estáticos definem as partes de um sistema e sua organização. Entre elementos estáticos estão: i) elementos de software; ii) elementos de dados; iii) elementos de hardware. Os relacionamentos entre os elementos também estão inclusos também compõem o aspecto estático da arquitetura do sistema \cite{germoglio2010fundamentos}. A figura abaixo representa os elementos estáticos da arquitetura do Rails.
+
+\graphicspath{{figuras/}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{mvc}
+\caption{Representação do padrão MVC}
+\label{mvc}
+\end{figure}
+
 [Inserir elementos estáticos e dinâmicos presentes no Rails]
-
-%---------------------------------------------------------------------------------------%
-
-\subsection{Evolução do Ruby on Rails}
-
-
-%---------------------------------------------------------------------------------------%
 
 \subsection{Plugins no Ruby on Rails}
