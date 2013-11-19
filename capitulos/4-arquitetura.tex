@@ -60,12 +60,8 @@ Qualquer software possui arquitetura, independente dela ser documentada ou proje
 
 Por relacionar atributos de qualidade (requisitos não-funcionais) a elementos arquiteturais as decisões auxiliam o rastreameto de requisitos.
 
-
-
 %-----------------------parágrafos desconexos---------------------------------------%
 Analisando o ciclo de desenvolvimento de software, é observado que a arquitetura é uma abordagem empregada desde as fases iniciais do processo. Neste instante o nível de abstração da arquitetura é bastante elevado, tendo o objetivo de definir e apresentar a solução computacional que será implementada, auxiliando a tomada de decisões dos stakeholders ou envolvidos no processo de desenvolvimento. Contudo, ao longo do desenvolvimento do software, a arquitetura sofre refinamentos que diminuem o nível de abstração e permitem, por exemplo, a representação dos relacionamentos entre os elementos arquiteturais e os arquivos de código fonte responsáveis por implementá-los \cite{clements2002documenting}.
-
-
 
 %---------------------------------------------------------------------------------------%
 
@@ -136,14 +132,14 @@ O MVC visa separar a representação da informação da interação com o usuár
 O exempo abaixo ilustra um cenário de execução de uma funcionalidade com o padrão MVC.
 
 \begin{mdframed}[frametitle={Exemplo},roundcorner=5pt, backgroundcolor=lightgray]
-Um usuário navega em um site de vendas de veículos. Ao pressionar o botão para visualizar determinado veículo, o navegador carrega a página de detalhes devolve ao usuário. Esse processo começa quando na VIEW o usuário pressiona o botão de visualização. A URL gerada é processada por um método da CONTROLLER de veículos. Esse método solicita ao MODEL o veículo correspondente a URL, então a VIEW é renderizada com os dados do veículo correspondente, obtidos pela CONTROLLER.
+Um usuário navega em um site de vendas de veículos. Ao pressionar o botão para visualizar determinado veículo, o navegador carrega a página de detalhes e a devolve ao usuário. Esse processo começa quando na VIEW o usuário pressiona o botão de visualização. A URL gerada é processada por um método da CONTROLLER de veículos. Esse método solicita ao MODEL o veículo correspondente a URL, então a VIEW é renderizada com os dados do veículo correspondente, obtidos pela CONTROLLER.
 \end{mdframed}
 
 %---------------------------------------------------------------------------------------%
 
 \subsection{Arquiterura do Rails}
 
-Entre os elementos da arquitetura de software, há elementos estáticos e dinâmicos. Elementos estáticos definem as partes de um sistema e sua organização. Entre elementos estáticos estão: i) elementos de software; ii) elementos de dados; iii) elementos de hardware. Os relacionamentos entre os elementos também estão inclusos também compõem o aspecto estático da arquitetura do sistema \cite{germoglio2010fundamentos}. A figura abaixo representa os elementos estáticos da arquitetura do Rails.
+Entre os elementos da arquitetura de software, há elementos estáticos e dinâmicos. Elementos estáticos definem as partes de um sistema e sua organização. Entre elementos estáticos estão: i) elementos de software; ii) elementos de dados; iii) elementos de hardware. Os relacionamentos entre os elementos também estão inclusos, e também compõem o aspecto estático da arquitetura do sistema \cite{germoglio2010fundamentos}. A figura abaixo representa os elementos estáticos da arquitetura do Rails.
 
 \graphicspath{{figuras/}}
 \begin{figure}[H]
@@ -153,6 +149,6 @@ Entre os elementos da arquitetura de software, há elementos estáticos e dinâm
 \label{mvc}
 \end{figure}
 
-[Inserir elementos estáticos e dinâmicos presentes no Rails]
+Já os elementos dinâmicos definem o comportamento do sistema e representa o sistema em execução. Nele estão incluídos processos, protocolos, módulos e classes que realizam comportamento.
 
 \subsection{Plugins no Ruby on Rails}

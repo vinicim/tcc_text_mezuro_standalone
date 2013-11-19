@@ -70,7 +70,7 @@ A linguagem de programação Ruby e o framework MVC Ruby on Rails foram utilizad
 A arquitetura do Noosfero permite a adição de novas funcionalidades através de plugins. Essa característica é interessante pois colaboradores podem implementar novas funcionalidades sem entender ou interagir com o código-fonte do Noosfero, já que os plugins possuem o código isolado, mantendo o baixo acoplamento e alta coesão dos módulos do sistema. Embora plugins sejam totalmente independentes do sistema alvo, no Noosfero os plugins são mantidos com o código principal para auxiliar no controle de qualidade do ambiente. Pensando nisso os plugins devem ter testes automatizados. Quando houver a necessidade de alterar o código do Noosfero, os testes dos plugins são executados para verificar se as mudanças não afetaram seu funcionamento \cite{noosfero2013plugins}.
 
 \graphicspath{{figuras/}}
-\begin{figure}[!htb]
+\begin{figure}[H]
 \centering
 \includegraphics{plugins}
 \caption{Arquitetura de Plugins do Noosfero}
@@ -82,7 +82,7 @@ A arquitetura do Noosfero permite a adição de novas funcionalidades através d
 O Mezuro como plugin do Noosfero foi construído utilizando o recurso de plugins do framework Ruby on Rails. Por esse motivo ele herda a arquitetura desse framework, a qual é baseada no padrão arquitetural MVC, assim como o Noosfero.
 O Mezuro utiliza um web service chamado Kalibro Metrics. Isso permite ao Mezuro: 
 
-\begin{itemize}
+\begin{enumerate}
 \item Baixar códigos-fonte de repositórios dos tipos GIT, Subversion, Baazar e CVS
 \item Criação de configurações as quais são conjuntos pré-definidos de métricas relacionadas para serem utilizadas na avaliação de projetos de software.
 \item Criação de intervalos relacionados com a métricas e avaliações qualitativas.
@@ -90,22 +90,27 @@ O Mezuro utiliza um web service chamado Kalibro Metrics. Isso permite ao Mezuro:
 \item Cálculo de resultados estatísticos para módulos com alta granularidade.
 \item Possibilidade de exportar arquivos com os resultados gerados.
 \item Interpretação dos resultados com inteface mais amigável aos usuarios com a utilização de cores nos intervalos das métricas.
-\end{itemize}
+\end{enumerate}
 
 %----------------------------------------------------------------------------%
 \section{Mezuro como aplicação independente}
 
-%Motivos para evolução
+As colaborações com a plataforma Mezuro, relacionadas a este trabalho, se iniciaram somente após a decisão de reescrita de seu código, o que a transforma em uma aplicação independente. Por isso decidiu-se elaborar um questionário destinado a equipe de desenvolvimento do Mezuro. Este questionário teve como objetivo extrair informações que embasassem a evolução da plataforma, do ponto de vista do código-fonte e sua arquitetura. O questionário se encontra disponível no Apêndice \ref{form-pesquisa} deste documento.
+
+%Motivos para evolução de Acordo com informações obtidas com o questionario
+
 
   %Evolução do framework rails: novos recursos para o desenvolvimento e gerenciamento das dependências, em especial da "gems" para visualização dos resultados. Além do suporte da comunidade Rails, que é global, para as últimas versões do Raisl e o Ruby. O que tem de novo no Rails 3 e 4 em relação ao Rails 2?
 
 Acompanhando a evolução do framework Rails, a equipe de desenvolvimento da plataforma Mezuro decidiu atualiza-la para as novas versões oferecidas do Ruby on Rails e da linguagem Ruby, as quais possuem atualmente as versões 4 e 2, respectivamente. Um dos motivos para essa atualização é aproveitar os novos recursos oferecidos, além do suporte da comunidade\footnote{\url{http://rubyonrails.org/}}, que favorece a utilização das versões mais novas.
 
-%Recursos desnecessários do Noosfero para o Mezuro: O Mezuro precisou se moldar mais ao Kalibro ao invés de se adaptar mais ao Noosfero como plugins (uma integração entre o Mezuro e o Noosfero continuará, mas como duas aplicações independentes). O Mezuro não precisa de todos os recursos de um rede social, como amigos e relacionamentos entre amigos, entre outras funcionalidades providas pelo Noosfero (blgo, fórum, upload de arquivos, CMS, chat, etc). Dessa forma, pensando no desempenho e na evolução do desenvolvimento do Mezuro, com o objetivo de formatar um comunidade de software livre para atrair desenvolvedores, resolveu-se retirar o Mezuro como um plugin do Noosfero, para não mais o limitar ao andamento do desenvolvimento do Noosfero. Em suma, o Mezuro ser um serviço na Web com foco apenas no monitoramento de código-fonte, podemos se integrar e complementar outros serviços disponíveis com o Olhoh /footnote{/url{http://ohloh.net}}. Em particular, o projeto Mezuro surgiu antes do CodeClimate /footnote{/url{http://codeclimate.com}}, que provê serviço similares aos pretendidos pelo Mezuro, mas monitorando 3 métricas para códigos Ruby.
+  %Recursos desnecessários do Noosfero para o Mezuro: O Mezuro precisou se moldar mais ao Kalibro ao invés de se adaptar mais ao Noosfero como plugins (uma integração entre o Mezuro e o Noosfero continuará, mas como duas aplicações independentes). O Mezuro não precisa de todos os recursos de um rede social, como amigos e relacionamentos entre amigos, entre outras funcionalidades providas pelo Noosfero (blgo, fórum, upload de arquivos, CMS, chat, etc). Dessa forma, pensando no desempenho e na evolução do desenvolvimento do Mezuro, com o objetivo de formatar um comunidade de software livre para atrair desenvolvedores, resolveu-se retirar o Mezuro como um plugin do Noosfero, para não mais o limitar ao andamento do desenvolvimento do Noosfero. Em suma, o Mezuro ser um serviço na Web com foco apenas no monitoramento de código-fonte, podemos se integrar e complementar outros serviços disponíveis com o Olhoh /footnote{/url{http://ohloh.net}}. Em particular, o projeto Mezuro surgiu antes do CodeClimate /footnote{/url{http://codeclimate.com}}, que provê serviço similares aos pretendidos pelo Mezuro, mas monitorando 3 métricas para códigos Ruby.
 Além disso, há outros fatores que influenciaram a evolução do Mezuro. Como já foi mencionado o Mezuro foi concebido como um plugin do Noosfero. O Noosfero, porém, possui muitos recursos desnecessários para uma ferramenta de monitoramento de código-fonte. Entre esses recursos estão: blog, fórum, upload de arquivos, CMS, chat entre outros. A manutenção do Mezuro como plugin se tornava cada vez mais complexa conforme ele evoluia, pois ao invés de fornecer um número baixo de funcionalidades, ou funcionalidades muito específicas, que é o princípio de um plugin, o Mezuro acabou se transformando em uma aplicação, a qual depende de outra aplicação, o Noosfero. 
 
 Pensando no desempenho, manutenibilidade, e com o objetivo de formatar uma comunidade de software livre para atrair novos colaboradores, resolveu-se retirar o Mezuro como plugin do Noosfero e evolui-lo para um plataforma independente, o Mezuro Standalone.
   
 %Nova arquitetura
+%Inserir anexo do formulário de pesquisa realizado com a equipe do Mezuro
+%Inserir resultados da pesquisa realizada
 
 
