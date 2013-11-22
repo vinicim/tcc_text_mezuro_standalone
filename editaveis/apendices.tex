@@ -1,6 +1,6 @@
 \newpage
 \appendix
-\section{Title of Appendix A} 
+\section{Questionário} 
 \label{form-pesquisa}
 
 \textbf{{\large Evolução da Plataforma Mezuro}}
@@ -19,4 +19,69 @@ Esta é uma pesquisa relacionada à evolução do Mezuro. Direcionada aos colabo
   \item Mais funcionalidades 
   \end{enumerate}
 \item Em relação a questão anterior. Em caso de mais funcionalidades ou menos, quais são elas? 
+\end{enumerate}
+
+\newpage
+\section{Respostas}
+\label{resp-pesquisa}
+
+{\large Respostas do Questionário}
+
+\textbf{Respostas 1}
+
+\begin{enumerate}
+\item Quais os principais problemas, do ponto de vista do código e da arquitetura, do antigo Mezuro? Por que os mantenedores decidiram escrevê-lo do zero? *
+  \begin{mdframed}
+A arquitetura de plugins do Noosfero impõe limitações para a estrutura da aplicação, como rotas e também herança de controllers por exemplo. Além disso o problema com tecnologias obsoletas era sério. Ruby 1.8, além de já não receber suporte dos desenvolvedores há algum tempo, tem sérios problemas de performance corrigidos nas versões posteriores. Da mesma forma, a versão 2 do Rails é incompatível com boa parte das gemas atuais.
+  \end{mdframed}
+%----------------------------------------------------------------------
+\item Há aspectos do código ou da arquitetura anteriores melhores que do novo código, ou vice-versa? Quais são eles? *
+  \begin{mdframed}
+Em suma, o novo código é melhor por que resolvemos todos os problemas da resposta anterior.
+  \end{mdframed}
+%---------------------------------------------------------------------
+\item Em relação ao código antigo, o novo código fornece (ou está previsto): *
+  \begin{enumerate}
+  \item As mesmas funcionalidades
+  \item Menos funcionalidades
+  \item Mais funcionalidades 
+  \end{enumerate}
+    \begin{mdframed}
+    As mesmas funcionalidades, menos funcionalidades, mais funcionalidades
+    \end{mdframed}
+%----------------------------------------------------------------------
+\item Em relação a questão anterior. Em caso de mais funcionalidades ou menos, quais são elas? 
+  \begin{mdframed}
+As novas funcionalidades que temos previstas além das que já existiam estão todas descritas nas issues do github.A menos, não pretendemos fornercer uma rede social com páginas pessoais, muito menos comunidades nem suporte a temas.
+  \end{mdframed}
+\end{enumerate}
+
+\textbf{Respostas 2}
+
+\begin{enumerate}
+\item Quais os principais problemas, do ponto de vista do código e da arquitetura, do antigo Mezuro? Por que os mantenedores decidiram escrevê-lo do zero? *
+  \begin{mdframed}
+Por antes o Mezuro ser um plugin de um software maior, nossa arquitetura era limitada ao que este software permitia fazer. Sobre o código, éramos obrigados a usar versões antigas de bibliotecas, o que fazia com que nossas soluções ficarem atrasadas com relação com o que está sendo desenvolvido no mundo do Ruby on Rails.
+Por esses motivos, resolvemos escrever o código do zero, pois agora temos liberdade para mudar a arquitetura sempre que necessário e podemos usar as tecnologias mais novas.
+  \end{mdframed}
+%----------------------------------------------------------------------
+\item Há aspectos do código ou da arquitetura anteriores melhores que do novo código, ou vice-versa? Quais são eles? *
+  \begin{mdframed}
+Antes o Mezuro era um plugin de um sistema maior, portanto a arquitetura era de um plugin e não de uma aplicação rails completa. No novo código, podemos desfrutar de todas as vantagens que o rails fornece. Por outro lado, antes tínhamos muita coisa já implementada que agora temos que refazer.
+  \end{mdframed}
+%---------------------------------------------------------------------
+\item Em relação ao código antigo, o novo código fornece (ou está previsto): *
+  \begin{enumerate}
+  \item As mesmas funcionalidades
+  \item Menos funcionalidades
+  \item Mais funcionalidades 
+  \end{enumerate}
+    \begin{mdframed}
+As mesmas funcionalidades, mais funcionalidades
+    \end{mdframed}
+%----------------------------------------------------------------------
+\item Em relação a questão anterior. Em caso de mais funcionalidades ou menos, quais são elas? 
+  \begin{mdframed}
+Ampliar o escopo para analisar código Ruby, melhorar a visualização dos gráficos e dos resultados, notificação de alerta quando uma métrica atingir certo valor considerado ruim, entre outras.
+  \end{mdframed}
 \end{enumerate}
