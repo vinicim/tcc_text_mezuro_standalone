@@ -31,10 +31,10 @@ Uma alternativa encontrada foi o software livre denominado Analizo\footnote{\url
 
 Na integração do Analizo com a Crab, este último consome serviços do Analizo, ao contrário do que acontecia na integração da JaBUTi com a Crab, onde a ferramenta base aciona o módulo de visualização (Crab) após a coleta das métricas. Essa inversão de paradigma e outras mudanças de impacto fez com que a Crab fosse relicenciada como LGPL versão 3, e para padronizar o nome das ferramentas a Crab passou a se chamar Kalibro ("calibrar" em esperanto). Em sua primeira versão para o projeto Qualipso o Kalibro possuia base de dados própria, calculava estatísticas para as métricas coletadas e exibia os resultados baseando-se nas configurações cadastradas. 
 
-Após a primeira versão do Kalibro integrada ao Analizo, decidiu-se separar a coleta, configuração e interpretação de métricas da sua visualização. Com isso surgiu o Kalibro Service, um serviço web sem interface gráfica, o qual possui todas as funcionalidades não-visuais que hoje são fornecidas pela plataforma Mezuro \cite{meirelles2013metrics}.
+Após a primeira versão do Kalibro integrada ao Analizo, decidiu-se separar a coleta, configuração e interpretação de métricas da sua visualização. Com isso surgiu o Kalibro Service, um serviço web sem interface gráfica, o qual possui todas as funcionalidades não-visuais que hoje são fornecidas pela plataforma Mezuro, que na prática funciona como uma camada de visualização do Kalibro Metrics \cite{meirelles2013metrics}.
 
 %Ferramentas similares
-No contexto do trabalho desenvolvido com o Mezuro, foram encontrados alguns projetos\footnote{flossmetrics.org,ohloh.net,qualoss.org,sqo-oss.org,qsos.org,fossology.org,code.google.com/p/hackystat,codeclimate.com} com propósitos similares\cite{meirelles2010mezuro}, entre eles:
+No contexto do trabalho desenvolvido com o Mezuro, foram encontrados alguns projetos com propósitos similares\cite{meirelles2010mezuro}, entre eles:
 
 \begin{itemize}
 \item \textbf{FlossMetrics} (Free/Libre Open Source Software Metrics) é um projeto que utiliza metodologias e ferramentas existentes para fornecer  uma extensa base de dados com informações sobre desenvolvimento de software livre;
@@ -84,7 +84,7 @@ A arquitetura do Noosfero permite a adição de novas funcionalidades através d
 %Funcionalidades atuais do Mezuro
 O Mezuro como plugin do Noosfero foi construído utilizando o recurso de plugins do framework Ruby on Rails. Por esse motivo ele herda a arquitetura desse framework, a qual é baseada no padrão arquitetural MVC, assim como o Noosfero.
 
-O Mezuro, desde sua criação, utiliza um web service chamado Kalibro Metrics. O Mezuro se comunica com este web service através de um protocolo conhecido como SOAP\footnote{Simple Object Access Protocol}. O protocolo SOAP é baseado no XML\footnote{Linguagem de Marcação Extensível} para o formato de mensagens, assim como dm protocolos da camada de aplicação, entre os principais estão o RPC\footnote{Chamada de Procedimento Remoto} e o HTTP\footnote{Protocolo de Transferência de Hipertexto}. Por meio de requisições SOAP o Mezuro acesso aos \textit{end-points}\footnote{•} do Kalibro Service, entre eles: Kalibro, Project, ProjectResult, ModuleResult, BaseTool, Configuration, and MetricConfiguration. Isso permite:
+O Mezuro, desde sua criação, utiliza o Kalibro Metrics para fornecer a funcionalidade de análise e avaliação de métricas de código-fonte. Essas duas ferramentas se comunicam através da interface do Kalibro em forma de web service conhecida como Kalibro Service. Serviços web são uma boa solução de interoperabilidade, com popularidade crescente na última década. O Mezuro se comunica com este web service através de um protocolo conhecido como SOAP\footnote{Simple Object Access Protocol}. O protocolo SOAP é baseado no XML\footnote{Linguagem de Marcação Extensível} para o formato de mensagens, assim como em protocolos da camada de aplicação, entre os principais estão o RPC\footnote{Chamada de Procedimento Remoto} e o HTTP\footnote{Protocolo de Transferência de Hipertexto}. Por meio de requisições SOAP o Mezuro acesso aos \textit{end-points}\footnote{•} do Kalibro Service, entre eles: Kalibro, Project, ProjectResult, ModuleResult, BaseTool, Configuration, and MetricConfiguration. Isso permite:
 
 \begin{itemize}
 \item Baixar códigos-fonte de repositórios dos tipos GIT, Subversion, Baazar e CVS
@@ -95,6 +95,8 @@ O Mezuro, desde sua criação, utiliza um web service chamado Kalibro Metrics. O
 \item Possibilidade de exportar arquivos com os resultados gerados.
 \item Interpretação dos resultados com inteface mais amigável aos usuarios com a utilização de cores nos intervalos das métricas.
 \end{itemize}
+
+Aplicações Java conseguem consumir os serviços do Kalibro Metrics apenas com o conhecimento da sua API\footnote{•}
 
 %----------------------------------------------------------------------------%
 \section{Mezuro como aplicação independente}
@@ -113,13 +115,21 @@ Como já foi mencionado o Mezuro foi concebido como um plugin do Noosfero. O Noo
 
 Acompanhando a evolução do framework Rails, visando os novos recursos, além do suporte da comunidade\footnote{\url{http://rubyonrails.org/}} desse framework, a equipe de desenvolvimento da plataforma Mezuro decidiu atualiza-la para as novas versões 2 e 4 do Ruby e do Rails respectivamente. A comunidade do Rails favorece a utilização das últimas versões, e as versões mais antigas vão perdendo força, passando a receber cada vez menos suporte dos desenvolvedores.
 
-O Mezuro precisou se moldar mais ao Kalibro do que se adaptar ao Noosfero como plugins, já que esse possui muitos recursos desnecessários para uma ferramenta de monitoramento de código-fonte. Entre esses recursos estão: blog, fórum, upload de arquivos, CMS, chat, características presentes em redes sociais como amigos, relacionamento entre amigos, entre outras funcionalidades. Evolução de software também significa retirar funcionalidades que não se encaixam mais ao ambiente que o software está inserido. Foi exatamente isso que a equipe de desenvolvimento levou em consideração ao decidir pela evolução do Mezuro.
+Conforme observado na Figura \ref{class-diagram}, o Mezuro precisou se moldar mais ao Kalibro do que se adaptar ao Noosfero como plugins, já que esse possui muitos recursos desnecessários para uma ferramenta de monitoramento de código-fonte. Entre esses recursos estão: blog, fórum, upload de arquivos, CMS, chat, características presentes em redes sociais como amigos, relacionamento entre amigos, entre outras funcionalidades. Evolução de software também significa retirar funcionalidades que não se encaixam mais ao ambiente que o software está inserido. Foi exatamente isso que a equipe de desenvolvimento levou em consideração ao decidir pela evolução do Mezuro.
+
+\graphicspath{{figuras/}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{class-diagram-mezuro}
+\caption{Diagrama de classes simples do Mezuro}
+\label{class-diagram}
+\end{figure}
 
 A manutenibilidade do Mezuro como plugin se tornava cada vez menor conforme ele evoluia, pois ao invés de fornecer um número baixo de funcionalidades, ou funcionalidades muito específicas, que é o princípio de um plugin, o Mezuro acabou se transformando em uma aplicação, a qual depende de outra aplicação, o Noosfero. 
 
 Dessa forma, pensando no desempenho e na evolução do desenvolvimento do Mezuro, com o objetivo de formatar um comunidade de software livre para atrair desenvolvedores, resolveu-se retirar o Mezuro como um plugin do Noosfero, para não mais o limitar ao andamento do desenvolvimento do Noosfero. Assim surgiu o Mezuro standalone, um serviço na Web com foco apenas no monitoramento de código-fonte, podemos se integrar e complementar outros serviços disponíveis com o Olhoh /footnote{/url{http://ohloh.net}}.
 
-Embora o Mezuro esteja evoluindo para uma aplicação independente, uma integração entre o Mezuro e o Noosfero continuará, mas como duas aplicações distintas.
+A Figura \ref{mezuro-design} representa o design de alto-nível da plataforma Mezuro como uma aplicação independente. Como mencionado anteriormente ele funciona como um módulo de visualização do Kalibro Metrics, que por sua vez utiliza de coletores de métricas para executar suas funcionalidades.
 
 %Nova arquitetura
 %Design alto nível Mezuro - camadas (mezuro-kalibro-analizo)
@@ -127,22 +137,20 @@ Embora o Mezuro esteja evoluindo para uma aplicação independente, uma integra�
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{mezuro-standalone-design}
-\caption{Design alto-nível do Mezuro}
-\label{mvc}
+\caption{Design de alto-nível do Mezuro. Editado de \cite{meirelles2010mezuro}}
+\label{mezuro-design}
 \end{figure}
-  
-%Comunicação via protocolo soap entre mezuro e kalibro
 
-%descrever esse protocolo
-
-%Inserir imagens da primeira versão do mezuro standalone
+Embora o Mezuro esteja evoluindo para uma aplicação independente, uma integração entre o Mezuro e o Noosfero continuará, mas como duas aplicações distintas.
 
 \graphicspath{{figuras/}}
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{mezuro-standalone}
-\caption{Design alto-nível do Mezuro}
-\label{mvc}
+\caption{Tela principal do Mezuro. Disponível em \url{http://mezuro.org/}}
+\label{mezuro}
 \end{figure}
+
+
 
 
