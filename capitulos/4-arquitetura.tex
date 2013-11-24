@@ -139,14 +139,32 @@ Um usuário navega em um site de vendas de veículos. Ao pressionar o botão par
 
 \subsection{Arquiterura do Rails}
 
-Entre os elementos da arquitetura de software, há elementos estáticos e dinâmicos. Elementos estáticos definem as partes de um sistema e sua organização. Entre elementos estáticos estão: i) elementos de software; ii) elementos de dados; iii) elementos de hardware. Os relacionamentos entre os elementos também estão inclusos, e também compõem o aspecto estático da arquitetura do sistema \cite{germoglio2010fundamentos}. A figura abaixo representa os elementos estáticos da arquitetura do Rails.
+Entre os elementos da arquitetura de software, há elementos estáticos e dinâmicos. Elementos estáticos definem as partes de um sistema e sua organização. Entre elementos estáticos estão: i) elementos de software; ii) elementos de dados; iii) elementos de hardware. 
+
+As características do Rails estão distribuídas entre os seguintes elementos, ou componentes:
+
+\begin{itemize}
+\item Action Mailer
+\item Action Pack
+ \begin{itemize}
+ \item Action Controller
+ \item Action Dispactcher
+ \item Action View
+ \end{itemize}
+\item Active Model
+\item Active Record
+\item Active Resource
+\item Active Support
+\end{itemize}
+
+Os relacionamentos entre os elementos também estão inclusos, e também compõem o aspecto estático da arquitetura do sistema \cite{germoglio2010fundamentos}. A figura abaixo representa os elementos estáticos da arquitetura do Rails.
 
 \graphicspath{{figuras/}}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{mvc}
-\caption{Representação do padrão MVC}
-\label{mvc}
+\includegraphics[width=0.7\textwidth]{rails-overview}
+\caption{Interação entre os componentes do Rails. Extraído  de \cite{mejia2011rails}}
+\label{rails-architecture}
 \end{figure}
 
 Já os elementos dinâmicos definem o comportamento do sistema e representa o sistema em execução. Nele estão incluídos processos, protocolos, módulos e classes que realizam comportamento.
