@@ -13,8 +13,6 @@ O esforço necessário para extrair métricas de código-fonte manualmente pode 
 Existem ferramentas CASE\footnote{Computer Aided Software Engineering - Classificação que abrange todas as ferramentas que auxiliam atividades de engenharia de software } que auxiliam nessas atividades. Por meio da extração e monitoramento automático de métricas de código-fonte, elas auxiliam  a equipe durante o processo de desenvolvimento. Porém, existem existem poucas ferramentas disponíveis no mercado, e muitas delas nem sempre são adequadas para análise do projeto alvo (software-livre) \cite{meirelles2010mezuro}.
 %Métricas são fundamentais para a melhora contínua de um projeto de software livre
 
-%Evolução do mezuro, paralelo com as leis de Lehman
-
 %Mezuro
   %Histórico Ferramentas até chegar ao Mezuro [tese prof. Paulo] 
     %Contexto das ferramentas
@@ -127,9 +125,9 @@ Conforme observado na Figura \ref{class-diagram}, o Mezuro precisou se moldar ma
 \label{class-diagram}
 \end{figure}
 
-A manutenibilidade do Mezuro como plugin se tornava cada vez menor conforme ele evoluia, pois ao invés de fornecer um número baixo de funcionalidades, ou funcionalidades muito específicas, que é o princípio de um plugin, o Mezuro acabou se transformando em uma aplicação, a qual depende de outra aplicação, o Noosfero. 
+A manutenibilidade do Mezuro como plugin se tornava cada vez menor conforme ele evoluia, pois ao invés de fornecer um número baixo de funcionalidades, ou funcionalidades muito específicas, que é o princípio de um plugin, o Mezuro acabou se transformando em uma aplicação, a qual depende de outra aplicação, o Noosfero. Aqui se encontra uma afirmação da segunda lei de Lehman disponível na Tabela \ref{tab-leis-lehman}, à medida que um software é alterado sua complexidade tende a crescer, a não ser que um trabalho seja feito para mantê-la ou diminuí-la. E assim fez a equipe de desenvolvimento do Mezuro.
 
-Dessa forma, pensando no desempenho e na evolução do desenvolvimento do Mezuro, com o objetivo de formatar um comunidade de software livre para atrair desenvolvedores, resolveu-se retirar o Mezuro como um plugin do Noosfero, para não mais o limitar ao andamento do desenvolvimento do Noosfero. Assim surgiu o Mezuro standalone, um serviço na Web com foco apenas no monitoramento de código-fonte, podemos se integrar e complementar outros serviços disponíveis com o Olhoh /footnote{/url{http://ohloh.net}}.
+Pensando no desempenho e na evolução do desenvolvimento do Mezuro, com o objetivo de formatar um comunidade de software livre para atrair desenvolvedores, resolveu-se retirar o Mezuro como um plugin do Noosfero, para não mais o limitar ao andamento do desenvolvimento do Noosfero. Assim surgiu o Mezuro standalone, um serviço na Web com foco apenas no monitoramento de código-fonte, podemos se integrar e complementar outros serviços disponíveis com o Olhoh /footnote{/url{http://ohloh.net}}.
 
 A Figura \ref{mezuro-design} representa o design de alto-nível da plataforma Mezuro como uma aplicação independente. Como mencionado anteriormente ele funciona como um módulo de visualização do Kalibro Metrics, que por sua vez utiliza de coletores de métricas para executar suas funcionalidades.
 

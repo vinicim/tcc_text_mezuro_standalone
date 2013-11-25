@@ -15,12 +15,30 @@ A evolução de software é importante para manter o software consistente com se
 
 Um dos desafios inerentes ao desenvolvimento de software é a manutenção e aumento da qualidade do sistema desenvolvido. Muitos indícios da qualidade de um software são encontrados no seu código-fonte através de suas métricas. Porém, extrair métricas de código-fonte manualmente não é uma tarefa considerada pelas equipes de desenvolvimento dado o esforço necessário para tal. Para isso existem ferramentas que auxiliam as equipes de desenvolvimento. Entre essas ferramentas está a plataforma Mezuro, utilizada para o monitoramento de códigos-fonte.
 
-O Mezuro é desenvolvido como um projeto de software livre, que a princípio era um plugin de uma plataforma de desenvolvimento de redes sociais denominada Noosfero. Porém, o Mezuro cresceu muito em tamanho e complexidade desde que foi concebido. Por isso a equipe decidiu pela reescrita de seu código, o transformando em uma plataforma independente foram do Noosfero, visando mante-la consitente com seu ambiente e com seus propósitos, competivivo em relação a ferramentas semelhantes e ampliar o interesse de utilização por parte de usuários. 
+O Mezuro é desenvolvido como um projeto de software livre, que a princípio era um plugin de uma plataforma de desenvolvimento de redes sociais denominada Noosfero. Porém, o Mezuro cresceu muito em tamanho e complexidade desde que foi concebido. Por isso a equipe decidiu pela reescrita de seu código, transformando-o em uma plataforma independente fora do Noosfero, visando mante-la consitente com seu ambiente e com seus propósitos, competivivo em relação a ferramentas semelhantes e ampliar o interesse de utilização por parte de usuários. 
 
 \section{Objetivos}
 
 \subsection{Objetivos Gerais}
 
+Neste trabalho de conclusão de curso, há como principal objetivo evoluir a plataforma de monitoramento de código-fonte Mezuro de plugin para uma aplicação independente.
+
 \subsection{Objetivos Específicos}
 
+Como objetivos específicos este trabalho visa:
+
+\begin{enumerate}
+\item Reescrever o código do \textit{background}\footnote{Sequência de passos ou processo que executa em paralelo e "por trás" da camada de visualização sem a intervenção do usuário} do Mezuro (modelo e controladores), transformando-o em uma ferramenta independente;
+\item Analisar os impactos na arquitetura;
+\item Manter e melhorar a qualidade do código-fonte;
+\item Fornecer documentação para o Mezuro, facilitando sua manutenção e evolução;
+\item Colaborar com uma comunidade de software livre, seguindo padrões para colaboração;
+\end{enumerate}
+
 \section{Organização do Trabalho}
+
+O primeiro passo para realização deste trabalho foi o contato com a equipe que mantem a plataforma Mezuro, que se deu através do professor Dr. Paulo Meirelles um dos mantenedores. Como muitos projetos de software livre contam com desenvolvedores distantes geograficamente, com o Mezuro não foi diferente. Após o contato com o primeiro mantenedor, iniciou-se os pareamentos remotos, através de vídeo-conferências, para maior familiriadade com o código e funcionalidades fornecidas pela ferramenta.
+
+Após a apresentação geral de todo o código e funcionalidades do Mezuro, iniciou-se o treinamento na ferramenta utilizada no desenvolvimento do Mezuro, o framework Ruby on Rails. Essa fase aconteceu em paralelo com os pareamentos, onde começei a implementar a primeira feature como colaborador da plataforma Mezuro.
+
+Esteve em paralelo com essas atividades a elaboração deste documento que está organizado em capítulos. O Capítulo 2 apresenta os principais conceitos de softwares livre, e padrões de contribuições. O Capítulo 3 contem uma fundamentação teórica sobre a área de conhecimento da evolução de software. O Capítulo 4 apresenta os principais, dos diversos conceitos, sobre arquitetura de software, assim como uma visão da arquitetura do Rails. Finalmente o Capítulo 4 apresenta com mais detalhes a plataforma Mezuro, seu processo de desenvolvimento, fatores que motivaram a reescrita de seu código assim como uma visão geral do status atual do desenvolvimento.
