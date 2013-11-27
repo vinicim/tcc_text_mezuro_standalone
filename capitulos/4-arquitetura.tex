@@ -72,6 +72,25 @@ Hansson lançou o Rails pela primeira vez ao público em 2004, e desde então se
 
 O Rails utiliza a linguagem de programação Ruby, criada no Japão em 1995 por Yukihiro "Matz" Matsumoto. A linguagem Ruby é interpretada, multiparadigma, com tipagem dinâmica e gerenciamento de memória automático. O Rails é basicamente uma biblioteca Ruby ou \textit{gem} e é construído utilizando o padrão arquitetural MVC.
 
+Um de seus fundamentos é facilitar o desenvolvimento. O Rails utiliza diversos princípios para orientá-lo do "modo certo" ("Rails way"), possibilitando concentrar esforços no problema do cliente, poupando a equipe do esforço de organizar a estrutura da aplicação a qual é feita pelo framework. Alguns princípios são:
+
+\begin{itemize}
+\item \textbf{DRY} - “Don’t Repeat Yourself” - Propõe que um mesmo trecho ou porção de
+conhecimento em um código deve possuir representação única no sistema, livre de
+redundância e repetições. Quando aplicado, esse princípio possibilita que uma alteração
+seja feita em um único local no código, evitando “bad smells” como código duplicado e
+facilitando a manutenbilidade do sistema
+\item \textbf{Convenção ao invés de Configuração} (Convention over configuration)- Considerado um paradigma de design que visa diminuir o número de decisões que os desenvolvedores precisam tomar, ganhando simplicidade, sem perder simplicidade.
+\item \textbf{REST} - É um estilo arquitetural para aplicações web. O termo REST é um acrônimo para \textbf{RE}presentaional \textbf{S}tate \textbf{T}ransfer. Propõe princípios (não exclusivos ao REST) que definem como Web Standards como HTTP e URIs devem ser usados. Os princípios são:
+  \begin{itemize}
+  \item Todos os recursos devem ter um identificador. Um conceito comum para identificador na web é a URI;
+  \item Utilize links (hipermídia) para referenciar recursos;
+  \item Utilize os métodos padrão - São eles GET, POST, PUT, DELETE. Os métodos GET e PUT e DELETE são idempotentes, ou seja, há garantia de que podemos enviar a requisição novamente. Quando emitimos um GET, por exemplo, e não recebermos resposta, não saberemos se a requisição foi perdida ou a resposta que se perdeu. Mas nesse caso podemos simplesmente enviar a solicitação novamente;
+  \item Múltipla representação de recursos - diversos formatos dos recursos para diferentes necessidades, como formatos XML, HTML. Isso faz com que seus recursos sejam consumidos não apenas pelo seu aplicativo, mas também por qualquer navegador web;
+  \item Comunicação sem estado - Um servidor não deveria guardar o estado da comunicação de qualquer um dos clientes que se comunique com ele além de uma única requisição. A razão para isso é escalabilidade - o número de clientes que podem interagir com o servidor seria consideravelmente impactado se fosse preciso manter o estado do cliente;
+  \end{itemize}
+\end{itemize}
+
 A tabela abaixo contem todas as versões do Rails até sua última versão, assim como as datas de lançamento de cada uma.
 
 \begin{table}[H]
@@ -131,7 +150,7 @@ O MVC visa separar a representação da informação da interação com o usuár
 
 O exempo abaixo ilustra um cenário de execução de uma funcionalidade com o padrão MVC.
 
-\begin{mdframed}[frametitle={Exemplo},roundcorner=5pt, backgroundcolor=lightgray]
+\begin{mdframed}[frametitle={Exemplo},roundcorner=5pt]
 Um usuário navega em um site de vendas de veículos. Ao pressionar o botão para visualizar determinado veículo, o navegador carrega a página de detalhes e a devolve ao usuário. Esse processo começa quando na VIEW o usuário pressiona o botão de visualização. A URL gerada é processada por um método da CONTROLLER de veículos. Esse método solicita ao MODEL o veículo correspondente a URL, então a VIEW é renderizada com os dados do veículo correspondente, obtidos pela CONTROLLER.
 \end{mdframed}
 
@@ -144,17 +163,24 @@ Entre os elementos da arquitetura de software, há elementos estáticos e dinâm
 As características do Rails estão distribuídas entre os seguintes elementos, ou componentes:
 
 \begin{itemize}
-\item Action Mailer
+\item Action Mailer fornece a capacidade de criação de serviços de e-mail. Podendo enviar e-
+mails baseados em templates adaptáveis ou receber e processar um e-mail;
 \item Action Pack
  \begin{itemize}
- \item Action Controller
- \item Action Dispactcher
- \item Action View
+ \item Action Controller é o componente que gerencia os controllers em uma aplicação
+Rails. Ele processa as requisições que chegam de uma aplicação Rails, recebe seus
+parâmetros e os envia para as ações pretendidas; 
+ \item Action View gerencia as views da aplicação. Isto é, as saídas HTML e XML por
+padrão. Gerencia a renderização de templates aninhados ou parciais , e inclui suporte
+embutido para AJAX;
  \end{itemize}
-\item Active Model
-\item Active Record
-\item Active Resource
-\item Active Support
+\item Active Record é abase dos \textit{models}. Ele fornece a independência de banco de dados e CRUD básico. Ele é utilizado para criar a representação, em orientação a objetos, dos
+dados presentes no banco de dados;
+\item Active Resource gerencia conexões entre objetos de negócio e serviços web RESTful.
+Ele mapeia recursos baseados em web para objetos locais com lógica CRUD;
+\item Active Support uma coleção de classes de utilidade e extenções da biblioteca padrão do
+Ruby que são utilizadas pelo Rails, tanto em seu núcleo quanto para suas aplicações;
+\item Railties é o núcleo do código Rails e é ele quem constrói novas aplicações Rails e junta os diversos componentes;
 \end{itemize}
 
 Os relacionamentos entre os elementos também estão inclusos, e também compõem o aspecto estático da arquitetura do sistema \cite{germoglio2010fundamentos}. A figura abaixo representa os elementos estáticos da arquitetura do Rails.
@@ -169,4 +195,3 @@ Os relacionamentos entre os elementos também estão inclusos, e também compõe
 
 Já os elementos dinâmicos definem o comportamento do sistema e representa o sistema em execução. Nele estão incluídos processos, protocolos, módulos e classes que realizam comportamento.
 
-\subsection{Plugins no Ruby on Rails}
