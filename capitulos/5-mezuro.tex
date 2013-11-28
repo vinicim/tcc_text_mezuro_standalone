@@ -145,6 +145,12 @@ A Figura \ref{mezuro-design} representa o design de alto-nível da plataforma Me
 
 Embora o Mezuro esteja evoluindo para uma aplicação independente, uma integração entre o Mezuro e o Noosfero continuará, mas como duas aplicações distintas.
 
+Assim como vários outros projetos de software livre o projeto da plataforma Mezuro segue uma estratégia semelhante no sentido de manter uma ramificação estável e outra de desenvolvimento. No caso do Mezuro há a ramificação estável que é equivalente ao branch\footnote{Ramificação do desenvolvimento. A partir do momento que é criado, se torna independente de qualquer outro.} master do seu repositório Git. A ramificação de desenvolvimento equivale ao branch dev do mesmo repositório. Há também outros branchs, os quais são criados a partir do branch dev. Esses branchs são criados para o desenvolvimento de novas features, e ao concluí-las esses branchs devem ser mesclados ao branch dev antes de fazer parte da versão estável do Mezuro.
+
+Esse mesmo processo foi seguido para o desenvolvimento da feature de Manter Repositórios. De acordo com o diagrama da Figura \ref{class-diagram} é observado que um projeto possui diversos repositórios, os quais podem ser adicionados e removidos de um projeto, além de editados e visualizados. No caso da visualização é feito um processamento para que o usuário analise as métricas extraídas do código presente nesse repositório. 
+
+Essa feature se encontra atualmente disponível na primeira versão do Mezuro como plataforma independente, lançada no mês de novembro de 2013.
+
 \graphicspath{{figuras/}}
 \begin{figure}[H]
 \centering
