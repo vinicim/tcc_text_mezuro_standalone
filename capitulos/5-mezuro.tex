@@ -66,8 +66,9 @@ Em particular, o projeto Mezuro surgiu antes do CodeClimate/footnote{/url{http:/
 %O que é o Noosfero
 O Mezuro foi concebido como instância de uma plataforma web conhecida como Noosfero, com o plugin Mezuro ativado. O Noosfero é um software livre para criação de redes sociais desenvolvido pela Cooperativa de Tecnologias Livres - Coolivre \footnote{\url{http://colivre.coop.br/}} sob licença AGPL\footnote{Licença de software GNU Affero General Public License} v.3 com o intuito de permitir que os usuários criem sua própria rede social livre e personalizada de acordo com suas necessidades.
 
-%Arquitetura do Noosfero
-A linguagem de programação Ruby e o framework MVC Ruby on Rails foram utilizados para desenvolver o Noosfero. Essas tecnologias foram escolhidas pois a linguagem Ruby possui uma sintaxe simples, que facilita a manunbilidade do sistema, característica importante em projetos de software livre que tendem a atrair colaboradores externos a equipe. Já o framework Ruby on Rails influencia em maior produtividade graças a conceitos como \textit{convention over configuration} e DRY\footnote{Don't Repeat Yourself. Princípio utilizado no framework Ruby on Rails para reaproveitamento de informações}.
+\subsection{Arquitetura do Noosfero}
+
+A linguagem de programação Ruby e o framework MVC Ruby on Rails foram utilizados para desenvolver o Noosfero. Essas tecnologias foram escolhidas pois a linguagem Ruby possui uma sintaxe simples, que facilita a manunbilidade do sistema, característica importante em projetos de software livre que tendem a atrair colaboradores externos a equipe. Já o framework Ruby on Rails influencia em maior produtividade graças a conceitos como \textit{convention over configuration} e DRY. Por esse motivo o Noosfero herda sua arquitetura, a qual é baseada no padrão arquitetural MVC, assim como os plugins que estendem suas funcionalidades.
 
 %Arquitetura de plugins do Noosfero
 A arquitetura do Noosfero permite a adição de novas funcionalidades através de plugins. Essa característica é interessante pois colaboradores podem implementar novas funcionalidades sem entender ou interagir com o código-fonte do Noosfero, já que os plugins possuem o código isolado, mantendo o baixo acoplamento e alta coesão dos módulos do sistema. Embora plugins sejam totalmente independentes do sistema alvo, no Noosfero os plugins são mantidos com o código principal para auxiliar no controle de qualidade do ambiente. Pensando nisso os plugins devem ter testes automatizados. Quando houver a necessidade de alterar o código do Noosfero, os testes dos plugins são executados para verificar se as mudanças não afetaram seu funcionamento \cite{noosfero2013plugins}.
@@ -80,9 +81,14 @@ A arquitetura do Noosfero permite a adição de novas funcionalidades através d
 \label{Rotulo}
 \end{figure}
 
-%Implementação do Mezuro como plugin do Noosfero
-%Funcionalidades atuais do Mezuro
-O Mezuro como plugin do Noosfero foi construído utilizando o recurso de plugins do framework Ruby on Rails. Por esse motivo ele herda a arquitetura desse framework, a qual é baseada no padrão arquitetural MVC, assim como o Noosfero.
+O funcionamento dos plugins é baseado no paradigma de orientação a eventos. O núcleo do Noosfero dispara um evento durante sua execução e os plugins interessados nesse evento saberão como tratar esse evento. Os eventos que são disparados pelo noosfero são chamados de “hotspots”. 
+
+No Noosfero, existem dois tipos de papéis para o desenvolvimento de plugins. Esses
+papeis possuem responsabilidades totalmente diferentes, contudo a junção deles será o
+funcionamento do plugin. Com isso é necessário construir interfaces bem definidas para a
+comunicação de esses dois papéis serem bem definidas. Os papéis no desenvolvimento são: i) desenvolvedor do Noosfero; ii) desenvolvedor do plugin.
+
+\subsection{Utilização do Kalibro Metrics}
 
 O Mezuro, desde sua criação, utiliza o Kalibro Metrics para fornecer a funcionalidade de análise e avaliação de métricas de código-fonte. Essas duas ferramentas se comunicam através da interface do Kalibro em forma de web service conhecida como Kalibro Service. Serviços web são uma boa solução de interoperabilidade, com popularidade crescente na última década. O Mezuro se comunica com este web service através de um protocolo conhecido como SOAP\footnote{Simple Object Access Protocol}. O protocolo SOAP é baseado no XML\footnote{Linguagem de Marcação Extensível} para o formato de mensagens, assim como em protocolos da camada de aplicação, entre os principais estão o RPC\footnote{Chamada de Procedimento Remoto} e o HTTP\footnote{Protocolo de Transferência de Hipertexto}. Por meio de requisições SOAP o Mezuro acesso aos \textit{end-points}\footnote{Métodos disponibilizado pelo web service, onde cada método define uma funcionalidade} do Kalibro Service, entre eles: Kalibro, Project, ProjectResult, ModuleResult, BaseTool, Configuration, and MetricConfiguration. Isso permite:
 
