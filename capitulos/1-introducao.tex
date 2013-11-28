@@ -4,41 +4,53 @@ Atualmente as tecnologias da informação exercem cada vez mais influência na s
 
 %Monopólio dos software proprietários e início dos softwares livre
 Por volta da década de 60 o software era comercializado juntamente com hardware. O código-fonte era disponibilizado junto com o software e muitos usuários compartilhavam código e informações. O software era dito livre até a década de 70, quando a IBM\footnote{Internacional Business Machines é uma empresa americana da área de tecnologia da informação. Comercializa hardware e software além de serviços de hospedagem e infra-estrutura.} decidiu comercializar seus programas separados do hardware. Com isso as restrições de acesso ao código-fonte se tornaram comuns, assim seu compartilhamento se tornava cada vez mais escasso, surgiram assim os softwares proprietários.
+%TODO: faltou uma referência para sustentar este parágrafo. Ver isso para o TCC 2.
 
-Durante a década de 80, porém, o contexto de software livre que permeava o início do software  ressurgiu graças a Richard Stallman. Em 1983, após uma experiência negativa com softwares proprietários, ele deu origem ao Projeto GNU\footnote{Projeto que tem como objetivo a criação de um sistema operacional livre}. Stalman objetivava criar um mecanismo para garantir direitos de cópia, modificação e redistribuição de software. Com isso surgiu a Licença GPL\footnote{General Public Lincense ou Licensa Pública Geral}.
+Durante a década de 80, porém, o contexto de software livre que permeava o início do software ressurgiu, em suma, por iniciativa Richard Stallman. Em 1983, após uma experiência negativa com softwares proprietários, ele deu origem ao Projeto GNU\footnote{Projeto que tem como objetivo a criação de um sistema operacional livre}. Stalman objetivava criar um mecanismo para garantir direitos de cópia, modificação e redistribuição de software. Com isso surgiu a Licença GPL\footnote{General Public Lincense ou Licensa Pública Geral}.
+%TODO: faltou uma referência para sustentar este parágrafo. Ver isso para o TCC 2.
 
 A definição de software é a mesma, seja ele proprietário ou livre. Softwares são constituídos por um conjunto de procedimentos, dados, possível documentação, e satisfazem necessidades específicas de determinados usuários. Além da definição, os dois tipo de software mencionados aqui possuem também a necessidade de serem mantidos e evoluídos.
+%TODO: Falou de definição sem referenciar - corrigir no TCC 2.
+% Trocar proprietário por restrito (colocar nota de rodapé falando que restrito, privativo ou proprietário são os termos mais usados)
 
-A evolução de software começou a receber mais atenção a partir dos estudos realizados por Meir M. Lehman no final da década de 60, assim se tornou uma área de conhecimento da engenharia de software. A partir de seus estudos Lehman elaborou um conjunto de oito leis que são conhecidas "Leis de Lehman", as quais definem um padrão para evolução de softwares. 
+A evolução de software começou a receber mais atenção a partir dos estudos realizados por Meir M. Lehman no final da década de 60, assim se tornou uma área de conhecimento da engenharia de software. A partir de seus estudos Lehman elaborou um conjunto de oito leis que são conhecidas "Leis de Lehman", as quais definem um padrão para evolução de softwares.
+%TODO: referenciar Lehman
 
-A evolução de software é importante para manter o software consistente com seu ambiente, competitivo em relação a sotwares concorrentes e manter os usuários interessados. Além disso, quando tratamos de software livre a evolução é essencial para manter a comunidade estabelecida ao seu redor, contribuindo para manter esse projeto ativo.  
+A evolução de software é importante para manter o software consistente com seu ambiente, competitivo em relação a sotwares concorrentes e manter os usuários interessados. Além disso, quando tratamos de software livre a evolução é essencial para manter a comunidade estabelecida ao seu redor, contribuindo para manter esse projeto ativo.
+%TODO: referenciar a mim ou a Terceiro. 
 
-Um dos desafios inerentes ao desenvolvimento de software é a manutenção e aumento da qualidade do sistema desenvolvido. Muitos indícios da qualidade de um software são encontrados no seu código-fonte através de suas métricas. Porém, extrair métricas de código-fonte manualmente não é uma tarefa considerada pelas equipes de desenvolvimento dado o esforço necessário para tal. Para isso existem ferramentas que auxiliam as equipes de desenvolvimento. Entre essas ferramentas está a plataforma Mezuro, utilizada para o monitoramento de códigos-fonte.
+Um dos desafios inerentes ao desenvolvimento de software é a manutenção e aumento da qualidade do sistema desenvolvido. Muitos indícios da qualidade de um software são encontrados no seu código-fonte através de suas métricas.
+%TODO: referenciar a mim
+Porém, extrair métricas de código-fonte manualmente não é uma tarefa considerada pelas equipes de desenvolvimento dado o esforço necessário para tal. Para isso existem ferramentas que auxiliam as equipes de desenvolvimento. Entre essas ferramentas está a plataforma Mezuro, utilizada para o monitoramento de códigos-fonte.
+%TODO: referenciar artigos sobre Mezuro e Kalibro.
 
-O Mezuro é desenvolvido como um projeto de software livre, que a princípio era um plugin de uma plataforma de desenvolvimento de redes sociais denominada Noosfero. Porém, o Mezuro cresceu muito em tamanho e complexidade desde que foi concebido. Por isso a equipe decidiu pela reescrita de seu código, transformando-o em uma plataforma independente fora do Noosfero, visando mante-la consitente com seu ambiente e com seus propósitos, competivivo em relação a ferramentas semelhantes e ampliar o interesse de utilização por parte de usuários. 
+O Mezuro é desenvolvido como um projeto de software livre, que a princípio era um plugin de uma plataforma de desenvolvimento de redes sociais denominada Noosfero.
+%TODO: nota de rodapé com a URL do Noosfero.
+Porém, o Mezuro cresceu em tamanho e complexidade. Por isso, a equipe de desenvolvimento do Mezuro decidiu pela reescrita de seu código, transformando-o em uma plataforma independente fora do Noosfero, visando mantê-la consitente com seu ambiente e com seus propósitos, competivivo em relação às ferramentas semelhantes e ampliar o interesse de utilização por parte de usuários.
 
 \section{Objetivos}
 
 \subsection{Objetivos Gerais}
 
-Neste trabalho de conclusão de curso, há como principal objetivo evoluir a plataforma de monitoramento de código-fonte Mezuro de plugin para uma aplicação independente.
+Neste trabalho de conclusão de curso, há como principal objetivo colaborar com evolução da plataforma de monitoramento de código-fonte Mezuro, de forma que migre do cenário de ser um plugin para torna-se uma aplicação independente.
 
 \subsection{Objetivos Específicos}
 
 Como objetivos específicos este trabalho visa:
 
 \begin{enumerate}
-\item Reescrever o código do \textit{background}\footnote{Sequência de passos ou processo que executa em paralelo e "por trás" da camada de visualização sem a intervenção do usuário} do Mezuro (modelo e controladores), transformando-o em uma ferramenta independente;
-\item Analisar os impactos na arquitetura;
-\item Manter e melhorar a qualidade do código-fonte;
+\item Reescrever o código do \textit{background}\footnote{Sequência de passos ou processo que executa em paralelo e ``por trás'' da camada de visualização sem a intervenção do usuário} do Mezuro (modelo e controladores);
+\item Analisar a nova arquitetura e compará-la com a antiga;
 \item Fornecer documentação para o Mezuro, facilitando sua manutenção e evolução;
-\item Colaborar com uma comunidade de software livre, seguindo padrões para colaboração;
+\item Colaborar com a comunidade de software livre do Mezuro, seguindo os padrões para colaboração.
 \end{enumerate}
 
 \section{Organização do Trabalho}
 
-O primeiro passo para realização deste trabalho foi o contato com a equipe que mantem a plataforma Mezuro, que se deu através do professor Dr. Paulo Meirelles um dos mantenedores. Como muitos projetos de software livre contam com desenvolvedores distantes geograficamente, com o Mezuro não foi diferente. Após o contato com o primeiro mantenedor, iniciou-se os pareamentos remotos, através de vídeo-conferências, para maior familiriadade com o código e funcionalidades fornecidas pela ferramenta.
+O primeiro passo para realização deste trabalho foi o contato com a equipe que mantem a plataforma Mezuro, que se deu através do professor Dr. Paulo Meirelles, um dos mantenedores. Como muitos projetos de software livre contam com desenvolvedores distantes geograficamente, com o Mezuro não foi diferente. Após o contato com o primeiro mantenedor, iniciou-se os pareamentos remotos, através de vídeo-conferências, para maior familiriadade com o código e funcionalidades fornecidas pela ferramenta.
 
-Após a apresentação geral de todo o código e funcionalidades do Mezuro, iniciou-se o treinamento na ferramenta utilizada no desenvolvimento do Mezuro, o framework Ruby on Rails. Essa fase aconteceu em paralelo com os pareamentos, onde começei a implementar a primeira feature como colaborador da plataforma Mezuro.
+Após a apresentação geral de todo o código e funcionalidades do Mezuro, iniciou-se o treinamento na ferramenta utilizada no desenvolvimento do Mezuro, o framework Ruby on Rails. Essa fase aconteceu em paralelo com os pareamentos, onde começei a implementar a primeira funcionalidade como colaborador da plataforma Mezuro.
 
-Esteve em paralelo com essas atividades a elaboração deste documento que está organizado em capítulos. O Capítulo 2 apresenta os principais conceitos de softwares livre, e padrões de contribuições. O Capítulo 3 contem uma fundamentação teórica sobre a área de conhecimento da evolução de software. O Capítulo 4 apresenta os principais, dos diversos conceitos, sobre arquitetura de software, assim como uma visão da arquitetura do Rails. Finalmente o Capítulo 4 apresenta com mais detalhes a plataforma Mezuro, seu processo de desenvolvimento, fatores que motivaram a reescrita de seu código assim como uma visão geral do status atual do desenvolvimento.
+Em paralelo, houve a escrita desta trabalho que está organizado em capítulos como a seguir. O Capítulo 2 apresenta os principais conceitos de softwares livre, e padrões de contribuições, com uma fundamentação teórica sobre evolução de software. O Capítulo 3 apresenta os principais, dos diversos conceitos, sobre arquitetura de software, assim como uma visão da arquitetura do Rails. Finalmente, o Capítulo 4 apresenta com mais detalhes a plataforma Mezuro, seu processo de desenvolvimento, fatores que motivaram a reescrita de seu código, assim como uma visão geral do estado atual do desenvolvimento.
+
+% A introdução ficou boa.
