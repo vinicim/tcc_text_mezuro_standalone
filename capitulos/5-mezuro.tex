@@ -123,19 +123,11 @@ Acompanhando a evolução do framework Rails, visando os novos recursos, além d
 
 Conforme observado na Figura \ref{class-diagram}, o Mezuro precisou se moldar mais ao Kalibro do que se adaptar ao Noosfero como plugins, já que esse possui muitos recursos desnecessários para uma ferramenta de monitoramento de código-fonte. Entre esses recursos estão: blog, fórum, upload de arquivos, CMS, chat, características presentes em redes sociais como amigos, relacionamento entre amigos, entre outras funcionalidades. Evolução de software também significa retirar funcionalidades que não se encaixam mais ao ambiente que o software está inserido. Foi exatamente isso que a equipe de desenvolvimento levou em consideração ao decidir pela evolução do Mezuro.
 
-\graphicspath{{figuras/}}
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.6\textwidth]{class-diagram-mezuro}
-\caption{Diagrama de classes simples do Mezuro}
-\label{class-diagram}
-\end{figure}
-
-A Figura \ref{class-diagram} é um diagrama de classes que representa as entidades já implementadas no Mezuro como plataforma independente. A classe Project representa o projeto a ser analisado. Um projeto pode conter vários repositórios, de onde as métricas são extraídas.  Um repositório pode ser de vários tipos, Git\footnote{\url{http://git-scm.com/}}, Subversion\footnote{\url{http://subversion.apache.org/}}, Bazaar\footnote{\url{http://bazaar.canonical.com/en/}} e Mercurial\footnote{\url{http://mercurial.selenic.com/}}. A classe Processing representa o processamento de um repositório para obter os resultados das métricas extraídas de acordo com a configuração selecionada. E finalmente, a classe Module-Result representa o resultado do processamento de um repositório. Uma configuração representa um conjunto de métricas, um intervalo para cada uma delas, além da interpretação de cada métrica após o processamento de um repositório. O Mezuro trás uma configuração \textit{default}, porém futuramente será possível a definição de uma configuração pelo usuário.
-
 A manutenibilidade do Mezuro como plugin se tornava cada vez menor conforme ele evoluia, pois ao invés de fornecer um número baixo de funcionalidades, ou funcionalidades muito específicas, que é o princípio de um plugin, o Mezuro acabou se transformando em uma aplicação, a qual depende de outra aplicação, o Noosfero. Aqui se encontra uma afirmação da segunda lei de Lehman disponível na Tabela \ref{tab-leis-lehman}, à medida que um software é alterado sua complexidade tende a crescer, a não ser que um trabalho seja feito para mantê-la ou diminuí-la. E assim fez a equipe de desenvolvimento do Mezuro.
 
 Pensando no desempenho e na evolução do desenvolvimento do Mezuro, com o objetivo de formatar um comunidade de software livre para atrair desenvolvedores, resolveu-se retirar o Mezuro como um plugin do Noosfero, para não mais o limitar ao andamento do desenvolvimento do Noosfero. Assim surgiu o Mezuro standalone, um serviço na Web com foco apenas no monitoramento de código-fonte, podemos se integrar e complementar outros serviços disponíveis com o Olhoh\footnote{\url{http://ohloh.net}}.
+
+\subsection{Desenvolvimento de uma plataforma independente}
 
 A Figura \ref{mezuro-design} representa o design de alto-nível da plataforma Mezuro como uma aplicação independente. Como mencionado anteriormente ele funciona como um módulo de visualização do Kalibro Metrics, que por sua vez utiliza coletores de métricas para executar suas funcionalidades.
 
@@ -164,6 +156,22 @@ Essa feature se encontra atualmente disponível na primeira versão do Mezuro co
 \caption{Tela principal do Mezuro. Disponível em \url{http://mezuro.org/}}
 \label{mezuro}
 \end{figure}
+
+%Inserir figuras que representem os repositórios
+
+A Figura \ref{class-diagram} é um diagrama de classes que representa as entidades já implementadas no Mezuro como plataforma independente. A classe Project representa o projeto a ser analisado. Um projeto pode conter vários repositórios, de onde as métricas são extraídas.  Um repositório pode ser de vários tipos, Git\footnote{\url{http://git-scm.com/}}, Subversion\footnote{\url{http://subversion.apache.org/}}, Bazaar\footnote{\url{http://bazaar.canonical.com/en/}} e Mercurial\footnote{\url{http://mercurial.selenic.com/}}. A classe Processing representa o processamento de um repositório para obter os resultados das métricas extraídas de acordo com a configuração selecionada. E finalmente, a classe Module-Result representa o resultado do processamento de um repositório. Uma configuração representa um conjunto de métricas, um intervalo para cada uma delas, além da interpretação de cada métrica após o processamento de um repositório. O Mezuro trás uma configuração \textit{default}, porém futuramente será possível a definição de uma configuração pelo usuário.
+
+\graphicspath{{figuras/}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{class-diagram-mezuro}
+\caption{Diagrama de classes simples do Mezuro}
+\label{class-diagram}
+\end{figure}
+
+%descrever decisão arquitetural - gema do kalibro
+
+
 
 
 
