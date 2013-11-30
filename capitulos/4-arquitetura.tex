@@ -198,7 +198,20 @@ Um usuário navega em um site de vendas de veículos. Ao pressionar o botão par
 
 Entre os elementos da arquitetura de software, há elementos estáticos e dinâmicos. Elementos estáticos definem as partes de um sistema e sua organização. Entre elementos estáticos estão: i) elementos de software; ii) elementos de dados; iii) elementos de hardware. 
 %
-As características do Rails estão distribuídas entre os seguintes elementos, ou componentes:
+As características do Rails estão distribuídas entre elementos, conforme ilustrado na Figura~\ref{fig:rails-architecture}.
+%
+Os relacionamentos entre os elementos também estão inclusos, e também compõem o aspecto estático da arquitetura do sistema \cite{germoglio2010fundamentos}.
+%
+Já os elementos dinâmicos definem o comportamento do sistema e representa o sistema em execução. Nele estão incluídos processos, protocolos, módulos e classes que realizam comportamento.
+
+\graphicspath{{figuras/}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{rails-overview}
+\caption{Interação entre os componentes do Rails. Extraído  de \cite{mejia2011rails}}
+\label{fig:rails-architecture}
+\end{figure}
+
 
 \begin{description}
 
@@ -232,17 +245,5 @@ Ruby que são utilizadas pelo Rails, tanto em seu núcleo quanto para suas aplic
 
 \end{description}
 
-Os relacionamentos entre os elementos também estão inclusos, e também compõem o aspecto estático da arquitetura do sistema \cite{germoglio2010fundamentos}. A Figura~\ref{fig:rails-architecture} representa os elementos estáticos da arquitetura do Rails.
 
-\graphicspath{{figuras/}}
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{rails-overview}
-\caption{Interação entre os componentes do Rails. Extraído  de \cite{mejia2011rails}}
-\label{fig:rails-architecture}
-\end{figure}
-
-Já os elementos dinâmicos definem o comportamento do sistema e representa o sistema em execução. Nele estão incluídos processos, protocolos, módulos e classes que realizam comportamento.
-
-
-%TODO: concluir algo ainda aqui para o TCC 1
+%TODO: concluir algo
