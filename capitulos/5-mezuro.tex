@@ -2,36 +2,38 @@
 
 %Introdução
 A prática da engenharia de software exige compreensão do sistema desenvolvido como um todo, onde o código-fonte é uma das partes mais importantes. O engenheiro de software precisa analizar um código-fonte diversas vezes, seja para desenvolver novas funcionalidades ou melhorar as existentes \cite{meirelles2010mezuro}.
-
+%
 Como parte fundamental do projeto de software, o código-fonte é um dos principais artefatos para avaliar sua qualidade \cite{meirelles2009crab}. Essas avaliações não são meramente subjetivas, sendo necessário extrair informações que possam ser replicadas e entendidas da mesma forma, independente de quem analisa o código. As métricas de código-fonte permitem esse tipo de avaliação pois possibilitam analisar, de forma objetiva, as principais características para aceitação de um software.
 
 %Métricas código-fonte
 Há várias características que fazem do software um sistema de qualidade ou não. Entre elas há algumas que são obtidas exclusivamente através do código-fonte. Quando compilamos um software, por exemplo, características podem ser analisadas, mas outras como organização e legibilidade não. Isso não refletiria tamanho, modularidade, manutenbilidade, complexidade, flexibilidade, que são características encontradas na análise de códigos-fonte \cite{meirelles2013metrics}.
-
+%
 %Ferramentas para monitoramento de métricas de código-fonte
 O esforço necessário para extrair métricas de código-fonte manualmente pode ser considerado imensurável. Quanto maior e mais complexo é o código, esse tipo de atividade se torna ainda mais distante das equipes de desenvolviento, dada a quantidade de propriedades e linhas de códigos a se analisar, além de não ser viável pelo tempo despendido. 
-Existem ferramentas CASE\footnote{Computer Aided Software Engineering - Classificação que abrange todas as ferramentas que auxiliam atividades de engenharia de software } que auxiliam nessas atividades. Por meio da extração e monitoramento automático de métricas de código-fonte, elas auxiliam  a equipe durante o processo de desenvolvimento. Porém, existem existem poucas ferramentas disponíveis no mercado, e muitas delas nem sempre são adequadas para análise do projeto alvo (software-livre) \cite{meirelles2010mezuro}.
+%
+Existem ferramentas que auxiliam nessas atividades, por meio da extração e monitoramento automático de métricas de código-fonte, elas auxiliam  a equipe durante o processo de desenvolvimento. Porém, existem existem poucas ferramentas disponíveis, e muitas delas nem sempre são adequadas para análise do projetos de software livre~\cite{meirelles2010mezuro}, que é ponto central deste trabalho.
 %Métricas são fundamentais para a melhora contínua de um projeto de software livre
+
+\section{Concepção do Projeto Mezuro}
 
 %Mezuro
   %Histórico Ferramentas até chegar ao Mezuro [tese prof. Paulo] 
     %Contexto das ferramentas
-A partir da necessidade de extrair métricas de código-fonte e interpretar seus valores, foi desenvolvida uma plataforma chamada Mezuro. Ela possibilita o monitoramento de características específicas do software \footnote{\url{http://mezuro.org/}}. Porém, essa ferramenta não foi criada da noite para o dia. O Mezuro foi concebido através de um longo processo de amadurecimento de diversas ferramentas, que teve seu início com o projeto Qualipso\footnote{Quality Platform for Open Source: \url{http://qualipso.icmc.usp.br/}}.
-
-\section{Concepção do Projeto Mezuro}
-
-	%Projeto Qualipso
-O projeto Qualipso é hoje um consórcio formado por indústria, academia, e governo. Seu principal objetivo é potencializar as práticas de desenvolvimento de software livre, tornando-as confiáveis, reconhecidas e estabelecidas na indústria, através da implementação de tecnologias, procedimentos e leis \cite{qualipso2009}. 
+A partir da necessidade de extrair métricas de código-fonte e interpretar seus valores, foi desenvolvida uma plataforma chamada Mezuro \footnote{\url{http://mezuro.org/}}. Ela possibilita o monitoramento de características específicas do software. O Mezuro foi concebido através de um longo processo de amadurecimento de diversas ferramentas, que teve seu início com o projeto Qualipso\footnote{Quality Platform for Open Source: \url{http://qualipso.icmc.usp.br/}}.
+%Projeto Qualipso
+O projeto Qualipso foi um consórcio formado por indústria, academia, e governo. Seu principal objetivo é potencializar as práticas de desenvolvimento de software livre, tornando-as confiáveis, reconhecidas e estabelecidas na indústria, através da implementação de tecnologias, procedimentos e leis \cite{qualipso2009}. 
 	
 	%Jabuti, ponto de partida
-Uma das iniciativas desse projeto envolvia  a adaptaçao da ferramenta JaBUTi\footnote{Java Bytecode Understanding and Testing}, uma ferramenta de análise de softwares em linguagem Java. O objetivo inicial era melhorar o módulo de cálculo das métricas fornecido pela JaBUTi. Porém a proposta foi alterada para a visualização de métricas, com configuração de intervalos das mesmas, facilitando a análise dos resultados. Esse módulo de visualização, posteriormente, se transformou em uma aplicação independente, o Crab \cite{meirelles2009crab}. Neste instante o JaBUTi calculava as métricas e posteriormente chamava o Crab para a visualização e configuração das mesmas,  assim como criação de novas métricas compostas. Após a experiência com a JaBUTi como ferramenta base, ou seja, aquela que coleta métricas de código-fonte, buscou-se outras alternativas para essa tarefa já que a JaBUTi era restrita a códigos escritos  em liguagem Java, o que limita a contribuição com softwares livre.
+%Uma das iniciativas desse projeto envolvia  a adaptaçao da ferramenta JaBUTi\footnote{Java Bytecode Understanding and Testing}, uma ferramenta de análise de softwares em linguagem Java. O objetivo inicial era melhorar o módulo de cálculo das métricas fornecido pela JaBUTi. Porém a proposta foi alterada para a visualização de métricas, com configuração de intervalos das mesmas, facilitando a análise dos resultados. Esse módulo de visualização, posteriormente, se transformou em uma aplicação independente, o Crab \cite{meirelles2009crab}. Neste instante o JaBUTi calculava as métricas e posteriormente chamava o Crab para a visualização e configuração das mesmas,  assim como criação de novas métricas compostas. Após a experiência com a JaBUTi como ferramenta base, ou seja, aquela que coleta métricas de código-fonte, buscou-se outras alternativas para essa tarefa já que a JaBUTi era restrita a códigos escritos  em liguagem Java, o que limita a contribuição com softwares livre.
 
 	%Analizo
-Uma alternativa encontrada foi o software livre denominado Analizo\footnote{\url{http://analizo.org/}}, que surgiu a partir de um outro software livre denominado Egypt\footnote{\url{http://gson.org/egypt/}}. O resultado após diversas contribuições (principalemnte de Antônio Terceiro e do grupo CCSL-USP) foram diversas funcionalidades que fugiram do escopo inicial do Egypt, o qual foi renomeado como Analizo ("análise" em esperanto). %descrever melhor o analizo
+%Uma alternativa encontrada foi o software livre denominado Analizo\footnote{\url{http://analizo.org/}}, que surgiu a partir de um outro software livre denominado Egypt\footnote{\url{http://gson.org/egypt/}}. O resultado após diversas contribuições (principalemnte de Antônio Terceiro e do grupo CCSL-USP) foram diversas funcionalidades que fugiram do escopo inicial do Egypt, o qual foi renomeado como Analizo ("análise" em esperanto). %descrever melhor o analizo
 
-Na integração do Analizo com a Crab, este último consome serviços do Analizo, ao contrário do que acontecia na integração da JaBUTi com a Crab, onde a ferramenta base aciona o módulo de visualização (Crab) após a coleta das métricas. Essa inversão de paradigma e outras mudanças de impacto fez com que a Crab fosse relicenciada como LGPL versão 3, e para padronizar o nome das ferramentas a Crab passou a se chamar Kalibro ("calibrar" em esperanto). Em sua primeira versão para o projeto Qualipso o Kalibro possuia base de dados própria, calculava estatísticas para as métricas coletadas e exibia os resultados baseando-se nas configurações cadastradas. 
+%Na integração do Analizo com a Crab, este último consome serviços do Analizo, ao contrário do que acontecia na integração da JaBUTi com a Crab, onde a ferramenta base aciona o módulo de visualização (Crab) após a coleta das métricas. Essa inversão de paradigma e outras mudanças de impacto fez com que a Crab fosse relicenciada como LGPL versão 3, e para padronizar o nome das ferramentas a Crab passou a se chamar Kalibro ("calibrar" em esperanto). Em sua primeira versão para o projeto Qualipso o Kalibro possuia base de dados própria, calculava estatísticas para as métricas coletadas e exibia os resultados baseando-se nas configurações cadastradas. 
 
-Após a primeira versão do Kalibro integrada ao Analizo, decidiu-se separar a coleta, configuração e interpretação de métricas da sua visualização. Com isso surgiu o Kalibro Service, um serviço web sem interface gráfica, o qual possui todas as funcionalidades não-visuais que hoje são fornecidas pela plataforma Mezuro, que na prática funciona como uma camada de visualização do Kalibro Metrics \cite{meirelles2013metrics}.
+%Após a primeira versão do Kalibro integrada ao Analizo, decidiu-se separar a coleta, configuração e interpretação de métricas da sua visualização. Com isso surgiu o Kalibro Service, um serviço web sem interface gráfica, o qual possui todas as funcionalidades não-visuais que hoje são fornecidas pela plataforma Mezuro, que na prática funciona como uma camada de visualização do Kalibro Metrics \cite{meirelles2013metrics}.
+%TODO: resumir trecho acima..
+
 
 %Ferramentas similares
 No contexto do trabalho desenvolvido com o Mezuro, foram encontrados alguns projetos com propósitos similares\cite{meirelles2010mezuro}, entre eles:
@@ -53,48 +55,22 @@ No contexto do trabalho desenvolvido com o Mezuro, foram encontrados alguns proj
 	\end{itemize}
 \end{itemize}
     
-Em particular, o projeto Mezuro surgiu antes do CodeClimate\footnote{\url{http://codeclimate.com}}, que provê serviços similares aos pretendidos pelo Mezuro, mas monitorando três métricas para códigos Ruby.
+Em particular, o projeto Mezuro surgiu antes do CodeClimate\footnote{\url{http://codeclimate.com}}, que provê serviços similares aos pretendidos pelo Mezuro, mas monitorando apenas três métricas para códigos Ruby. Diferentemente do Mezuro, que hoje, suporta dezenas de métricas providas pelos coletores de métricas: Analizo~\footnote{\url{http://anzalizo.org}}, CheckStyle~\footnote{\url{http://checkstyle.org}} e CVSAnalY~\footnote{\url{http://cvsanaly.org}}.
 
-%Em particular, o projeto Mezuro surgiu antes do CodeClimate, uma das principais ferramentas de monitoramento de código , que provê serviço similares aos pretendidos pelo Mezuro, mas monitorando 3 métricas para códigos Ruby.
 
 %Kalibro
 %Consumo dos serviços do Kalibro - webService (http://www.teses.usp.br/teses/disponiveis/45/45134/tde-25092013-142158/)
 %----------------------------------------------------------------------------%
 
-\section{Mezuro como Plugin do Noosfero}
-
-%O que é o Noosfero
-O Mezuro foi concebido como instância de uma plataforma web conhecida como Noosfero, com o plugin Mezuro ativado. O Noosfero é um software livre para criação de redes sociais desenvolvido pela Cooperativa de Tecnologias Livres - Coolivre \footnote{\url{http://colivre.coop.br/}} sob licença AGPL\footnote{Licença de software GNU Affero General Public License} v.3 com o intuito de permitir que os usuários criem sua própria rede social livre e personalizada de acordo com suas necessidades.
-
-\subsection{Arquitetura do Noosfero}
-
-A linguagem de programação Ruby e o framework MVC Ruby on Rails foram utilizados para desenvolver o Noosfero. Essas tecnologias foram escolhidas pois a linguagem Ruby possui uma sintaxe simples, que facilita a manunbilidade do sistema, característica importante em projetos de software livre que tendem a atrair colaboradores externos a equipe. Já o framework Ruby on Rails influencia em maior produtividade graças a conceitos como \textit{convention over configuration} e DRY. Por esse motivo o Noosfero herda sua arquitetura, a qual é baseada no padrão arquitetural MVC, assim como os plugins que estendem suas funcionalidades.
-
-%Arquitetura de plugins do Noosfero
-A arquitetura do Noosfero permite a adição de novas funcionalidades através de plugins. Essa característica é interessante pois colaboradores podem implementar novas funcionalidades sem entender ou interagir com o código-fonte do Noosfero, já que os plugins possuem o código isolado, mantendo o baixo acoplamento e alta coesão dos módulos do sistema. Embora plugins sejam totalmente independentes do sistema alvo, no Noosfero os plugins são mantidos com o código principal para auxiliar no controle de qualidade do ambiente. Pensando nisso os plugins devem ter testes automatizados. Quando houver a necessidade de alterar o código do Noosfero, os testes dos plugins são executados para verificar se as mudanças não afetaram seu funcionamento \cite{noosfero2013plugins}.
-
-\graphicspath{{figuras/}}
-\begin{figure}[H]
-\centering
-\includegraphics{plugins}
-\caption{Arquitetura de Plugins do Noosfero}
-\label{Rotulo}
-\end{figure}
-
-O funcionamento dos plugins é baseado no paradigma de orientação a eventos. O núcleo do Noosfero dispara um evento durante sua execução e os plugins interessados nesse evento saberão como tratar esse evento. Os eventos que são disparados pelo noosfero são chamados de “hotspots”. 
-
-No Noosfero, existem dois tipos de papéis para o desenvolvimento de plugins. Esses
-papeis possuem responsabilidades totalmente diferentes, contudo a junção deles será o
-funcionamento do plugin. Com isso é necessário construir interfaces bem definidas para a
-comunicação de esses dois papéis serem bem definidas. Os papéis no desenvolvimento são: i) desenvolvedor do Noosfero; ii) desenvolvedor do plugin.
-
-\subsection{Utilização do Kalibro Metrics}
-
-O Mezuro, desde sua criação, utiliza o Kalibro Metrics para fornecer a funcionalidade de análise e avaliação de métricas de código-fonte. Essas duas ferramentas se comunicam através da interface do Kalibro em forma de web service conhecida como Kalibro Service. Serviços web são uma boa solução de interoperabilidade, com popularidade crescente na última década. O Mezuro se comunica com este web service através de um protocolo conhecido como SOAP\footnote{Simple Object Access Protocol}. O protocolo SOAP é baseado no XML\footnote{Linguagem de Marcação Extensível} para o formato de mensagens, assim como em protocolos da camada de aplicação, entre os principais estão o RPC\footnote{Chamada de Procedimento Remoto} e o HTTP\footnote{Protocolo de Transferência de Hipertexto}. Por meio de requisições SOAP o Mezuro acesso aos \textit{end-points}\footnote{Métodos disponibilizado pelo web service, onde cada método define uma funcionalidade} do Kalibro Service, entre eles: Kalibro, Project, ProjectResult, ModuleResult, BaseTool, Configuration, and MetricConfiguration. Isso permite:
+O Mezuro utiliza o Kalibro Metrics~\footnote{\url{http://kalibro.org}} para fornecer a funcionalidade de análise e avaliação de métricas de código-fonte. O Mezuro e o Kalibro se comunicam através da interface do Kalibro em forma de web service conhecida como Kalibro Service.
+%
+O criadores do projeto Mezuro argumentam que serviços web são uma boa solução de interoperabilidade, com popularidade crescente na última década. O Mezuro se comunica com este web service através de um protocolo conhecido como SOAP\footnote{Simple Object Access Protocol}, baseado em XML\footnote{Linguagem de Marcação Extensível} para o formato de mensagens.
+%
+Por meio de requisições SOAP, o Mezuro acessa os \textit{end-points}\footnote{Métodos disponibilizado pelo web service, onde cada método define uma funcionalidade} do Kalibro Service. Em resumo, isso permite ao Mezuro provê aos seus usuários as seguintes funcionalidades:
 
 \begin{itemize}
 \item Baixar códigos-fonte de repositórios dos tipos GIT, Subversion, Baazar e CVS
-\item Criação de configurações as quais são conjuntos pré-definidos de métricas relacionadas para serem utilizadas na avaliação de projetos de software.
+\item Criação de configurações, que conjuntos pré-definidos de métricas relacionadas para serem utilizadas na avaliação de projetos de software.
 \item Criação de intervalos relacionados com a métricas e avaliações qualitativas.
 \item Criação de novas métricas compostas, de acordo com aquelas fornecidas pelos coletores do Kalibro.
 \item Cálculo de resultados estatísticos para módulos com alta granularidade.
@@ -102,26 +78,57 @@ O Mezuro, desde sua criação, utiliza o Kalibro Metrics para fornecer a funcion
 \item Interpretação dos resultados com inteface mais amigável aos usuarios com a utilização de cores nos intervalos das métricas.
 \end{itemize}
 
-Aplicações Java conseguem consumir os serviços do Kalibro Metrics apenas com o conhecimento da sua API\footnote{Application Programming Interface. Conjunto de rotinas estabelecidos por um software para utilização de suas funcionalidades}
+%Aplicações Java conseguem consumir os serviços do Kalibro Metrics apenas com o conhecimento da sua API\footnote{Application Programming Interface. Conjunto de rotinas estabelecidos por um software para utilização de suas funcionalidades}
+
+
+\section{Mezuro como Plugin do Noosfero}
+
+%O que é o Noosfero
+O Mezuro foi concebido como instância de uma plataforma web conhecida como Noosfero, com o plugin Mezuro ativado. O Noosfero é um software livre para criação de redes sociais, que está disponível sob licença AGPL\footnote{Licença de software GNU Affero General Public License} V3, com o intuito de permitir que os usuários criem sua própria rede social livre e personalizada de acordo com suas necessidades.
+
+A linguagem de programação Ruby e o arcabouço MVC Ruby on Rails foram utilizados para desenvolver o Noosfero. Essas tecnologias foram escolhidas pois a linguagem Ruby possui uma sintaxe simples, que facilita a manunbilidade do sistema, característica importante em projetos de software livre que tendem a atrair colaboradores externos a equipe. Já o arcabouço Ruby on Rails influencia em maior produtividade graças a conceitos como \textit{convention over configuration} e DRY. Por esse motivo o Noosfero ``herda'' sua arquitetura, a qual é baseada no padrão arquitetural MVC, assim como os plugins que estendem suas funcionalidades.
+
+%Arquitetura de plugins do Noosfero
+A arquitetura do Noosfero permite a adição de novas funcionalidades através de plugins. Essa característica é interessante, pois colaboradores podem implementar novas funcionalidades o código-fonte do núcleo do Noosfero, já que os plugins possuem o código isolado, mantendo o baixo acoplamento e alta coesão dos módulos do sistema.
+%
+Embora plugins sejam totalmente independentes do sistema alvo, no Noosfero os plugins são mantidos com o código principal para auxiliar no controle de qualidade do ambiente. Pensando nisso os plugins devem ter testes automatizados. Quando houver a necessidade de alterar o código do Noosfero, os testes dos plugins são executados para verificar se as mudanças não afetaram seu funcionamento \cite{noosfero2013plugins}.
+%
+O funcionamento dos plugins é baseado no paradigma de orientação a eventos. O núcleo do Noosfero dispara um evento durante sua execução e os plugins interessados nesse evento saberão como tratar esse evento. Os eventos que são disparados pelo Noosfero são chamados de “hotspots”.
+
+%\graphicspath{{figuras/}}
+%\begin{figure}[H]
+%\centering
+%\includegraphics{plugins}
+%\caption{Arquitetura de Plugins do Noosfero}
+%\label{Rotulo}
+%\end{figure}
+
+%TODO: figura ruim
+%
+%Além disso, no Noosfero, existem dois tipos de papéis para o desenvolvimento de plugins. Esses
+%papeis possuem responsabilidades totalmente diferentes, contudo a junção deles será o
+%funcionamento do plugin. Com isso é necessário construir interfaces bem definidas para a
+%comunicação de esses dois papéis serem bem definidas. Os papéis no desenvolvimento são: i) desenvolvedor do Noosfero; ii) desenvolvedor do plugin.
+%TODO: não entendi... parece blabla...
 
 %----------------------------------------------------------------------------%
 \section{Mezuro como aplicação independente}
 
-As colaborações com a plataforma Mezuro, relacionadas a este trabalho, se iniciaram somente após a decisão de reescrita de seu código, para transforma-la em uma aplicação independente. Por isso decidiu-se elaborar um questionário destinado a equipe de desenvolvimento do Mezuro. Este questionário teve como objetivo extrair informações que embasassem a evolução da plataforma, do ponto de vista do código-fonte e sua arquitetura. O questionário se encontra disponível no Apêndice \ref{form-pesquisa} deste documento e as respostas de alguns dos desenvolvedores se encontram no Anexo \ref{resp-pesquisa}.
-
+As colaborações com a plataforma Mezuro, relacionadas a este trabalho, se iniciaram somente após a decisão de reescrita de seu código, para transforma-la em uma aplicação independente. Por isso, decidimos elaborar um questionário destinado a equipe de desenvolvimento do Mezuro. Esse questionário teve como objetivo extrair informações que embasassem a evolução da plataforma, do ponto de vista do código-fonte e sua arquitetura. O questionário se encontra disponível no Apêndice \ref{form-pesquisa} deste documento e as respostas de alguns dos desenvolvedores se encontram no Anexo \ref{resp-pesquisa}.
+%
 De acordo com as informações obtidas com o questionário, é percebido que não foi um fator isolado que motivou a evolução da plataforma Mezuro, e sim um conjunto deles. 
 
-\subsection{Motivos para a evolução}
+%\subsection{Motivos para a evolução}
 
 %Motivos para evolução de Acordo com informações obtidas com o questionario
 
-  %Evolução do framework rails: novos recursos para o desenvolvimento e gerenciamento das dependências, em especial da "gems" para visualização dos resultados. Além do suporte da comunidade Rails, que é global, para as últimas versões do Raisl e o Ruby. O que tem de novo no Rails 3 e 4 em relação ao Rails 2?
+  %Evolução do arcabouço rails: novos recursos para o desenvolvimento e gerenciamento das dependências, em especial da "gems" para visualização dos resultados. Além do suporte da comunidade Rails, que é global, para as últimas versões do Raisl e o Ruby. O que tem de novo no Rails 3 e 4 em relação ao Rails 2?
   
-Como já foi mencionado o Mezuro foi concebido como um plugin do Noosfero. O Noosfero, porém, foi desenvolvido nas versões 1.8 e 2 do Ruby e do Rails, respectivamente. De acordo com a Tabela \ref{rails_versions} o Rails já se encontra a quatro versões a frente, que significa mais recursos e melhorias. Além disso, a versão 1.8 da linguagem Ruby já não recebe suporte dos desenvolvedores desde o início de 2012 em favor das versões 1.9 e superiores. Isso era um fator limitante, pois o Mezuro, assim como sua equipe de desenvolvimento, ficavam restritos aos recursos disponíveis nessas versões.
+Como já foi mencionado, o Mezuro foi concebido como um plugin do Noosfero. O Noosfero, porém, ainda está nas versões 1.8 e 2 do Ruby e do Rails, respectivamente. Com apresentado na Seção~\ref{sec:rails}, o Rails encontra-se na quarta versão, com mais recursos e melhorias em relação à segunda versão. Além disso, a versão 1.8 do Ruby já não recebe suporte dos desenvolvedores desde o início de 2012, em favor das versões 1.9 e superiores. Isso era um fator limitante, pois o Mezuro ficavam restritos aos recursos disponíveis nessas versões usadas pelo Noosfero.
 
-Acompanhando a evolução do framework Rails, visando os novos recursos, além do suporte da comunidade\footnote{\url{http://rubyonrails.org/}} desse framework, a equipe de desenvolvimento da plataforma Mezuro decidiu atualiza-la para as novas versões 2 e 4 do Ruby e do Rails respectivamente. A comunidade do Rails favorece a utilização das últimas versões, e as versões mais antigas vão perdendo força, passando a receber cada vez menos suporte dos desenvolvedores.
+Acompanhando a evolução do arcabouço Rails, visando os novos recursos, além do suporte da comunidade\footnote{\url{http://rubyonrails.org/}} desse arcabouço, a equipe de desenvolvimento da plataforma Mezuro decidiu atualiza-la para as novas versões 2 do Ruby e 4 do Rails. A comunidade do Rails favorece a utilização das últimas versões, e as versões mais antigas vão perdendo força, passando a receber cada vez menos suporte dos desenvolvedores.
 
-Conforme observado na Figura \ref{class-diagram}, o Mezuro precisou se moldar mais ao Kalibro do que se adaptar ao Noosfero como plugins, já que esse possui muitos recursos desnecessários para uma ferramenta de monitoramento de código-fonte. Entre esses recursos estão: blog, fórum, upload de arquivos, CMS, chat, características presentes em redes sociais como amigos, relacionamento entre amigos, entre outras funcionalidades. Evolução de software também significa retirar funcionalidades que não se encaixam mais ao ambiente que o software está inserido. Foi exatamente isso que a equipe de desenvolvimento levou em consideração ao decidir pela evolução do Mezuro.
+Conforme observado na Figura \ref{class-diagram}, o Mezuro é um ``cliente'' do Kalibro do que se adaptar ao Noosfero como plugins, já que esse possui muitos recursos desnecessários para uma ferramenta de monitoramento de código-fonte. Entre esses recursos estão: blog, fórum, upload de arquivos, CMS, chat, características presentes em redes sociais como amigos, relacionamento entre amigos, entre outras funcionalidades. Evolução de software também significa retirar funcionalidades que não se encaixam mais ao ambiente que o software está inserido. Foi exatamente isso que a equipe de desenvolvimento levou em consideração ao decidir pela evolução do Mezuro.
 
 A manutenibilidade do Mezuro como plugin se tornava cada vez menor conforme ele evoluia, pois ao invés de fornecer um número baixo de funcionalidades, ou funcionalidades muito específicas, que é o princípio de um plugin, o Mezuro acabou se transformando em uma aplicação, a qual depende de outra aplicação, o Noosfero. Aqui se encontra uma afirmação da segunda lei de Lehman disponível na Tabela \ref{tab-leis-lehman}, à medida que um software é alterado sua complexidade tende a crescer, a não ser que um trabalho seja feito para mantê-la ou diminuí-la. E assim fez a equipe de desenvolvimento do Mezuro.
 
