@@ -55,7 +55,7 @@ No contexto do trabalho desenvolvido com o Mezuro, foram encontrados alguns proj
 	\end{itemize}
 \end{itemize}
     
-Em particular, o projeto Mezuro surgiu antes do CodeClimate\footnote{\url{http://codeclimate.com}}, que provê serviços similares aos pretendidos pelo Mezuro, mas monitorando apenas três métricas para códigos Ruby. Diferentemente do Mezuro, que hoje, suporta dezenas de métricas providas pelos coletores de métricas: Analizo~\footnote{\url{http://anzalizo.org}}, CheckStyle~\footnote{\url{http://checkstyle.org}} e CVSAnalY~\footnote{\url{http://cvsanaly.org}}.
+Em particular, o projeto Mezuro surgiu antes do CodeClimate\footnote{\url{http://codeclimate.com}}, que provê serviços similares aos pretendidos pelo Mezuro, mas monitorando apenas três métricas para códigos Ruby. Diferentemente do Mezuro, que hoje, suporta dezenas de métricas providas pelos coletores de métricas: Analizo~\footnote{\url{http://anzalizo.org}}, CheckStyle~\footnote{\url{http://checkstyle.sourceforge.net/}} e CVSAnalY~\footnote{\url{http://tools.libresoft.es/cvsanaly}}.
 
 
 %Kalibro
@@ -99,13 +99,13 @@ O funcionamento dos plugins é baseado no paradigma de orientação a eventos. O
 %----------------------------------------------------------------------------%
 \section{Mezuro como aplicação independente}
 
-As colaborações com a plataforma Mezuro, relacionadas a este trabalho, se iniciaram somente após a decisão de reescrita de seu código, para transforma-la em uma aplicação independente. Por isso, decidimos elaborar um questionário destinado a equipe de desenvolvimento do Mezuro. Esse questionário teve como objetivo extrair informações que embasassem a evolução da plataforma, do ponto de vista do código-fonte e sua arquitetura. O questionário se encontra disponível no Apêndice\ref{form-pesquisa} deste documento e as respostas de alguns dos desenvolvedores se encontram no Anexo\ref{resp-pesquisa}.
+As colaborações com a plataforma Mezuro, relacionadas a este trabalho, se iniciaram somente após a decisão de reescrita de seu código, para transformá-la em uma aplicação independente. Por isso, decidimos elaborar um questionário destinado à equipe de desenvolvimento do Mezuro. Esse questionário teve como objetivo extrair informações que embasassem a evolução da plataforma, do ponto de vista do código-fonte e sua arquitetura. O questionário encontra-se disponível no Apêndice\ref{form-pesquisa} deste documento e as respostas de alguns dos desenvolvedores se encontram no Anexo\ref{resp-pesquisa}.
 %
 De acordo com as informações obtidas com o questionário, é percebido que não foi um fator isolado que motivou a evolução da plataforma Mezuro, e sim um conjunto deles. 
 
 Como já foi mencionado, o Mezuro foi concebido como um plugin do Noosfero. O Noosfero, porém, ainda está nas versões 1.8 e 2 do Ruby e do Rails, respectivamente. Como apresentado na Seção~\ref{sec:rails}, o Rails encontra-se na quarta versão, com mais recursos e melhorias em relação à segunda versão. Além disso, a versão 1.8 do Ruby já não recebe suporte dos desenvolvedores desde o início de 2012, em favor das versões 1.9 e superiores. Isso era um fator limitante, pois os desenvolvedores do Mezuro ficavam restritos aos recursos disponíveis nessas versões usadas pelo Noosfero.
 
-Acompanhando a evolução do Rails, visando os novos recursos, além do suporte da comunidade\footnote{\url{http://rubyonrails.org/}} desse arcabouço, a equipe de desenvolvimento da plataforma Mezuro decidiu atualiza-la para as novas versões 2 do Ruby e 4 do Rails. A comunidade do Rails favorece a utilização das últimas versões, e as versões mais antigas vão perdendo força, passando a receber cada vez menos suporte dos desenvolvedores.
+Acompanhando a evolução do Rails, visando os novos recursos, além do suporte da comunidade\footnote{\url{http://rubyonrails.org/}} desse arcabouço, a equipe de desenvolvimento da plataforma Mezuro decidiu atualizá-la para as novas versões 2 do Ruby e 4 do Rails. A comunidade do Rails favorece a utilização das últimas versões, e as versões mais antigas vão perdendo força, passando a receber cada vez menos suporte dos desenvolvedores.
 
 Conforme observado na Figura \ref{class-diagram}, o Mezuro é um ``cliente'' do Kalibro. Ele como um plugin para o Noosfero, faz com que possua muitos recursos, que primeiro foram vistos com vantagem, mas depois foi avaliado pelos desenvolvedores do Mezuro como desnecessários para uma ferramenta de monitoramento de código-fonte. Entre esses recursos estão: blog, fórum, upload de arquivos, CMS, chat e relacionamento entre  ``amigos''. Evolução de software também significa retirar funcionalidades que não se encaixam mais ao ambiente que o software está inserido. Foi exatamente isso que a equipe de desenvolvimento levou em consideração ao decidir por esse passo na evolução do Mezuro.
 
@@ -114,71 +114,67 @@ A manutenibilidade do Mezuro como plugin se tornava cada vez menor conforme ele 
 Em suma, pensando no desempenho e na evolução do desenvolvimento do Mezuro, com o objetivo de formatar um comunidade de software livre para atrair desenvolvedores, resolveu-se retirar o Mezuro como um plugin do Noosfero, para não mais o limitar ao andamento do desenvolvimento do Noosfero. 
 
 %\subsection{Desenvolvimento do Mezuro com uma plataforma independente}
-Do ponto de vista do desenvolvimento, a Figura \ref{mezuro-design} representa o projeto de alto-nível da plataforma Mezuro como uma aplicação independente. Como mencionado anteriormente ele funciona como a camada de visualização do Kalibro Metrics, que por sua vez utiliza coletores de métricas para executar suas funcionalidades.
+Do ponto de vista do desenvolvimento, a Figura \ref{mezuro-design} representa o projeto de alto-nível da plataforma Mezuro como uma aplicação independente. Como mencionado anteriormente, ele funciona como a camada de visualização do Kalibro Metrics, que por sua vez utiliza coletores de métricas (Analizo, CheckStyle e CVSAnalY) para executar suas funcionalidades.
 
 \graphicspath{{figuras/}}
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{mezuro-standalone-design}
 \caption{Design de alto-nível do Mezuro. Editado de \cite{meirelles2010mezuro}}
 \label{mezuro-design}
 \end{figure}
 
-Sem as restrições impostas pelo desenvolvimento do Noosfero, uma importante decisão arquitetural tomada pela equipe do Mezuro foi o desenvolvimento de uma \textit{gem} do Kalibro Metrics. Anteriormente, quando o Mezuro estava incorporado ao Noosfero, toda a interface de utilização do serviço do Kalibro, o Kalibro Service, estava implementada no próprio Mezuro. Com o desenvolvimento dessa \textit{gem} esse serviço se torna mais reutilizável, resultando numa contribuição a toda a comunidade do Rails, já que em projetos desenvolvidos com esse \textit{framework} e necessitam utilizar serviços do Kalibro, bastam instalar e utilizar a \textit{gem}, sem a necessidade de reimplementar a interface do serviço.
-
-Dentro da evolução do Mezuro, nesta primeira fase trabalho, como um forma de conhecer a tecnologia e aprender a colaborar com o Mezuro, desenvolvemos a funcionalidade de inserção de repositórios nos projetos cadastrados para serem monitorados no Mezuro. De acordo com o diagrama da Figura \ref{class-diagram} é observado que um projeto possui diversos repositórios, os quais podem ser adicionados e removidos de um projeto, além de editados e visualizados. No caso da visualização é feito um processamento para que o usuário analise as métricas extraídas do código presente nesse repositório. 
-%
-Essa funcionalidade, desenvolvida ao decorrer deste trabalho, se encontra atualmente disponível na primeira versão do Mezuro como plataforma independente, lançada no mês de novembro de 2013, Figura \ref{mezuro}.
+Sem as restrições impostas pelo desenvolvimento do Noosfero, uma importante decisão arquitetural tomada pela equipe do Mezuro foi o desenvolvimento de uma \textit{gem} (para Ruby, equivalente a uma \textit{Lib} do Java) do Kalibro Metrics. Anteriormente, quando o Mezuro estava incorporado ao Noosfero, toda a interface de utilização do serviço do Kalibro estava implementada no próprio Mezuro. Com o desenvolvimento dessa \textit{gem}, esse serviço se torna mais reutilizável, resultando numa contribuição a toda a comunidade do Rails, já que em projetos desenvolvidos com esse arcabouço e necessitam utilizar serviços do Kalibro, bastam instalar e utilizar a \textit{gem}, sem a necessidade de reimplementar a interface do serviço.
 
 \graphicspath{{figuras/}}
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{mezuro-standalone}
 \caption{Tela principal do Mezuro. Disponível em \url{http://mezuro.org/}}
 \label{mezuro}
 \end{figure}
 
-Ao clicar em algum projeto disponível no Mezuro, sua tela visualização é carregada. Nela são exibidas todos os repositórios realacionados a esse projeto. Na Figura \ref{fig:mezuro-repositories}, por exemplo, é exibida a tela do projeto Kalibro, assim como um único repositório associado a ele.
+Dentro da evolução do Mezuro, nesta primeira fase trabalho, como uma forma de conhecer a tecnologia e aprender a colaborar com o Mezuro, desenvolvemos a funcionalidade de inserção de repositórios nos projetos cadastrados para serem monitorados no Mezuro. De acordo com o diagrama da Figura \ref{class-diagram} é observado que um projeto possui diversos repositórios, os quais podem ser adicionados e removidos de um projeto, além de editados e visualizados. No caso da visualização é feito um processamento para que o usuário análise as métricas extraídas do código presente nesse repositório. 
+%
+Essa funcionalidade, desenvolvida ao decorrer deste trabalho, se encontra atualmente disponível na primeira versão do Mezuro como plataforma independente, lançada no mês de novembro de 2013,  ilustrada na Figura \ref{mezuro}.
 
 \graphicspath{{figuras/}}
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{mezuro-repositories}
 \caption{Tela de visualização de um projeto}
 \label{fig:mezuro-repositories}
 \end{figure}
 
-Ao clicar em visualizar um repositório, é feito um processamento desse, e a tela de detalhes do mesmo é carregada. A Figura \ref{fig:mezuro-info} e \ref{fig:mezuro-result} são os resultados do processamento do único repositório associado ao projeto Kalibro.
+Ao clicar em algum projeto disponível no Mezuro, sua tela visualização é carregada. Nela são exibidas todos os repositórios realacionados a esse projeto. Na Figura \ref{fig:mezuro-repositories}, por exemplo, é exibida a tela do monitoramento do código do Kalibro cadastrado no Mezuro, assim como um único repositório associado a ele.
 
 \graphicspath{{figuras/}}
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{mezuro-info}
 \caption{Tela de informações do repositório}
 \label{fig:mezuro-info}
 \end{figure}
 
-A figura acima exibe informações gerais do processamento do reposítório, como a configuração, estado, data de criação e tempo de processamento.
-
 \graphicspath{{figuras/}}
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{mezuro-result}
 \caption{Métricas do repositório após processamento}
 \label{fig:mezuro-result}
 \end{figure}
 
-Acima há o conjunto de métricas relacionas a configuração do repositório processado (configuração \textit{default}), assim como os intervalos e interpretação de cada uma dessas métricas.
+Ao clicar em visualizar um repositório, é feito um processamento desse, e a tela de detalhes do mesmo é carregada. A Figura \ref{fig:mezuro-info} e \ref{fig:mezuro-result} são os resultados do processamento do único repositório associado ao projeto Kalibro monitorado pelo Mezuro.
+%
+A Figura~\ref{fig:mezuro-info} exibe informações gerais do processamento do reposítório, como a configuração, estado, data de criação e tempo de processamento. A Figura~\ref{fig:mezuro-result} mostra o conjunto de métricas relacionas à configuração do repositório processado (uma configuração \textit{default}, por exemplo), assim como os intervalos e interpretação de cada uma dessas métricas.
 
 \graphicspath{{figuras/}}
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{class-diagram-mezuro}
 \caption{Diagrama de classes simples do Mezuro}
 \label{class-diagram}
 \end{figure}
 
-A Figura \ref{class-diagram} apresenta um diagrama de classes que representa as entidades já implementadas no Mezuro como plataforma independente. A classe \textit{Project} representa o projeto a ser analisado. Um projeto pode conter vários repositórios, de onde as métricas são extraídas.  Um repositório pode ser de vários tipos, Git\footnote{\url{http://git-scm.com/}}, Subversion\footnote{\url{http://subversion.apache.org/}}, Bazaar\footnote{\url{http://bazaar.canonical.com/en/}} e Mercurial\footnote{\url{http://mercurial.selenic.com/}}. A classe \textit{Processing} representa o processamento de um repositório para obter os resultados das métricas extraídas de acordo com a configuração selecionada. E finalmente, a classe \textit{Module-Result} representa o resultado do processamento de um repositório. Uma configuração representa um conjunto de métricas, um intervalo para cada uma delas, além da interpretação de cada métrica após o processamento de um repositório. Terminar de  migrar todas essas funcionalidades, que já estavam implementadas no Mezuro Plugin, é o ponto em que está esse processo de evolução do Mezuro.
-
-
+Por fim, a Figura \ref{class-diagram} apresenta um diagrama de classes que representa as entidades já implementadas no Mezuro como plataforma independente. A classe \textit{Project} representa o projeto a ser analisado. Um projeto pode conter vários repositórios, de onde as métricas são extraídas.  Um repositório pode ser de vários tipos, Git\footnote{\url{http://git-scm.com/}}, Subversion\footnote{\url{http://subversion.apache.org/}}, Bazaar\footnote{\url{http://bazaar.canonical.com/en/}} e Mercurial\footnote{\url{http://mercurial.selenic.com/}}. A classe \textit{Processing} representa o processamento de um repositório para obter os resultados das métricas extraídas de acordo com a configuração selecionada. E finalmente, a classe \textit{Module-Result} representa o resultado do processamento de um repositório. Uma configuração representa um conjunto de métricas, um intervalo para cada uma delas, além da interpretação de cada métrica após o processamento de um repositório. Terminar de  migrar todas essas funcionalidades, que já estavam implementadas no Mezuro Plugin, é o ponto em que está esse processo de evolução do Mezuro.
 
