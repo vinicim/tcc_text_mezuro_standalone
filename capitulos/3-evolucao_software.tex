@@ -80,41 +80,51 @@ Por outro lado, neste trabalho, não estamos tratando a evolução de software d
 
 %Contexto e conceito e importência da visualização
 
-O desenvolvimento de softwares livres pode ser referenciado como um movimento que vem sendo pesquisado e aplicado em grandes organizações, assim como vem sendo utilizados por um grande número de desenvolvedores em todo mundo. Apesar disso é um movimento recente, o que causa certa resistência na adoção dessa nova abordagem por um número maior de organizações e desenvolvedores. Isso pois inicialmente havia certa dificuldade na seleção e integração desses produtos, o que motivou o estabelecimento de processos objetivos para compreensão da qualidade de projetos FOSS. Uma das formas para compreender, é a extração de métricas de qualidade, tanto de código-fonte como de repositório. 
+O desenvolvimento de softwares livres pode ser referenciado como um movimento pesquisado e aplicado em grandes organizações, assim como é utilizado por um grande número de desenvolvedores em todo mundo. Apesar disso é um movimento recente, o que causa certa resistência na adoção dessa nova abordagem por um número maior de organizações e desenvolvedores. Isso pois inicialmente havia certa dificuldade na seleção e integração desses produtos, o que motivou o estabelecimento de processos objetivos para compreensão da qualidade de projetos FOSS\footnote{Free and Open Source Software}. Uma das formas para compreende-la, é através da extração de métricas de qualidade, tanto de código-fonte como de repositório. 
 
-O processo de extração de métricas, muitas vezes, geram um grande volume de informações que são difíceis de análisar em ferramenta apropriada. O objetivo da visualização de informação aplicada a softwares livres é possibilitar que grandes quantidades de informações, as métricas extraídas, sejam analisadas objetivamente para compreensão da qualidade de projetos FOSS. Isso permite estabelecer um processo para apoiar as tarefas de avaliação, monitoramento e melhoria da qualidade.
+O processo de extração de métricas, muitas vezes, gera um grande volume de informações que são difíceis de analisar sem ferramentas apropriadas. O objetivo da visualização de informação aplicada a softwares, não apenas livres, é possibilitar que grandes quantidades de informações, as métricas extraídas, sejam analisadas objetivamente para compreensão de sua qualidade. Isso permite estabelecer um processo para apoiar as tarefas de avaliação, monitoramento e melhoria da qualidade.
 
 %Motivação
-Muitas vezes sa avaliações de projetos FOSS são feitas informalmente, com a leitura de documentação e análise de opiniões de usuários anteriores, que nem sempre geram resultados confiáveis. Nesses projetos, muitos dados, tanto de processo como de produto, estão disponíveis publicamente. Exemplos desses dados são: código-fonte, históricos de evolução do repositório, conjunto de testes, relatório de erros, entre outros. Todas essas informações, se corretamente processadas, podem ser utilizadas para avaliar a qualidade de projetos. 
+Muitas vezes as avaliações de projetos FOSS são feitas informalmente, com a leitura de documentação e análise de opiniões de usuários anteriores, que nem sempre geram resultados confiáveis. Nesses projetos, muitos dados, tanto de processo como de produto, estão disponíveis publicamente. Exemplos desses dados são: código-fonte, históricos de evolução do repositório, conjunto de testes, relatório de erros, entre outros. Todas essas informações, se corretamente processadas, podem ser utilizadas para avaliar a qualidade de projetos. 
 
-Métricas podem ser usadas para medir características e atributos definidos por modelos de qualidade de software voltados para a an análise tanto do processo quanto do produto. Alguns modelos propostos especificamente para FOSS (Deprez e Alexandre, 2008; Petrinja et al., 2009; Spinellis et al., 2009) se baseiam em modelos tradicionais como o CMMI (Capability Maturity Model Integration) (Chrissis et al., 2006) e a norma ISO 9126 (ISO/IEC, 2001) mas incluem extensões que consideram especificamente aspectos importantes do desenvolvimento aberto. No entanto, a multiplicidade de indicadores de qualidade que podem ser extraídos de um projeto FOSS, considerando todas as suas diversas perspectivas (principalmente código, testes e repositório), cada um com sua própria interpretaçãoe valores de referência, torna complicada a realização de uma avaliação objetiva e direta. Abaixo se encontram as métricas disponibilizadas pelas ferramentas base utilizadas na plataforma Mezuro.
+Métricas podem ser usadas para medir características e atributos definidos por modelos de qualidade de software voltados para a análise tanto do processo quanto do produto. Alguns modelos propostos especificamente para FOSS se baseiam em modelos tradicionais como o CMMI\footnote{Capability Maturity Model Integration}\cite{paulk1994capability} e a norma ISO 9126\cite{iso2003iec} mas incluem extensões que consideram especificamente aspectos importantes do desenvolvimento aberto. No entanto, a multiplicidade de indicadores de qualidade que podem ser extraídos de um projeto FOSS, considerando todas as suas diversas perspectivas (principalmente código, testes e repositório), cada um com suas próprias interpretações e valores de referência, torna complicada a realização de uma avaliação objetiva e direta. Abaixo se encontram as métricas disponibilizadas pelas ferramentas base utilizadas na plataforma Mezuro.
 
 \graphicspath{{figuras/}}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.4\textwidth]{analizo_temp}
+\includegraphics[width=0.8\textwidth]{analizo_bt}
 \caption{Métricas fornecidas pela ferramenta base Analizo}
-\label{fig-evolucaolinu}
+\label{fig-analizo_bt}
 \end{figure}
 
 \graphicspath{{figuras/}}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.4\textwidth]{checkstyle_temp}
+\includegraphics[width=0.8\textwidth]{checkstyle_bt}
 \caption{Métricas fornecidas pela ferramenta base Checkstyle}
-\label{fig-evolucaolin}
+\label{fig-checkstyle_bt}
 \end{figure}
 
-Plataformas de avaliação de qualidade baseadas em conjuntos de ferramentas, como é o caso da plataforma Mezuro, expõem o avaliador de qualidade a dezenas de valores numéricos relacionados as métricas calculadas. Sem uma apresentação especial, esses dados são de pouco valor, pois são numerosos e difíceis de avaliar. Muitas vezes as métricas não são correlacionadas e a formatação da apresentação consiste apenas na aplicação de valores de referência.
+\graphicspath{{figuras/}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{cvsanaly_bt}
+\caption{Métricas fornecidas pela ferramenta base CVS Analy}
+\label{fig-cvsanaly_bt}
+\end{figure}
 
-Uma possibilidade para a solução desse problema é o uso de visualização de informação, que são representações visuais e interativas de dados, apoiadas por computador, utilizadas para amplificar a aquisição de conhecimento e apoiar descobertas, tomadas de decisão e explicações a partir de dados complexos.
+Plataformas de avaliação de qualidade baseadas em conjuntos de ferramentas, como é o caso do Mezuro, expõem o avaliador de qualidade a dezenas de valores numéricos relacionados as métricas calculadas. Sem uma apresentação especial, esses dados são de pouco valor, pois são numerosos e difíceis de avaliar. Muitas vezes as métricas não são correlacionadas e a formatação da apresentação consiste apenas na aplicação de valores de referência.
+
+Uma possibilidade para a solução desse problema é o uso de visualização de informação, que são representações gráficas e interativas de dados, apoiadas por computador, utilizadas para amplificar a aquisição de conhecimento e apoiar descobertas, tomadas de decisão e explicações a partir de dados complexos.
 
 Uma das ramificações da visualização de informação que mais cresce atualmente á a visualização de software, cujos objetivos são auxiliar a compreensão de sistemas complexos de software e melhorar a produtividade do processo de desenvolvimento utilizando visualização. A visualização de software é dividida em três categorias principais: estrutura, comportamento e evolução.
 
 %tecnicas para visualização em geral: https://github.com/mbostock/d3/wiki/Gallery
 
 \begin{itemize}
-\item \textbf{Estrutura} é a categoria que representa as partes estáticas do sistema, ou seja, aquelas que podem ser computadas sem executá-lo. 
+\item \textbf{Estrutura} é a categoria que representa as partes estáticas do sistema, ou seja, aquelas que podem ser computadas sem executá-lo como por exemplo o código-fonte, estrutura de dados do programa, o grafo de chamadas estático, e a organização do programa em módulos.
+
+A maioria das ferramentas, técnicas, propostas nessa categoria compartilham um mesmo modelo conceitual: a geração de um grafo, onde vertices representam entidades do programa, como arquivos ou classes, e arestas representam dependências como usos, chamadas, ou heranças.
 
 %tecnicas de visualição dessa categoria, de acordo com Rafael Messias:
 %codecity, treemap, HEB
@@ -126,18 +136,39 @@ Uma das ramificações da visualização de informação que mais cresce atualme
 %hierárquica dos arquivos do código fonte e suas dependências, ou seja, as chamadas entre
 %funções ou métodos.
 
-\item \textbf{Comportamento} se refere a compreensão do que ocorre com o sistema durante seu tempo de execução. Para o Mezuro essa categoria não é tão interessante, já que as métricas analisadas nessa plataforma, são extraídas a partir de sua análise estática.
+\item \textbf{Comportamento} se refere a compreensão do que ocorre com o sistema durante seu tempo de execução, quais instruções são executadas e como seus estados mudam dado um conjunto de possíveis entradas. Entre as aplicações dessa categoria de visualização estão a análise de traces, que são registros de valores de variáveis em certos instantes, animação de algorítmos, depuração visual, e apoio visual a atividade de teste. 
 
 %As técnicas dessa categoria NÃO são importantes para o Mezuro (pelo menos até agora)
 
-\item \textbf{Evolução} representa as características modificadas ao longo do tempo em um sistema. Técnicas de visualizações dessa categoria podem auxiliar analistas verificarem quais as relações entre artefatos modificados, quais tendências dessas modificações. Analisar e evolução de um sistema pode ser tão ou mais importante que a análise de sua estrutura, já que manutenções, sejam elas corretivas, preventivas ou adaptatiavs representam grande parte do custo envolvido em um projeto, podendo chegar em até 80\% do total.
+\item \textbf{Evolução} representa as características modificadas ao longo do tempo em um sistema. Técnicas de visualização dessa categoria podem auxiliar analistas a verificarem quais as relações entre artefatos modificados e quais tendências dessas modificações. Analisar a evolução de um sistema pode ser tão ou mais importante que a análise de sua estrutura, já que manutenções, sejam elas corretivas, preventivas ou adaptativas representam grande parte do custo envolvido em um projeto, podendo chegar a até 80\% do total.
 
 %técnicas presentes na categoria de evolução:
 %
 %
 %
-
 \end{itemize}
+
+Como o Mezuro é uma plataforma de análise de código-fonte, ou seja, análise estática, a categoria de visualização de software comportamento, responsável por fornecer informações da execução do sistema, não será relevante para este trabalho, ao contrário das categorias estrutura e evolução.
+
+Selecionar uma técnica de visualização mais relevante para um objetivo ou aplicação particular não é trivial, já que nenhuma técnica específica funciona bem para todos os casos ou problemas (Thomas e Cook, 2005).
+
+%No entanto, a multiplicidade de indicadores de qualidade que podem ser extráıdos de um projeto FOSS, considerando todas as suas diversas perspectivas (principalmente c ́odigo, testes e reposit ́orio), cada um com sua pr ́opria interpreta ̧c a  ̃ o
+%e valores de referˆencia, torna complicada a realiza ̧c a  ̃ o de uma avalia ̧c a  ̃ o objetiva e direta.
+%Plataformas de avalia ̧c a  ̃ o de qualidade baseadas em conjuntos de ferramentas, como  ́e o
+%caso das plataformas Qualipso, FLOSSMetrics ou Alitheia Core 2 , exp ̃oem ao avaliador
+%de qualidade dezenas de valores num ́ericos relacionados a ` s m ́etricas calculadas. Sem uma
+%apresenta ̧c ̃ao especial esses dados s ̃ao de pouco valor, pois s ̃ao numerosos e dif ́ıceis de
+%avaliar. Muitas vezes as m ́etricas n ̃ao s ̃ao correlacionadas e a formata ̧c ̃ao da apresenta ̧c a  ̃ o
+%consiste apenas na aplica ̧c a  ̃ o de valores de referˆencia.
+%
+%Atualmente, embora em alguns casos os indicadores sejam apresentados visualmente,
+%as met ́aforas visuais s ̃ao simples e os avaliadores s ̃ao envolvidos por uma quantidade
+%esmagadora de informa ̧c a  ̃ o e perdem a imagem do todo (Burkhard et al., 2005). Por isso,
+%processos de avalia ̧c a  ̃ o devem focar em apresentar os dados coletados de forma a comunicar
+%a vis ̃ao geral ao inv ́es de apresentar dados brutos em tabelas decorativas. No entanto,
+%a tarefa de selecionar uma t ́ecnica de visualiza ̧c a  ̃ o mais relevante para um objetivo ou
+%aplica ̧c ̃ao particular n ̃ao  ́e trivial, j ́a que nenhuma t ́ecnica espec ́ıfica funciona para todos
+%os problemas (Thomas e Cook, 2005).
 
 
 
