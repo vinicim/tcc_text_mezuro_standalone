@@ -1,9 +1,12 @@
-#TCC1 de Vinícius Vieira Meneses FGA-UnB
+#TCC2 - FGA-UnB
 
-Aluno: Vinícius Vieira Meneses  
+Alunos:
+Vinícius Vieira Meneses
+Renan Costa Filqueiras
 Orientador: Prof. Dr. Paulo Roberto Miranda Meirelles
+Coorientador: Prof Dr. Andre Barros de Sales
 
-Título: Evolução Plataforma Mezuro: De Plugin a Aplicação Independente
+Título: Evolução de Software Livre Mezuro, da Arquitetura à Experiência do Usuário
 
 Esse trabalho utiliza o template desenvolvido e adaptado pelo professor Edson Alves <edsomjr@gmail.com> disponível em [Template TCC FGA](https://github.com/fga-unb/template-latex-tcc)
 
