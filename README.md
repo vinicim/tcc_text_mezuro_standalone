@@ -3,12 +3,45 @@
 Alunos:
 Vinícius Vieira Meneses
 Renan Costa Filqueiras
+
 Orientador: Prof. Dr. Paulo Roberto Miranda Meirelles
 Coorientador: Prof Dr. Andre Barros de Sales
+
+Banca Avaliadora:
+-Prof. Dr. Fabrício Braz
+-Prof. Dr. Maurício Serrano
 
 Título: Evolução de Software Livre Mezuro, da Arquitetura à Experiência do Usuário
 
 Esse trabalho utiliza o template desenvolvido e adaptado pelo professor Edson Alves <edsomjr@gmail.com> disponível em [Template TCC FGA](https://github.com/fga-unb/template-latex-tcc)
+
+#Estrutura - Capítulos:
+
+-Introduçao
+ +metodologia
+ +questões
+
+-Métodos Empíricos de Desenvolvimento:
+ +Software Livre
+ +Métodos Ágeis
+ +padroes de contribuição
+ +processos de desenvolvimento
+
+-Evolução de Projetos de Software
+ + Arquitetura de Software
+ +evolução da arquitetura
+
+-Experiências do Usuário -> conceituar
+ +Requisitos Não-Funcionais
+ +Visualizaçao
+ +Usabilidade
+
+-Estudo de Caso: Mezuro, uma plataforma de Monitoramento de Código-Fonte
+
+-Considerações Finais
+ +conclusão
+ +limitações
+ +trabalhos futuros
 
 ## Instruções de instalação do abnTeX2
 
