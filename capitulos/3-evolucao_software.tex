@@ -1,20 +1,20 @@
 \chapter{Evolução de Projetos de Software}
 
-Este trabalho visa contribuir diretamente com um software livre, tratando a evolução do mesmo. Dessa forma, neste capítulo, apresentamos os principais conceitos relacionados com esse tipo de software, passando pelas definições básicas, processos de desenvolvimento e os padrões para se contribuir com um projeto de software livre. Complementarmente, discutimos o que é evolução de software, tratando as Leis de Lehman e como está apresentada na literatura os estudos sobre a evolução de projeto de software livre.
+Atualmente as tecnologias da informação exercem cada vez mais influência na sociedade, seja na interação entre pessoas, ou nas relações que empresas possuem com o mercado. Organizações que possuem parte dos seus lucros associados diretamente, ou não, a sistemas de software, precisam evolui-los, seja para adequa-los à mudanças no ambiente onde estão inseridos, ou para mante-los competitivos frente aos concorrentes. Além desses fatores, quando os sistemas em questão são desenvolvidos como softwares livres, eles também precisam evoluir para que se mantenham sempre atrativos, motivando a comunidade estabelecida ao seu redor. Sistemas estagnados desmotivam usuários ou colaboradores, o que significa risco de perda de mercado ou enfraquecimento de um projeto de software livre, já que esses são feitos de colaboradores, como foi dito.
+
+Por outro lado, a manutenção desses sistemas é difícil, consome bastante tempo e recursos. Tarefas como adicionar novas funcionalidades, suporte a novos dispositivos de hardware, correção de defeitos, entre outros, se tornam mais difíceis e complexas conforme o sistema cresce e envelhece \cite{godfrey2000evolution}, surgindo adversidades. Os problemas de \textit{design} vão além de algorítmos e estruturas de dados, onde a especificação da estrutura geral do sistema surge como um novo obstáculo \cite{garlan1993introduction}. Visando amenizar problemas como esse, a arquitetura de software tem recebido grande atenção  desde a década passada, já que ela tem auxiliado na obtenção de ótimos resultados quanto ao atendimento de atributos de qualidade \cite{fabricio2009instrumentation}.
+
+Este trabalho visa contribuir diretamente com um software livre, tratando a evolução do mesmo. Dessa forma, neste capítulo, apresentamos o que é evolução de software, assim como esta é  apresentada na literatura. Além disso, serão apresentados conceitos da arquitetura do ponto de vista da Engenharia de Software e aspectos relevantes deste processo durante a evolução de um sistema de software. %Na seção 4.1 são apresentados os principais conceitos sobre arquitetura do ponto de vista da engenharia de software. Já a seção 4.2 expõe elementos da arquitetura do Ruby on Rails, arcabouço utilizado para o desenvolvimento da plataforma Mezuro.
 
 %-------------------------------------------------------------------------------
 \section{Evolução de Software}
 
-Atualmente as tecnologias da informação exercem cada vez mais influência na sociedade, seja na interação entre pessoas, ou nas relações que empresas possuem com o mercado. Empresas, que possuem parte dos seus lucros associados diretamente, ou não, há sistemas de software, precisam evolui-los, seja para adequa-los à mudanças no ambiente onde estão inseridos, ou para mante-los competitivos frente aos concorrentes. Além desses fatores, quando os sistemas em questão são desenvolvidos como softwares livres, eles também precisam evoluir para que se mantenham sempre atrativos, motivando a comunidade estabelecida ao seu redor. Sistemas estagnados desmotivam usuários ou colaboradores, o que significa risco de perda de mercado ou enfraquecimento de um projeto de software livre, já que esses são feitos de colaboradores
-%[modificar esse parágrafo com base no artigo challanges_sw_evolution]
-
-Por outro lado, a manutenção desses sistemas é difícil, consome bastante tempo e recursos. Tarefas como adicionar novas funcionalidades, suporte a novos dispositivos de hardware, correção de defeitos, entre outros, se tornam mais difíceis conforme o sistema cresce e envelhece \cite{godfrey2000evolution}.
-
-Acima foram mencionados os termos manutenção e evolução de software. Na maioria das vezes esses palavras aparecem juntas na literatura, e embora se refiram ao mesmo fenômeno, possuem ênfases diferentes. Manutenção é o ato de manter uma entidade num estado de reparo, capacidade ou disponibilidade, prevenindo-a contra falhas, mantendo a satisfação dos envolvidos ao longo do ciclo de vida do software. Já a evolução refere-se a um processo de mudança contínuo de um estado mais baixo, simples ou pior para um estado mais alto, mais complexo e melhor, refletindo a soma de todas as alterações implementadas no sistema.
-
 %evolução de software sempre existiu, porem nao era estudada
 A evolução de software foi identificada pela primeira vez no final dos anos 60, embora não denominada evolução até 1969, quando Meir M. Lehman realizou um estudo com a IBM, com a ideia de melhorar a efetividade de programação dessa empresa. Apesar de não ter recebido tanta atenção e pouco impactado nas práticas de desenvolvimento dessa companhia , esse estudo fez surgir um novo campo de pesquisa, a evolução de software.
-%\cite{Artigo IBM}.
+
+\begin{mdframed}
+Muitas vezes, na literatura os termos manutenção e evolução de sistemas de software apresentam-se juntas, o que pode causar a falsa impressão que possuem o mesmo siginificado. Embora se refiram ao mesmo fenômeno, possuem ênfases diferentes. Manutenção é o ato de manter uma entidade num estado de reparo, capacidade ou disponibilidade, prevenindo-a contra falhas, mantendo a satisfação dos envolvidos ao longo do ciclo de vida do software. Já a evolução refere-se a um processo de mudança contínuo de um estado mais baixo, simples ou pior para um estado mais alto, mais complexo e melhor, refletindo a soma de todas as alterações implementadas no sistema.
+\end{mdframed}
 
 Durante esses estudos, Lehman formulou as três primeiras, de um total de oito leis, conhecidas atualmente como leis de Lehman. O restante foi formulado em estudos posteriores, conforme a relevancia desse campo aumentava. O conjunto dessas oito leis estão listadas abaixo:
 \begin{table}[H]
@@ -69,29 +69,15 @@ A Figura \ref{fig-evolucaolinux} mostra o crescimento do sistema operacional Lin
 
 Os dados presentes no gráfico, até o início dos anos 2000, vão de encontro à quinta lei de Lehman, citada na Tabela \ref{tab-leis-lehman}. No gráfico, o número de linhas de código (LOC) do kernel do sistema, possui taxa de crescimento positiva, enquanto a lei afirma que ao longo do tempo a taxa de crescimento tende a diminuir.
 %
-Por outro lado, neste trabalho, não estamos tratando a evolução de software do ponto de vista da inserção de novas funcionalidades, o que pode levar ao crescrimento de número de linhas de código, como exemplificado acima. Estamos tratando a evolução de um software livre real, do ponto de vista da sua arquitetura, de acordo com as decisões julgadas pelo seus principais desenvolvedores, conforme descrito nas respostas ao questionário apresentado no Apêndice \ref{form-pesquisa}, para poderem evoluir o projeto de uma forma mais rápida e objetivando formação de uma comunidade de desenvolvedores.
+Por outro lado, neste trabalho, não estamos tratando a evolução de software apenas do ponto de vista da inserção de novas funcionalidades, o que pode levar ao crescrimento de número de linhas de código, como exemplificado acima. Estamos tratando a evolução de um software livre real, do ponto de vista da sua arquitetura, de acordo com as decisões julgadas pelo seus principais desenvolvedores, conforme descrito nas respostas ao questionário apresentado no Apêndice \ref{form-pesquisa}, para poderem evoluir o projeto de uma forma mais rápida e objetivando formação de uma comunidade de desenvolvedores.
 
 \section{Evolução da Arquitetura}
 
 \subsection{Arquitetura de Software}
 
-%Definições - principais (i.e Garlan and Shaw; Krutchen; IEEE)
-%Conceitos fundamentais (comuns na literatura)
-%Atributos de qualidade
-%Decisões arquiteturais
-%Papéis
-%Visões arquiteturais
-%Estilos arquiteturais
-
 %Contexto
-O desenvolvimento de um sistema de software não é uma tarefa simples por conta da complexidade envolvida no processo. Além de lidar com a complexidade inerente ao problema a ser resolvido, devemos nos preocupar em como o software resolve esse mesmo problema. Por esse motivo muitos softwares fracassam, seja por custar muito acima do orçamento, estarem imcompletos ou não solucionarem os problemas como deveriam. Assim um software além de resolver o problema, deve resolvê-lo da forma esperada, satisfazendo atributos de qualidade \cite{germoglio2010fundamentos}.
+%O desenvolvimento de um sistema de software não é uma tarefa simples por conta da complexidade envolvida no processo. Além de lidar com a complexidade inerente ao problema a ser resolvido, devemos nos preocupar em como o software resolve esse mesmo problema. Por esse motivo muitos softwares fracassam, seja por custar muito acima do orçamento, estarem imcompletos ou não solucionarem os problemas como deveriam. Assim um software além de resolver o problema, deve resolvê-lo da forma esperada, satisfazendo atributos de qualidade \cite{germoglio2010fundamentos}.
 
-%Contexto
-Conforme a complexidade dos softwares aumentam, surgem adversidades. Os problemas de \textit{design} vão além de algorítmos e estruturas de dados, onde a especificação da estrutura geral do sistema surge como um novo obstáculo \cite{garlan1993introduction}. Visando amenizar problemas como esse, a arquitetura de software tem recebido grande atenção  desde a década passada, já que ela tem auxiliado na obtenção de ótimos resultados quanto ao atendimento de atributos de qualidade \cite{fabricio2009instrumentation}. 
-
-Neste capítulo serão apresentados aspectos da arquitetura, relevantes durante a evolução de um sistema de software. Na seção 4.1 são apresentados os principais conceitos sobre arquitetura do ponto de vista da engenharia de software. Já a seção 4.2 expõe elementos da arquitetura do Ruby on Rails, arcabouço utilizado para o desenvolvimento da plataforma Mezuro.
-
-\subsubsection{Arquitetura na Engenharia de Software}
 
 %Definição
 Desde a primeira referência em um relatório técnico intitulado \textit{Software Engineering Tecnhiques} \cite{buxton1970software}, na década de 1970, diversos autores buscaram definir o termo arquitetura de software de software.
@@ -131,7 +117,7 @@ Qualquer software possui arquitetura, independente dela ser documentada ou proje
 Além da participação no desenvolvimento e o estudo da nova arquitetura do Mezuro,
 neste trabalho, também colaboraremos com documentação de sua arquitetura, e de modo
 que possa ser mantida de acordo com as práticas das comunidades de software livre,
-ou seja, também mantida e distruída junto ao código no seu repositório.
+ou seja, também mantida e distribuida junto ao código no seu repositório.
 
 
 %-----------------------parágrafos desconexos---------------------------------------%
@@ -141,7 +127,7 @@ ou seja, também mantida e distruída junto ao código no seu repositório.
 %Analisando o ciclo de desenvolvimento de software, é observado que a arquitetura é uma abordagem empregada desde as fases iniciais do processo. Neste instante o nível de abstração da arquitetura é bastante elevado, tendo o objetivo de definir e apresentar a solução computacional que será implementada, auxiliando a tomada de decisões dos stakeholders ou envolvidos no processo de desenvolvimento. Contudo, ao longo do desenvolvimento do software, a arquitetura sofre refinamentos que diminuem o nível de abstração e permitem, por exemplo, a representação dos relacionamentos entre os elementos arquiteturais e os arquivos de código fonte responsáveis por implementá-los \cite{clements2002documenting}.
 %---------------------------------------------------------------------------------------%
 
-\subsubsection{O arcabouço Ruby on Rails}
+\subsection{O arcabouço Ruby on Rails}
 
 O Ruby on Rails é um \textit{arcabouço}, disponível como software livre, criado em 2003 por David Heinemeier Hansson.
 %
