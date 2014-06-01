@@ -133,9 +133,9 @@ O Ruby on Rails é um \textit{arcabouço}, disponível como software livre, cria
 %
 Sua primeira versão foi lançada em 2004, e desde então seu desenvolvimento e utilização são cada vez maiores.
 %
-Diversos programadores e empresas em todo mundo utilizam esse o Rails para construirem suas aplicações. Entre as mais conhecidas estão o Twitter (nas primeiras versões), GitHub e Groupon. 
+Diversos programadores e empresas em todo mundo utilizam esse arcabouço para construirem suas aplicações. Entre as mais conhecidas estão o Twitter (nas primeiras versões), GitHub e Groupon. 
 %
-O Rails utiliza a linguagem de programação Ruby, criada no Japão em 1995 por Yukihiro "Matz" Matsumoto. A linguagem Ruby é interpretada, multiparadigma, com tipagem dinâmica e gerenciamento de memória automático. O Rails é basicamente uma biblioteca Ruby ou \textit{gem} e é construído utilizando o padrão arquitetural MVC.
+O Rails utiliza a linguagem de programação Ruby, criada no Japão em 1995 por Yukihiro "Matz" Matsumoto. A linguagem Ruby é interpretada, multiparadigma, com tipagem dinâmica e gerenciamento de memória automático. O Rails é basicamente uma biblioteca Ruby ou \textit{gem} e é construído utilizando o padrão arquitetural \textbf{MVC}.
 
 Um de seus fundamentos é facilitar o desenvolvimento. O Rails utiliza diversos princípios para orientá-lo do "modo certo" ("Rails way"), possibilitando concentrar esforços no problema do cliente, poupando a equipe do esforço de organizar a estrutura da aplicação a qual é feita pelo arcabouço. Alguns princípios são:
 
@@ -170,7 +170,7 @@ facilitando a manutenbilidade do sistema.
 % Não foi você que inventou isso tudo, tem que dar o crédito a quem definiu ;)
 
 %---------------------------------------------------------------------------------------%
-
+%Essa seção é importante pois a evolução do Rails foi um dos motivos que motivou a evolução da plataforma Mezuro.
 \textbf{Evolução do Ruby on Rails}
 
 O arcabouço Rails, desde seu lançamento, sofre frequentes alterações, e com isso novas versões são lançadas constantemente, conforme apresentado na Tabela~\ref{tab:rails_versions}. Muitos desenvolvedores enxergam essas constantes mudanças como um ponto negativo, ao passo que há incompatibilidade de algumas "gems" de uma versão para outra. Por outro lado, outros aprovam essa característica pois a cada atualização há melhora no produto, com adição de novos recursos, além de ser um incentivo para a implementação de testes, já que eles auxiliam a manter a integridade da aplicação a cada atualização.
@@ -216,11 +216,13 @@ Entre os novos recursos oferecidos pela versão 4 do Rails, que é a versão usa
 
 %TODO: também se referencia ou coloca-se uma nota de rodapé de onde o leitor pode ver isso e conhecer mais a tecnologia.
 
+É importante discutir sobre a evolução deste arcabouço pois esse foi um dos motivos que motivaram a evolução da plataforma Mezuro. Isso para aproveitar os recursos mais novos disponíveis nas versões mais recentes, além de desfrutar de maior suporte da comunidade deste arcabouço como da linguagem utilizada por ele, a linguagem Ruby. Um questionário com questões relacionadas a evolução do Mezuro se encontra no Apêndice\ref{form-pesquisa} deste documento e respostas de alguns dos colaboradores  se encontram no Anexo\ref{resp-pesquisa}.
+
 %---------------------------------------------------------------------------------------%
 
 \textbf{Padrão Arquitetural MVC}
 
-O padrão MVC começou como um arcabouço desenvolvido por Trygve Reenskaug para a plataforma SmallTalk, no final dos anos 70. Desde então, ele exerce grande influência sobre diversos arcabouços que promovem interação com usuário, como é o caso do Ruby on Rails.
+O padrão \textbf{MVC} começou como um arcabouço desenvolvido por Trygve Reenskaug para a plataforma SmallTalk, no final dos anos 70. Desde então, ele exerce grande influência sobre diversos arcabouços que promovem interação com usuário, como é o caso do Ruby on Rails.
 %
 O MVC visa separar a representação da informação da interação com o usuário. Para atingir esse objetivo são utilizados três ``papéis'', conforme apresentado do na Figura~\ref{fig:mvc}:
 %
@@ -243,7 +245,7 @@ visão para satisfazer as requisições do usuário.
 \label{fig:mvc}
 \end{figure}
 
-O exempo abaixo ilustra um cenário de execução de uma funcionalidade com o padrão MVC.
+O exemplo abaixo ilustra um cenário de execução de uma funcionalidade com o padrão MVC.
 
 \begin{mdframed}[frametitle={Exemplo},roundcorner=5pt]
 Um usuário navega em um site de vendas de veículos. Ao pressionar o botão para visualizar determinado veículo, o navegador carrega a página de detalhes e a devolve ao usuário. Esse processo começa quando na VIEW o usuário pressiona o botão de visualização. A URL gerada é processada por um método da CONTROLLER de veículos. Esse método solicita ao MODEL o veículo correspondente a URL, então a VIEW é renderizada com os dados do veículo correspondente, obtidos pela CONTROLLER.
@@ -272,37 +274,34 @@ Já os elementos dinâmicos definem o comportamento do sistema e representa o si
 \end{figure}
 
 
-\begin{description}
+\begin{enumerate}
 
-\item [Action Mailer] fornece a capacidade de criação de serviços de e-mail. Podendo enviar e-
-mails baseados em templates adaptáveis ou receber e processar um e-mail;
+	\item \textbf{Action Mailer} fornece a capacidade de criação de serviços de e-mail. Podendo enviar e-mails baseados em templates adaptáveis ou receber e processar um e-mail;
 
-\item [Action Pack]
+	\item \textbf{Action Pack} é composto por: \\
 
- \begin{description}
+	\begin{description}
+ 
+	\item [Action Controller] é o componente que gerencia os controllers em uma aplicação Rails. Ele processa as requisições que chegam de uma aplicação Rails, recebe seus
+parâmetros e os envia para as ações pretendidas;
 
-	 \item [Action Controller] é o componente que gerencia os controllers em uma aplicação
-	Rails. Ele processa as requisições que chegam de uma aplicação Rails, recebe seus
-	parâmetros e os envia para as ações pretendidas; 
+	\item [Action View] gerencia as views da aplicação. Isto é, as saídas HTML e XML por 	padrão. Gerencia a renderização de templates aninhados ou parciais , e inclui suporte
+embutido para AJAX;
 
-	 \item [Action View] gerencia as views da aplicação. Isto é, as saídas HTML e XML por
-	padrão. Gerencia a renderização de templates aninhados ou parciais , e inclui suporte
-	embutido para AJAX;
+	\end{description}
 
- \end{description}
-
-\item [Active Record] é abase dos \textit{models}. Ele fornece a independência de banco de dados e CRUD básico. Ele é utilizado para criar a representação, em orientação a objetos, dos
+\item \textbf{Active Record} é abase dos \textit{models}. Ele fornece a independência de banco de dados e CRUD básico. Ele é utilizado para criar a representação, em orientação a objetos, dos
 dados presentes no banco de dados;
 
-\item [Active Resource] gerencia conexões entre objetos de negócio e serviços web RESTful.
+\item \textbf{Active Resource} gerencia conexões entre objetos de negócio e serviços web RESTful.
 Ele mapeia recursos baseados em web para objetos locais com lógica CRUD;
 
-\item [Active Support] uma coleção de classes de utilidade e extenções da biblioteca padrão do
+\item \textbf{Active Support} uma coleção de classes de utilidade e extenções da biblioteca padrão do
 Ruby que são utilizadas pelo Rails, tanto em seu núcleo quanto para suas aplicações;
 
-\item [Railties] é o núcleo do código Rails e é ele quem constrói novas aplicações Rails e junta os diversos componentes;
+\item \textbf{Railties} é o núcleo do código Rails e é ele quem constrói novas aplicações Rails e junta os diversos componentes;
 
-\end{description}
+\end{enumerate}
 
 
 %TODO: concluir algo
