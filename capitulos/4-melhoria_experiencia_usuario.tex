@@ -414,6 +414,8 @@ Métricas podem ser usadas para medir características e atributos definidos por
 \label{fig-analizo_bt}
 \end{figure}
 
+O Analizo possui suporte nativo às linguagens C, C++ e Java, extraindo métricas de código-fonte (entre elas há mais de quinze métricas de módulos e sete métricas de projetos). Além dessas características, o Analizo também apoia a evolução de software já que permite a análise de diferentes versões do software em relação ao tempo .
+
 \graphicspath{{figuras/}}
 \begin{figure}[H]
 \centering
@@ -422,6 +424,8 @@ Métricas podem ser usadas para medir características e atributos definidos por
 \label{fig-checkstyle_bt}
 \end{figure}
 
+O Checkstyle é uma ferramente de desenvolvimento que tem como principal objetivo auxiliar os desenvolvedores a seguirem um padrão de codificação. Assim como o Analizo, é através da extração de métricas de código-fonte Java que essa ferramenta visa alcançar o padrão de codificação pretendido.
+
 \graphicspath{{figuras/}}
 \begin{figure}[H]
 \centering
@@ -429,6 +433,9 @@ Métricas podem ser usadas para medir características e atributos definidos por
 \caption{Métricas fornecidas pela ferramenta base CVS Analy}
 \label{fig-cvsanaly_bt}
 \end{figure}
+
+%qual linguagem de suporte, realmente essas informações são verídicas?
+Dentre os coletores de métricas utilizados no Mezuro, o último a ser adicionado foi o CVSAnaly, que apesar de não ampliar o suporte do Mezuro a novas linguagens, ele aumenta a variedade de métricas disponíveis já que muitas das métricas extraídas por essa ferramentas são complementares às métricas do Analizo e do Checkstyle.
 
 Plataformas de avaliação de qualidade baseadas em conjuntos de ferramentas, como é o caso do Mezuro, expõem o avaliador de qualidade a dezenas de valores numéricos relacionados as métricas calculadas. Sem uma apresentação especial, esses dados são de pouco valor, pois são numerosos e difíceis de avaliar. Muitas vezes as métricas não são correlacionadas e a formatação da apresentação consiste apenas na aplicação de valores de referência.
 
