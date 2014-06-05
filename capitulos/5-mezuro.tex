@@ -1,7 +1,7 @@
 \chapter{Estudo de Caso: Mezuro, uma plataforma de Monitoramento de Código Fonte}
 
 %Introdução
-A prática da engenharia de software exige compreensão do sistema desenvolvido como um todo, onde o código-fonte é uma das partes mais importantes. O engenheiro de software precisa analizar um código-fonte diversas vezes, seja para desenvolver novas funcionalidades ou melhorar as existentes \cite{meirelles2010mezuro}.
+A prática da engenharia de software exige compreensão do sistema desenvolvido como um todo, onde o código-fonte é uma das partes mais importantes. O engenheiro de software precisa analisar um código-fonte diversas vezes, seja para desenvolver novas funcionalidades ou melhorar as existentes \cite{meirelles2010mezuro}.
 %
 Como parte fundamental do projeto de software, o código-fonte é um dos principais artefatos para avaliar sua qualidade \cite{meirelles2009crab}. Essas avaliações não são meramente subjetivas, sendo necessário extrair informações que possam ser replicadas e entendidas da mesma forma, independente de quem analisa o código. As métricas de código-fonte permitem esse tipo de avaliação pois possibilitam analisar, de forma objetiva, as principais características para aceitação de um software.
 
@@ -9,7 +9,7 @@ Como parte fundamental do projeto de software, o código-fonte é um dos princip
 Há várias características que fazem do software um sistema de qualidade ou não. Entre elas há algumas que são obtidas exclusivamente através do código-fonte. Quando compilamos um software, por exemplo, características podem ser analisadas, mas outras como organização e legibilidade não. Isso não refletiria tamanho, modularidade, manutenibilidade, complexidade, flexibilidade, que são características encontradas na análise de códigos-fonte \cite{meirelles2013metrics}.
 %
 %Ferramentas para monitoramento de métricas de código-fonte
-O esforço necessário para extrair métricas de código-fonte manualmente pode ser considerado imensurável. Quanto maior e mais complexo é o código, esse tipo de atividade se torna ainda mais distante das equipes de desenvolviento, dada a quantidade de propriedades e linhas de códigos a se analisar, além de não ser viável pelo tempo despendido. 
+O esforço necessário para extrair métricas de código-fonte manualmente pode ser considerado imensurável. Quanto maior e mais complexo é o código, esse tipo de atividade se torna ainda mais distante das equipes de desenvolvimento, dada a quantidade de propriedades e linhas de códigos a se analisar, além de não ser viável pelo tempo despendido. 
 %
 Existem ferramentas que auxiliam nessas atividades, por meio da extração e monitoramento automático de métricas de código-fonte, elas auxiliam  a equipe durante o processo de desenvolvimento. Porém, existem existem poucas ferramentas disponíveis, e muitas delas nem sempre são adequadas para análise do projetos de software livre~\cite{meirelles2010mezuro}, que é ponto central deste trabalho.
 %Métricas são fundamentais para a melhora contínua de um projeto de software livre
@@ -75,7 +75,7 @@ Por meio de requisições SOAP, o Mezuro acessa os \textit{end-points}\footnote{
 \item Criação de novas métricas compostas, de acordo com aquelas fornecidas pelos coletores do Kalibro.
 \item Cálculo de resultados estatísticos para módulos com alta granularidade.
 \item Possibilidade de exportar arquivos com os resultados gerados.
-\item Interpretação dos resultados com inteface mais amigável aos usuarios com a utilização de cores nos intervalos das métricas.
+\item Interpretação dos resultados com interface mais amigável aos usuários com a utilização de cores nos intervalos das métricas.
 \end{itemize}
 
 %Aplicações Java conseguem consumir os serviços do Kalibro Metrics apenas com o conhecimento da sua API\footnote{Application Programming Interface. Conjunto de rotinas estabelecidos por um software para utilização de suas funcionalidades}
@@ -109,7 +109,7 @@ Acompanhando a evolução do Rails, visando os novos recursos, além do suporte 
 
 Conforme observado na Figura \ref{class-diagram}, o Mezuro é um ``cliente'' do Kalibro. Ele como um plugin para o Noosfero, faz com que possua muitos recursos, que primeiro foram vistos com vantagem, mas depois foi avaliado pelos desenvolvedores do Mezuro como desnecessários para uma ferramenta de monitoramento de código-fonte. Entre esses recursos estão: blog, fórum, upload de arquivos, CMS, chat e relacionamento entre  ``amigos''. Evolução de software também significa retirar funcionalidades que não se encaixam mais ao ambiente que o software está inserido. Foi exatamente isso que a equipe de desenvolvimento levou em consideração ao decidir por esse passo na evolução do Mezuro.
 
-A manutenibilidade do Mezuro como plugin se tornava cada vez menor conforme ele evoluia, pois ao invés de fornecer um número baixo de funcionalidades, ou funcionalidades muito específicas, que é o princípio de um plugin, o Mezuro acabou se transformando em uma aplicação, a qual depende de outra aplicação, no caso, o Noosfero. Neste ponto, podemos observar a segunda lei de Lehman disponível na Tabela \ref{tab-leis-lehman}, à medida que um software é alterado sua complexidade tende a crescer, a não ser que um trabalho seja feito para mantê-la ou diminuí-la. E assim fez a equipe de desenvolvimento do Mezuro.
+A manutenibilidade do Mezuro como plugin se tornava cada vez menor conforme ele evoluía, pois ao invés de fornecer um número baixo de funcionalidades, ou funcionalidades muito específicas, que é o princípio de um plugin, o Mezuro acabou se transformando em uma aplicação, a qual depende de outra aplicação, no caso, o Noosfero. Neste ponto, podemos observar a segunda lei de Lehman disponível na Tabela \ref{tab-leis-lehman}, à medida que um software é alterado sua complexidade tende a crescer, a não ser que um trabalho seja feito para mantê-la ou diminuí-la. E assim fez a equipe de desenvolvimento do Mezuro.
 %
 Em suma, pensando no desempenho e na evolução do desenvolvimento do Mezuro, com o objetivo de formatar um comunidade de software livre para atrair desenvolvedores, resolveu-se retirar o Mezuro como um plugin do Noosfero, para não mais o limitar ao andamento do desenvolvimento do Noosfero. 
 
@@ -146,7 +146,7 @@ Essa funcionalidade, desenvolvida ao decorrer deste trabalho, se encontra atualm
 \label{fig:mezuro-repositories}
 \end{figure}
 
-Ao clicar em algum projeto disponível no Mezuro, sua tela visualização é carregada. Nela são exibidas todos os repositórios realacionados a esse projeto. Na Figura \ref{fig:mezuro-repositories}, por exemplo, é exibida a tela do monitoramento do código do Kalibro cadastrado no Mezuro, assim como um único repositório associado a ele.
+Ao clicar em algum projeto disponível no Mezuro, sua tela visualização é carregada. Nela são exibidas todos os repositórios relacionados a esse projeto. Na Figura \ref{fig:mezuro-repositories}, por exemplo, é exibida a tela do monitoramento do código do Kalibro cadastrado no Mezuro, assim como um único repositório associado a ele.
 
 \graphicspath{{figuras/}}
 \begin{figure}[h]
@@ -166,7 +166,7 @@ Ao clicar em algum projeto disponível no Mezuro, sua tela visualização é car
 
 Ao clicar em visualizar um repositório, é feito um processamento desse, e a tela de detalhes do mesmo é carregada. A Figura \ref{fig:mezuro-info} e \ref{fig:mezuro-result} são os resultados do processamento do único repositório associado ao projeto Kalibro monitorado pelo Mezuro.
 %
-A Figura~\ref{fig:mezuro-info} exibe informações gerais do processamento do reposítório, como a configuração, estado, data de criação e tempo de processamento. A Figura~\ref{fig:mezuro-result} mostra o conjunto de métricas relacionas à configuração do repositório processado (uma configuração \textit{default}, por exemplo), assim como os intervalos e interpretação de cada uma dessas métricas.
+A Figura~\ref{fig:mezuro-info} exibe informações gerais do processamento do repositório, como a configuração, estado, data de criação e tempo de processamento. A Figura~\ref{fig:mezuro-result} mostra o conjunto de métricas relacionas à configuração do repositório processado (uma configuração \textit{default}, por exemplo), assim como os intervalos e interpretação de cada uma dessas métricas.
 
 \graphicspath{{figuras/}}
 \begin{figure}[h]
