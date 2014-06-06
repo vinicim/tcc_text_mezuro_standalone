@@ -1,8 +1,8 @@
 \chapter{Evolução de Projetos de Software}
 
-Atualmente as tecnologias da informação exercem cada vez mais influência na sociedade, seja na interação entre pessoas, ou nas relações que empresas possuem com o mercado. Organizações que possuem parte dos seus lucros associados diretamente, ou não, a sistemas de software, precisam evolui-los, seja para adequa-los à mudanças no ambiente onde estão inseridos, ou para mantê-los competitivos frente aos concorrentes. Além desses fatores, quando os sistemas em questão são desenvolvidos como softwares livres, eles também precisam evoluir para que se mantenham sempre atrativos, motivando a comunidade estabelecida ao seu redor. Sistemas estagnados desmotivam usuários ou colaboradores, o que significa risco de perda de mercado ou enfraquecimento de um projeto de software livre, já que esses são feitos de colaboradores, como foi dito.
+Atualmente as tecnologias da informação exercem cada vez mais influência na sociedade, seja na interação entre pessoas, ou nas relações que empresas possuem com o mercado. Organizações que possuem parte dos seus lucros associados diretamente, ou não, a sistemas de software, precisam evolui-los, seja para adequá-los à mudanças no ambiente onde estão inseridos, ou para mantê-los competitivos frente aos concorrentes. Além desses fatores, quando os sistemas em questão são desenvolvidos como softwares livres, eles também precisam evoluir para que se mantenham sempre atrativos, motivando a comunidade estabelecida ao seu redor. Sistemas estagnados desmotivam usuários ou colaboradores, o que significa risco de perda de mercado ou enfraquecimento de um projeto de software livre, já que esses são feitos de colaboradores, como foi dito.
 
-Por outro lado, a manutenção desses sistemas é difícil, consome bastante tempo e recursos. Tarefas como adicionar novas funcionalidades, suporte a novos dispositivos de hardware, correção de defeitos, entre outros, se tornam mais difíceis e complexas conforme o sistema cresce e envelhece \cite{godfrey2000evolution}, surgindo adversidades. Os problemas de \textit{design} vão além de algorítmos e estruturas de dados, onde a especificação da estrutura geral do sistema surge como um novo obstáculo \cite{garlan1993introduction}. Visando amenizar problemas como esse, a arquitetura de software tem recebido grande atenção  desde a década passada, já que ela tem auxiliado na obtenção de ótimos resultados quanto ao atendimento de atributos de qualidade \cite{fabricio2009instrumentation}.
+Por outro lado, a manutenção desses sistemas é difícil, consome bastante tempo e recursos. Tarefas como adicionar novas funcionalidades, suporte a novos dispositivos de hardware, correção de defeitos, entre outros, se tornam mais difíceis e complexas conforme o sistema cresce e envelhece \cite{godfrey2000evolution}, surgindo adversidades. Os problemas de \textit{design} vão além de algoritmos e estruturas de dados, onde a especificação da estrutura geral do sistema surge como um novo obstáculo \cite{garlan1993introduction}. Visando amenizar problemas como esse, a arquitetura de software tem recebido grande atenção  desde a década passada, já que ela tem auxiliado na obtenção de ótimos resultados quanto ao atendimento de atributos de qualidade \cite{fabricio2009instrumentation}.
 
 Este trabalho visa contribuir diretamente com um software livre, tratando a evolução do mesmo. Dessa forma, neste capítulo, apresentamos o que é evolução de software, assim como esse assunto é apresentado na literatura. Além disso, serão apresentados conceitos da arquitetura do ponto de vista da Engenharia de Software e aspectos relevantes deste processo durante a evolução de um sistema de software. %Na seção 4.1 são apresentados os principais conceitos sobre arquitetura do ponto de vista da engenharia de software. Já a seção 4.2 expõe elementos da arquitetura do Ruby on Rails, arcabouço utilizado para o desenvolvimento da plataforma Mezuro.
 
@@ -13,7 +13,7 @@ Este trabalho visa contribuir diretamente com um software livre, tratando a evol
 A evolução de software foi identificada pela primeira vez no final dos anos 60, embora não denominada evolução até 1969, quando Meir M. Lehman realizou um estudo com a IBM, com a ideia de melhorar a efetividade de programação dessa empresa. Apesar de não ter recebido tanta atenção e pouco impactado nas práticas de desenvolvimento dessa companhia , esse estudo fez surgir um novo campo de pesquisa, a evolução de software.
 
 \begin{mdframed}
-Muitas vezes, na literatura os termos manutenção e evolução de sistemas de software apresentam-se juntas, o que pode causar a falsa impressão que possuem o mesmo siginificado. Embora se refiram ao mesmo fenômeno, possuem ênfases diferentes. Manutenção é o ato de manter uma entidade num estado de reparo, capacidade ou disponibilidade, prevenindo-a contra falhas, mantendo a satisfação dos envolvidos ao longo do ciclo de vida do software. Já a evolução refere-se a um processo de mudança contínuo de um estado mais baixo, simples ou pior para um estado mais alto, mais complexo e melhor, refletindo a soma de todas as alterações implementadas no sistema.
+Muitas vezes, na literatura os termos manutenção e evolução de sistemas de software apresentam-se juntas, o que pode causar a falsa impressão que possuem o mesmo significado. Embora se refiram ao mesmo fenômeno, possuem ênfases diferentes. Manutenção é o ato de manter uma entidade num estado de reparo, capacidade ou disponibilidade, prevenindo-a contra falhas, mantendo a satisfação dos envolvidos ao longo do ciclo de vida do software. Já a evolução refere-se a um processo de mudança contínuo de um estado mais baixo, simples ou pior para um estado mais alto, mais complexo e melhor, refletindo a soma de todas as alterações implementadas no sistema.
 \end{mdframed}
 
 Durante esses estudos, Lehman formulou as três primeiras, de um total de oito leis, conhecidas atualmente como leis de Lehman. O restante foi formulado em estudos posteriores, conforme a relevância desse campo aumentava. O conjunto dessas oito leis estão listadas abaixo:
@@ -29,7 +29,7 @@ Durante esses estudos, Lehman formulou as três primeiras, de um total de oito l
     5 (1991) & Conservação da Familiaridade & De maneira geral, a taxa de crescimento incremental e taxa crescimento a longo prazo tende a declinar. \\ \hline
     6 (1991) & Crescimento contínuo & O conteúdo funcional de um software deve ser continuamente aumentado durante seu tempo de vida para para manter a satisfação do usuário. \\ \hline
     7 (1996) & Qualidade decrescente & A qualidade do software será entendida como declinante a menos que o software seja rigorosamente adaptado às mudanças no ambiente operacional. \\ \hline
-    8 (1971/96) & Sistema de Retro-alimentação & Processos de evolução de software são sistemas de retro-alimentação em múltiplos níves, em múltiplos laços (loops) e envolvendo múltiplos agentes. \\ \hline
+    8 (1971/96) & Sistema de Retro-alimentação & Processos de evolução de software são sistemas de retro-alimentação em múltiplos níveis, em múltiplos laços (loops) e envolvendo múltiplos agentes. \\ \hline
     \end{tabular}
     \caption{Leis de Lehman, extraído de \cite{fernandez2008empirical}}
     \label{tab-leis-lehman}
@@ -48,14 +48,14 @@ Ao contrário das engenharias tradicionais, a engenharia de software tem em mão
 \end{itemize}
 
 %importancia
-Quando inserida ou considerada nos processos de desenvolvimento, ela resulta numa excelente alternativa para evitar os sintomas do envelhecimento e inconsistencias entre o próprio software e o ambinte onde está inserido \cite{mens2005challenges}.
+Quando inserida ou considerada nos processos de desenvolvimento, ela resulta numa excelente alternativa para evitar os sintomas do envelhecimento e inconsistencias entre o próprio software e o ambiente onde está inserido \cite{mens2005challenges}.
 %\subsection{Evolução de Software Livre}
 %grande crescimento dos softwares livres em geral, a exemplo do linux
 Dessa forma, argumentamos que o desenvolvimento de projetos de software livre têm colaborado para a produção de softwares de alta qualidade com grande número de funcionalidades. Um exemplo disso é o sistema operacional Linux, que nas últimas décadas, entre outro pontos, tem experimentado um grande sucesso comercial.
 
 Em geral, sistemas desenvolvidos por meio de projetos de software livre tendem a crescer com o passar do tempo, após sucessivas releases. Esse comportamento sugere consistência com a sexta lei de Lehman, que se refere ao crescimento contínuo. Nesse sentido, além de um comportamento necessário para manter a satisfação do usuário, o crescimento contínuo de um software livre é importante para manter a motivação da comunidade estabelecida ao seu redor.
 
-Por exemplo, para avaliar esse comportamento de contínuo crescimento em softwares livres, \citeonline{godfrey2000evolution} realizaram pesquisas, do tipo estudo de caso, baseados no sistema operacinal Linux.
+Por exemplo, para avaliar esse comportamento de contínuo crescimento em softwares livres, \citeonline{godfrey2000evolution} realizaram pesquisas, do tipo estudo de caso, baseados no sistema operacional Linux.
 %
 A Figura \ref{fig-evolucaolinux} mostra o crescimento do sistema operacional Linux desde sua primeira release, no ano de 1994. Desde então, ele é mantido por centenas de desenvolvedores que o desenvolvem em dois ramos paralelos: stable releases contendo as principais atualizações e correções de defeitos, e \textit{development releases} com funcionalidades experimentais e porções de código não testado.
 
@@ -69,7 +69,7 @@ A Figura \ref{fig-evolucaolinux} mostra o crescimento do sistema operacional Lin
 
 Os dados presentes no gráfico, até o início dos anos 2000, vão de encontro à quinta lei de Lehman, citada na Tabela \ref{tab-leis-lehman}. No gráfico, o número de linhas de código (LOC) do kernel do sistema, possui taxa de crescimento positiva, enquanto a lei afirma que ao longo do tempo a taxa de crescimento tende a diminuir.
 %
-Por outro lado, neste trabalho, não estamos tratando a evolução de software apenas do ponto de vista da inserção de novas funcionalidades, o que pode levar ao crescrimento de número de linhas de código, como exemplificado acima. Estamos tratando a evolução de um software livre real, do ponto de vista da sua arquitetura, de acordo com as decisões julgadas pelo seus principais desenvolvedores, conforme descrito nas respostas ao questionário apresentado no Apêndice \ref{form-pesquisa}, para poderem evoluir o projeto de uma forma mais rápida e objetivando formação de uma comunidade de desenvolvedores.
+Por outro lado, neste trabalho, não estamos tratando a evolução de software apenas do ponto de vista da inserção de novas funcionalidades, o que pode levar ao crescimento de número de linhas de código, como exemplificado acima. Estamos tratando a evolução de um software livre real, do ponto de vista da sua arquitetura, de acordo com as decisões julgadas pelo seus principais desenvolvedores, conforme descrito nas respostas ao questionário apresentado no Apêndice \ref{form-pesquisa}, para poderem evoluir o projeto de uma forma mais rápida e objetivando formação de uma comunidade de desenvolvedores.
 
 \section{Evolução da Arquitetura}
 
@@ -100,7 +100,7 @@ Durante a especificação da arquitetura é importante ter a atenção nos relac
 Os atributos de qualidade são uma das principais preocupações da arquitetura. Eles representam a maneira que o sistema executará suas funcionalidades e são impostos pelos diversos envolvidos no sistema. Podem ser de três tipos:
 
 \begin{itemize}
-\item Atributos de produto ditam como o sistema irá se comportar. Exemplos clássicos são: desempenho, disponibilidade, manutenbilidade, escalabilidade, disponibilidade e portabilidade;
+\item Atributos de produto ditam como o sistema irá se comportar. Exemplos clássicos são: desempenho, disponibilidade, manutenibilidade, escalabilidade, disponibilidade e portabilidade;
 \item Atributos organizacionais são padrões ou regras impostas por organizações envolvidas para satisfazer determinados requisitos. 
 \item Atributos externos são leis impostas sobre softwares ou requisitos de interoperabilidade entre sistemas.
 \end{itemize}
@@ -112,12 +112,12 @@ Os atributos de qualidade são uma das principais preocupações da arquitetura.
 Para satisfazer esses atributos a arquitetura não pode ter suas estruturas definidas aleatoriamente. É necessário que o engenheiro de software opte por alternativas, divida o sistema em elementos e defina seus relacionamentos para alcançar os atributos de qualidade desejados. Esse conjunto de decisões é conhecido por decisões arquiteturais.
 %Rastreabilidade
 %TODO: referência
-Qualquer software possui arquitetura, independente dela ser documentada ou projetada. Entretando, uma arquitetura apenas implementada, ou seja, arquitetura sem projeto, não fornece benefícios ou vantagens que uma arquitetura projetada e bem documentada pode oferecer. Entre os benefícios da documentação da arquitetura estão: i) arquitetura como ferramenta de comunicação entre os participantes do projeto; ii) um método ou modelo para a análise antecipada do sistema a ser desenvolvido; iii) ferramenta de rastreabilidade entre os requisitos e os elementos que compõem o sistema, o que é de grande relevância dada a volatilidade dos requisitos durante o processo de desenvolvimento.
+Qualquer software possui arquitetura, independente dela ser documentada ou projetada. Entretanto, uma arquitetura apenas implementada, ou seja, arquitetura sem projeto, não fornece benefícios ou vantagens que uma arquitetura projetada e bem documentada pode oferecer. Entre os benefícios da documentação da arquitetura estão: i) arquitetura como ferramenta de comunicação entre os participantes do projeto; ii) um método ou modelo para a análise antecipada do sistema a ser desenvolvido; iii) ferramenta de rastreabilidade entre os requisitos e os elementos que compõem o sistema, o que é de grande relevância dada a volatilidade dos requisitos durante o processo de desenvolvimento.
 %
 Além da participação no desenvolvimento e o estudo da nova arquitetura do Mezuro,
 neste trabalho, também colaboraremos com documentação de sua arquitetura, e de modo
 que possa ser mantida de acordo com as práticas das comunidades de software livre,
-ou seja, também mantida e distribuida junto ao código no seu repositório.
+ou seja, também mantida e distribuída junto ao código no seu repositório.
 
 
 %-----------------------parágrafos desconexos---------------------------------------%
@@ -133,7 +133,7 @@ O Ruby on Rails é um \textit{arcabouço}, disponível como software livre, cria
 %
 Sua primeira versão foi lançada em 2004, e desde então seu desenvolvimento e utilização são cada vez maiores.
 %
-Diversos programadores e empresas em todo mundo utilizam esse arcabouço para construirem suas aplicações. Entre as mais conhecidas estão o Twitter (nas primeiras versões), GitHub e Groupon. 
+Diversos programadores e empresas em todo mundo utilizam esse arcabouço para construírem suas aplicações. Entre as mais conhecidas estão o Twitter (nas primeiras versões), GitHub e Groupon. 
 %
 O Rails utiliza a linguagem de programação Ruby, criada no Japão em 1995 por Yukihiro "Matz" Matsumoto. A linguagem Ruby é interpretada, multiparadigma, com tipagem dinâmica e gerenciamento de memória automático. O Rails é basicamente uma biblioteca Ruby ou \textit{gem} e é construído utilizando o padrão arquitetural \textbf{MVC}.
 
@@ -145,7 +145,7 @@ Um de seus fundamentos é facilitar o desenvolvimento. O Rails utiliza diversos 
 conhecimento em um código deve possuir representação única no sistema, livre de
 redundância e repetições. Quando aplicado, esse princípio possibilita que uma alteração
 seja feita em um único local no código, evitando “bad smells” como código duplicado e
-facilitando a manutenbilidade do sistema.
+facilitando a manutenibilidade do sistema.
 
 \item \textbf{Convenção ao invés de Configuração} (Convention over configuration)- Considerado um paradigma de design que visa diminuir o número de decisões que os desenvolvedores precisam tomar, ganhando simplicidade, sem perder simplicidade.
 
@@ -230,10 +230,10 @@ O MVC visa separar a representação da informação da interação com o usuár
 da aplicação, regras de negócio, lógica e funções;
 %
 A visão (\textit{view}) que são saídas de representação dos dados do modelo ao
-usuário. Um exemplo comum de visão é uma pagína HTML contendo dados presentes
+usuário. Um exemplo comum de visão é uma página HTML contendo dados presentes
 no modelo.
 %
-O útimo papel, o controlador (\textit{controller}) é responsável por receber
+O último papel, o controlador (\textit{controller}) é responsável por receber
 requisições da visão, manipula-las, utilizando dados do modelo, e atualizar a
 visão para satisfazer as requisições do usuário.
 
@@ -290,13 +290,13 @@ embutido para AJAX;
 
 	\end{description}
 
-\item \textbf{Active Record} é abase dos \textit{models}. Ele fornece a independência de banco de dados e CRUD básico. Ele é utilizado para criar a representação, em orientação a objetos, dos
+\item \textbf{Active Record} é a base dos \textit{models}. Ele fornece a independência de banco de dados e CRUD básico. Ele é utilizado para criar a representação, em orientação a objetos, dos
 dados presentes no banco de dados;
 
 \item \textbf{Active Resource} gerencia conexões entre objetos de negócio e serviços web RESTful.
 Ele mapeia recursos baseados em web para objetos locais com lógica CRUD;
 
-\item \textbf{Active Support} uma coleção de classes de utilidade e extenções da biblioteca padrão do
+\item \textbf{Active Support} uma coleção de classes de utilidade e extensões da biblioteca padrão do
 Ruby que são utilizadas pelo Rails, tanto em seu núcleo quanto para suas aplicações;
 
 \item \textbf{Railties} é o núcleo do código Rails e é ele quem constrói novas aplicações Rails e junta os diversos componentes;
