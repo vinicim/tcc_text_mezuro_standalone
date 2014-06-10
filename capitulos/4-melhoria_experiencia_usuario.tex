@@ -398,22 +398,52 @@ Com a aplicação dos métodos de avaliação será obtido os relatórios com os
 %importancia da visualização, geral
 O progresso alcançado com sistemas de hardware possibilita que grandes quantidades de informações sejam armazenadas por sistemas computacionais. Aproximadamente um exabyte, quantidade equivalente a um milhão de terabytes, de dados é gerado a cada ano, das quais a maior parte está disponível na forma digital \cite{keim2002information}. Um dos fatores que contribuem para isso são o avanço das tecnologias da informação e das telecomunicações, além da diminuição dos custos dos dispositivos de armazenamento. Dados armazenados podem auxiliar no apoio aos mais diversos tipos de atividades como definição de políticas públicas, investigações científicas, estratégias de negócios, melhoria da qualidade de sistemas de software. Mas para que os dados possam ser aproveitados ao máximo, é necessário primeiro compreendê-los \cite{heer2012interactive}. referencia
 
-A visualização fornece meios poderosos para a compreensão de grandes conjuntos de dados. O mapeamento de atributos ou características, relativos ao domínio observado, em propriedades visuais como posição, tamanho, forma e cor potencializa as habilidades sensoriais do ser humano para o entendimento e interpretação de padrões, agrupamentos, tendências e discrepâncias. A partir de uma representação inicial, o usuario extrai observações e conclusões sobre os dados e interage diretamente com a visualização, moldando-a para atingir os objetivos de sua tarefa \cite{rafaelmessiasmartins2012}.
+A visualização fornece meios poderosos para a compreensão de grandes conjuntos de dados. Por meio de representações gráficas e interativas apoiadas por computador é possível mapear atributos ou características, relativos ao domínio observado, em propriedades visuais como posição, tamanho, forma e cor potencializa as habilidades sensoriais do ser humano para o entendimento, tomadas de decisão e interpretação de padrões, agrupamentos, tendências e discrepâncias. A partir de uma representação inicial, o usuario extrai observações e conclusões sobre os dados e interage diretamente com a visualização, moldando-a para atingir os objetivos de sua tarefa \cite{rafaelmessiasmartins2012}.
 
 O estudo da visualização de informações pode ser dividida em duas grandes vertentes. A primeira é a visualização científica que trata de dados físicos ou geométricos, como o planeta Terra, o corpo humano e fenômenos da natureza. A segunda vertente está relacionada a informações não-físicas, como dados financeiros, coleçoes de documentos, código-fonte de sistemas de software, os quais podem se beneficiar de representações visuais \cite{rafaelmessiasmartins2012}. Porém, para esse tipo de informação é necessário aplicar técnicas de visualização, pois não há formas diretas para representá-las. %referenciar card et. al 1999
 
 A visualização de informação é composta por dados de entrada, que consistem em grandes conjuntos de registros. Cada registro contem certo número de atributos ou dimensões. A quantidade de dimensões define a dimensionalidade do conjunto de dados, que pode ser bidimensional ou multidimensional. Conjuntos de dados multidimensionais exigem técnicas mais sofisticadas para sua representação, já que não podem ser mapeados diretamente nos espaços 2D ou 3D, ao contrário dos bidimensionais.
 
-Neste capítulo, abordamos a Visualização de Software, uma sub-área da visualização de informações cujos objetivos são auxiliar a compreensão de software e melhorar a produtividade do seu processo de desenvolvimento utilizando visualização, já que essa sub-área gera representações visuais de diversos aspectos do software e de seu processo de desenvolvimento \cite{rafaelmessiasmartins2012}, como processos de análise e especificação de requisitos, design e arquitetura, implementação, manutenção e evolução de software.
+Plataformas de avaliação de qualidade baseadas em conjuntos de ferramentas, como é o caso do Mezuro, expõem o avaliador de qualidade a dezenas de valores numéricos relacionados as métricas calculadas. Sem uma apresentação especial, esses dados são de pouco valor, pois são numerosos e difíceis de avaliar. Muitas vezes as métricas não são correlacionadas e a formatação da apresentação consiste apenas na aplicação de valores de referência.
+
+Uma possibilidade para a solução desse problema é a exploração da visualização de software, uma sub-área da visualização de informações cujos objetivos são auxiliar a compreensão de software e melhorar a produtividade do seu processo de desenvolvimento utilizando visualização, já que essa sub-área gera representações visuais de diversos aspectos do software e de seu processo de desenvolvimento \cite{rafaelmessiasmartins2012}, como processos de análise e especificação de requisitos, design e arquitetura, implementação, manutenção e evolução de software.
+
+A visualização de software é uma das ramificações da visualização de informação que mais cresce atualmente. A visualização de software é dividida em três categorias principais: estrutura, comportamento e evolução.
+%tecnicas para visualização em geral: https://github.com/mbostock/d3/wiki/Gallery
+\begin{itemize}
+\item \textbf{Estrutura} é a categoria que representa as partes estáticas do sistema, ou seja, aquelas que podem ser computadas sem executá-lo como por exemplo o código-fonte, estrutura de dados do programa, o grafo de chamadas estático, e a organização do programa em módulos.
+
+A maioria das ferramentas, técnicas, propostas nessa categoria compartilham um mesmo modelo conceitual: a geração de um grafo, onde vértices representam entidades do programa, como arquivos ou classes, e arestas representam dependências como usos, chamadas, ou heranças.
+
+%tecnicas de visualição dessa categoria, de acordo com Rafael Messias:
+%codecity, treemap, HEB
+%Grande parte das ferramentas propostas na categoria Estrutura compartilham um
+%mesmo modelo conceitual: a geração de um grafo, onde vértices representam entidades
+%do programa, como arquivos ou classes, e arestas representam dependências como usos ou
+%heranças. A técnica Hierarchical Edge Bundles (HEB) (Holten, 2006), ilustrada na Figura
+%3.3,  ́e utilizada para visualizar ao mesmo tempo duas informações do grafo: a estrutura
+%hierárquica dos arquivos do código fonte e suas dependências, ou seja, as chamadas entre
+%funções ou métodos.
+
+\item \textbf{Comportamento} se refere a compreensão do que ocorre com o sistema durante seu tempo de execução, quais instruções são executadas e como seus estados mudam dado um conjunto de possíveis entradas. Entre as aplicações dessa categoria de visualização estão a análise de traces, que são registros de valores de variáveis em certos instantes, animação de algoritmos, depuração visual, e apoio visual a atividade de teste. 
+
+%As técnicas dessa categoria NÃO são importantes para o Mezuro (pelo menos até agora)
+\item \textbf{Evolução} representa as características modificadas ao longo do tempo em um sistema. Técnicas de visualização dessa categoria podem auxiliar analistas a verificarem quais as relações entre artefatos modificados e quais tendências dessas modificações. Analisar a evolução de um sistema pode ser tão ou mais importante que a análise de sua estrutura, já que manutenções, sejam elas corretivas, preventivas ou adaptativas representam grande parte do custo envolvido em um projeto, podendo chegar a até 80\% do total.
+%técnicas presentes na categoria de evolução:
+\end{itemize}
+
+Como o Mezuro é uma plataforma de análise de código-fonte, ou seja, análise estática, a categoria de visualização de software comportamento, responsável por fornecer informações da execução do sistema, não será relevante para este trabalho, ao contrário das categorias estrutura e evolução.
+
+Selecionar uma técnica de visualização mais relevante para um objetivo ou aplicação particular não é trivial, já que nenhuma técnica específica funciona bem para todos os casos ou problemas (Thomas e Cook, 2005).
 
 %importancia visualização em softwares livres
-As vantagens proporcionadas pela visualização motivam a exploração dessa área do conhecimento em projetos de sofwares livres. Em projetos FOSS há diversas informações que podem ser utilizadas para compreender a qualidade do projeto desenvolvido. Porém a quantidade de informações e a própria natureza do código-fonte, como tratado na seção \ref{sec-proc-sl}, tornam essas informações pouco eficazes para auxiliar processos de melhoria.
+%As vantagens proporcionadas pela visualização motivam a exploração dessa área do conhecimento em projetos de sofwares livres. Em projetos FOSS há diversas informações que podem ser utilizadas para compreender a qualidade do projeto desenvolvido. Porém a quantidade de informações e a própria natureza do código-fonte, como tratado na seção \ref{sec-proc-sl}, tornam essas informações pouco eficazes para auxiliar processos de melhoria.
 
-%o desenvolvimento de softwares livres pode ser referenciado como um movimento pesquisado e aplicado em grandes organizações, assim como é utilizado por um grande número de desenvolvedores em todo mundo. Apesar disso é um movimento recente, o que causa certa resistência na adoção dessa nova abordagem por um número maior de organizações e desenvolvedores. Isso pois inicialmente havia certa dificuldade na seleção e integração desses produtos, o que motivou o estabelecimento de processos objetivos para compreensão da qualidade de projetos FOSS\footnote{Free and Open Source Software}.
+Para alcançar as representações gráficas e todas as vantagens proporcionadas pela visualização de software, é necessário primeiro extrair as métricas de código-fonte e repositório.
 
-\begin{section}{Métricas de Qualidade}
+\subsection{Métricas de Qualidade}
 
-Uma das formas de compreender melhor essas informações, é através da extração de métricas de qualidade, tanto de código-fonte como de repositório. O processo de extração de métricas, muitas vezes, gera um grande volume de métricas, com valores predominantemente núméricos, que ainda são difíceis de analisar sem ferramentas apropriadas. O objetivo da visualização de informação aplicada a softwares, não apenas livres, é possibilitar que grandes quantidades de informações, as métricas extraídas, sejam analisadas objetivamente para compreensão de sua qualidade. Isso permite estabelecer um processo para apoiar as tarefas de avaliação, monitoramento e melhoria da qualidade.
+O processo de extração de métricas, muitas vezes, gera um grande volume de métricas, com valores predominantemente núméricos, que ainda são difíceis de analisar sem ferramentas apropriadas. O objetivo da visualização de informação aplicada a softwares, não apenas livres, é possibilitar que grandes quantidades de informações, as métricas extraídas, sejam analisadas objetivamente para compreensão de sua qualidade. Isso permite estabelecer um processo para apoiar as tarefas de avaliação, monitoramento e melhoria da qualidade.
 
 %Motivação
 Muitas vezes as avaliações de projetos FOSS são feitas informalmente, com a leitura de documentação e análise de opiniões de usuários anteriores, que nem sempre geram resultados confiáveis. Nesses projetos, muitos dados, tanto de processo como de produto, estão disponíveis publicamente. Exemplos desses dados são: código-fonte, históricos de evolução do repositório, conjunto de testes, relatório de erros, entre outros. Todas essas informações, se corretamente processadas, podem ser utilizadas para avaliar a qualidade de projetos. 
@@ -450,138 +480,3 @@ O Checkstyle é uma ferramente de desenvolvimento que tem como principal objetiv
 
 %qual linguagem de suporte, realmente essas informações são verídicas?
 Dentre os coletores de métricas utilizados no Mezuro, o último a ser adicionado foi o CVSAnaly, que apesar de não ampliar o suporte do Mezuro a novas linguagens, ele aumenta a variedade de métricas disponíveis já que muitas das métricas extraídas por essa ferramentas são complementares às métricas do Analizo e do Checkstyle.
-
-\end{section}
-
-Plataformas de avaliação de qualidade baseadas em conjuntos de ferramentas, como é o caso do Mezuro, expõem o avaliador de qualidade a dezenas de valores numéricos relacionados as métricas calculadas. Sem uma apresentação especial, esses dados são de pouco valor, pois são numerosos e difíceis de avaliar. Muitas vezes as métricas não são correlacionadas e a formatação da apresentação consiste apenas na aplicação de valores de referência.
-
-Uma possibilidade para a solução desse problema é o uso de visualização de informação, que são representações gráficas e interativas de dados, apoiadas por computador, utilizadas para amplificar a aquisição de conhecimento e apoiar descobertas, tomadas de decisão e explicações a partir de dados complexos.
-
-Uma das ramificações da visualização de informação que mais cresce atualmente á a visualização de software, cujos objetivos são auxiliar a compreensão de sistemas complexos de software e melhorar a produtividade do processo de desenvolvimento utilizando visualização. A visualização de software é dividida em três categorias principais: estrutura, comportamento e evolução.
-
-%tecnicas para visualização em geral: https://github.com/mbostock/d3/wiki/Gallery
-
-\begin{itemize}
-\item \textbf{Estrutura} é a categoria que representa as partes estáticas do sistema, ou seja, aquelas que podem ser computadas sem executá-lo como por exemplo o código-fonte, estrutura de dados do programa, o grafo de chamadas estático, e a organização do programa em módulos.
-
-A maioria das ferramentas, técnicas, propostas nessa categoria compartilham um mesmo modelo conceitual: a geração de um grafo, onde vértices representam entidades do programa, como arquivos ou classes, e arestas representam dependências como usos, chamadas, ou heranças.
-
-%tecnicas de visualição dessa categoria, de acordo com Rafael Messias:
-%codecity, treemap, HEB
-%Grande parte das ferramentas propostas na categoria Estrutura compartilham um
-%mesmo modelo conceitual: a geração de um grafo, onde vértices representam entidades
-%do programa, como arquivos ou classes, e arestas representam dependências como usos ou
-%heranças. A técnica Hierarchical Edge Bundles (HEB) (Holten, 2006), ilustrada na Figura
-%3.3,  ́e utilizada para visualizar ao mesmo tempo duas informações do grafo: a estrutura
-%hierárquica dos arquivos do código fonte e suas dependências, ou seja, as chamadas entre
-%funções ou métodos.
-
-\item \textbf{Comportamento} se refere a compreensão do que ocorre com o sistema durante seu tempo de execução, quais instruções são executadas e como seus estados mudam dado um conjunto de possíveis entradas. Entre as aplicações dessa categoria de visualização estão a análise de traces, que são registros de valores de variáveis em certos instantes, animação de algoritmos, depuração visual, e apoio visual a atividade de teste. 
-
-%As técnicas dessa categoria NÃO são importantes para o Mezuro (pelo menos até agora)
-
-\item \textbf{Evolução} representa as características modificadas ao longo do tempo em um sistema. Técnicas de visualização dessa categoria podem auxiliar analistas a verificarem quais as relações entre artefatos modificados e quais tendências dessas modificações. Analisar a evolução de um sistema pode ser tão ou mais importante que a análise de sua estrutura, já que manutenções, sejam elas corretivas, preventivas ou adaptativas representam grande parte do custo envolvido em um projeto, podendo chegar a até 80\% do total.
-
-%técnicas presentes na categoria de evolução:
-%
-%
-%
-\end{itemize}
-
-Como o Mezuro é uma plataforma de análise de código-fonte, ou seja, análise estática, a categoria de visualização de software comportamento, responsável por fornecer informações da execução do sistema, não será relevante para este trabalho, ao contrário das categorias estrutura e evolução.
-
-Selecionar uma técnica de visualização mais relevante para um objetivo ou aplicação particular não é trivial, já que nenhuma técnica específica funciona bem para todos os casos ou problemas (Thomas e Cook, 2005).
-
-%No entanto, a multiplicidade de indicadores de qualidade que podem ser extráıdos de um projeto FOSS, considerando todas as suas diversas perspectivas (principalmente c ́odigo, testes e reposit ́orio), cada um com sua pr ́opria interpreta ̧c a  ̃ o
-%e valores de referˆencia, torna complicada a realiza ̧c a  ̃ o de uma avalia ̧c a  ̃ o objetiva e direta.
-%Plataformas de avalia ̧c a  ̃ o de qualidade baseadas em conjuntos de ferramentas, como  ́e o
-%caso das plataformas Qualipso, FLOSSMetrics ou Alitheia Core 2 , exp ̃oem ao avaliador
-%de qualidade dezenas de valores num ́ericos relacionados a ` s m ́etricas calculadas. Sem uma
-%apresenta ̧c ̃ao especial esses dados s ̃ao de pouco valor, pois s ̃ao numerosos e dif ́ıceis de
-%avaliar. Muitas vezes as m ́etricas n ̃ao s ̃ao correlacionadas e a formata ̧c ̃ao da apresenta ̧c a  ̃ o
-%consiste apenas na aplica ̧c a  ̃ o de valores de referˆencia.
-%
-%Atualmente, embora em alguns casos os indicadores sejam apresentados visualmente,
-%as met ́aforas visuais s ̃ao simples e os avaliadores s ̃ao envolvidos por uma quantidade
-%esmagadora de informa ̧c a  ̃ o e perdem a imagem do todo (Burkhard et al., 2005). Por isso,
-%processos de avalia ̧c a  ̃ o devem focar em apresentar os dados coletados de forma a comunicar
-%a vis ̃ao geral ao inv ́es de apresentar dados brutos em tabelas decorativas. No entanto,
-%a tarefa de selecionar uma t ́ecnica de visualiza ̧c a  ̃ o mais relevante para um objetivo ou
-%aplica ̧c ̃ao particular n ̃ao  ́e trivial, j ́a que nenhuma t ́ecnica espec ́ıfica funciona para todos
-%os problemas (Thomas e Cook, 2005).
-%\section{Evolução de Software}
-%
-%Atualmente as tecnologias da informação exercem cada vez mais influência na sociedade, seja na interação entre pessoas, ou nas relações que empresas possuem com o mercado. Empresas, que possuem parte dos seus lucros associados diretamente, ou não, há sistemas de software, precisam evolui-los, seja para adequa-los à mudanças no ambiente onde estão inseridos, ou para mante-los competitivos frente aos concorrentes. Além desses fatores, quando os sistemas em questão são desenvolvidos como softwares livres, eles também precisam evoluir para que se mantenham sempre atrativos, motivando a comunidade estabelecida ao seu redor. Sistemas estagnados desmotivam usuários ou colaboradores, o que significa risco de perda de mercado ou enfraquecimento de um projeto de software livre, já que esses são feitos de colaboradores
-%%[modificar esse parágrafo com base no artigo challanges_sw_evolution]
-%
-%Por outro lado, a manutenção desses sistemas é difícil, consome bastante tempo e recursos. Tarefas como adicionar novas funcionalidades, suporte a novos dispositivos de hardware, correção de defeitos, entre outros, se tornam mais difíceis conforme o sistema cresce e envelhece \cite{godfrey2000evolution}.
-%
-%Acima foram mencionados os termos manutenção e evolução de software. Na maioria das vezes esses palavras aparecem juntas na literatura, e embora se refiram ao mesmo fenômeno, possuem ênfases diferentes. Manutenção é o ato de manter uma entidade num estado de reparo, capacidade ou disponibilidade, prevenindo-a contra falhas, mantendo a satisfação dos envolvidos ao longo do ciclo de vida do software. Já a evolução refere-se a um processo de mudança contínuo de um estado mais baixo, simples ou pior para um estado mais alto, mais complexo e melhor, refletindo a soma de todas as alterações implementadas no sistema.
-%
-%%evolução de software sempre existiu, porem nao era estudada
-%A evolução de software foi identificada pela primeira vez no final dos anos 60, embora não denominada evolução até 1969, quando Meir M. Lehman realizou um estudo com a IBM, com a ideia de melhorar a efetividade de programação dessa empresa. Apesar de não ter recebido tanta atenção e pouco impactado nas práticas de desenvolvimento dessa companhia , esse estudo fez surgir um novo campo de pesquisa, a evolução de software.
-%%\cite{Artigo IBM}.
-%
-%Durante esses estudos, Lehman formulou as três primeiras, de um total de oito leis, conhecidas atualmente como leis de Lehman. O restante foi formulado em estudos posteriores, conforme a relevancia desse campo aumentava. O conjunto dessas oito leis estão listadas abaixo:
-%\begin{table}[H]
-%\begin{center}
-%    \begin{tabular}{ | l | p{4cm} | p{9cm} |}
-%    \hline
-%    Índice (Ano) & Nome & Descrição \\ \hline
-%    1 (1974) & Mudança contínua & Um software deve ser continuamente adaptado, caso contrário se torna progressivamente menos satisfatório. \\ \hline
-%    2 (1974) & Complexidade Crescente & À medida que um software é alterado, sua complexidade cresce, a menos que um trabalho seja feito para mantê-la ou diminuí-la. \\ \hline
-%    3 (1974) & Auto-regulação & O processo de evolução de software é auto-regulado próximo à distribuição normal com relação às medidas dos atributos de produtos e processos. \\ \hline
-%    4 (1978) & Conservação da estabilidade organizacional & A não ser que mecanismos de retro-alimentação tenham sido ajustados de maneira apropriada, a taxa media de atividade global efetiva num software em evolução tende a ser manter constante durante o tempo de vida do produto. \\ \hline
-%    5 (1991) & Conservação da Familiaridade & De maneira geral, a taxa de crescimento incremental e taxa crescimento a longo prazo tende a declinar. \\ \hline
-%    6 (1991) & Crescimento contínuo & O conteúdo funcional de um software deve ser continuamente aumentado durante seu tempo de vida para para manter a satisfação do usuário. \\ \hline
-%    7 (1996) & Qualidade decrescente & A qualidade do software será entendida como declinante a menos que o software seja rigorosamente adaptado às mudanças no ambiente operacional. \\ \hline
-%    8 (1971/96) & Sistema de Retro-alimentação & Processos de evolução de software são sistemas de retro-alimentação em múltiplos níves, em múltiplos laços (loops) e envolvendo múltiplos agentes. \\ \hline
-%    \end{tabular}
-%    \caption{Leis de Lehman, extraído de \cite{fernandez2008empirical}}
-%    \label{tab-leis-lehman}
-%\end{center}
-%\end{table}
-%
-%Ao contrário das engenharias tradicionais, a engenharia de software tem em mãos um produto abstrato e intangível, o que resulta em alguns desafios inerentes aos processo de desenvolvimento. A evolução de software busca amenizar ou solucionar alguns desses desafios \cite{mens2005challenges}, entre eles:
-%
-%\begin{itemize}
-%\item Manter e melhorar a qualidade do software;
-%\item Suportar evolução do modelo de desenvolvimento (não só código-fonte);
-%\item Manter consistência entre artefatos relacionados;
-%\item Integrar mudanças dentro do ciclo de desenvolvimento de software;
-%\item Necessidades de bons sistemas de controle de versão;
-%\item Integração e análise de dados de várias fontes (relatórios de erros, métricas, solicitações de mudança);
-%\end{itemize}
-%
-%%importancia
-%Quando inserida ou considerada nos processos de desenvolvimento, ela resulta numa excelente alternativa para evitar os sintomas do envelhecimento e inconsistencias entre o próprio software e o ambinte onde está inserido \cite{mens2005challenges}.
-%%\subsection{Evolução de Software Livre}
-%%grande crescimento dos softwares livres em geral, a exemplo do linux
-%Dessa forma, argumentamos que o desenvolvimento de projetos de software livre têm colaborado para a produção de softwares de alta qualidade com grande número de funcionalidades. Um exemplo disso é o sistema operacional Linux, que nas últimas décadas, entre outro pontos, tem experimentado um grande sucesso comercial.
-%
-%Em geral, sistemas desenvolvidos por meio de projetos de software livre tendem a crescer com o passar do tempo, após sucessivas releases. Esse comportamento sugere consistência com a sexta lei de Lehman, que se refere ao crescimento contínuo. Nesse sentido, além de um comportamento necessário para manter a satisfação do usuário, o crescimento contínuo de um software livre é importante para manter a motivação da comunidade estabelecida ao seu redor.
-%
-%Por exemplo, para avaliar esse comportamento de contínuo crescimento em softwares livres, \citeonline{godfrey2000evolution} realizaram pesquisas, do tipo estudo de caso, baseados no sistema operacinal Linux.
-%%
-%A Figura \ref{fig-evolucaolinux} mostra o crescimento do sistema operacional Linux desde sua primeira release, no ano de 1994. Desde então, ele é mantido por centenas de desenvolvedores que o desenvolvem em dois ramos paralelos: stable releases contendo as principais atualizações e correções de defeitos, e \textit{development releases} com funcionalidades experimentais e porções de código não testado.
-%
-%\graphicspath{{figuras/}}
-%\begin{figure}[H]
-%\centering
-%\includegraphics[width=0.6\textwidth]{linux-evolution}
-%\caption{Evolução do sistema operacional Linux, extraído de \cite{godfrey2000evolution}}
-%\label{fig-evolucaolinux}
-%\end{figure}
-%
-%Os dados presentes no gráfico, até o início dos anos 2000, vão de encontro à quinta lei de Lehman, citada na Tabela \ref{tab-leis-lehman}. No gráfico, o número de linhas de código (LOC) do kernel do sistema, possui taxa de crescimento positiva, enquanto a lei afirma que ao longo do tempo a taxa de crescimento tende a diminuir.
-%%
-%Por outro lado, neste trabalho, não estamos tratando a evolução de software do ponto de vista da inserção de novas funcionalidades, o que pode levar ao crescrimento de número de linhas de código, como exemplificado acima. Estamos tratando a evolução de um software livre real, do ponto de vista da sua arquitetura, de acordo com as decisões julgadas pelo seus principais desenvolvedores, conforme descrito nas respostas ao questionário apresentado no Apêndice \ref{form-pesquisa}, para poderem evoluir o projeto de uma forma mais rápida e objetivando formação de uma comunidade de desenvolvedores.
-
-
-
-
-
-
-
-
-
