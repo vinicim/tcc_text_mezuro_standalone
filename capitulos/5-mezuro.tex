@@ -134,7 +134,7 @@ Sem as restrições impostas pelo desenvolvimento do Noosfero, uma importante de
 \label{mezuro}
 \end{figure}
 
-Dentro da evolução do Mezuro, nesta primeira fase trabalho, como uma forma de conhecer a tecnologia e aprender a colaborar com o Mezuro, desenvolvemos a funcionalidade de inserção de repositórios nos projetos cadastrados para serem monitorados no Mezuro. De acordo com o diagrama da Figura \ref{class-diagram} é observado que um projeto possui diversos repositórios, os quais podem ser adicionados e removidos de um projeto, além de editados e visualizados. No caso da visualização é feito um processamento para que o usuário análise as métricas extraídas do código presente nesse repositório. 
+Dentro da evolução do Mezuro, nesta primeira fase de trabalho, como uma forma de conhecer a tecnologia e aprender a colaborar com o Mezuro, desenvolvemos a funcionalidade de inserção de repositórios nos projetos cadastrados para serem monitorados no Mezuro. De acordo com o diagrama da Figura \ref{class-diagram} é observado que um projeto possui diversos repositórios, os quais podem ser adicionados e removidos de um projeto, além de editados e visualizados. No caso da visualização é feito um processamento para que o usuário análise as métricas extraídas do código presente nesse repositório. 
 %
 Essa funcionalidade, desenvolvida ao decorrer deste trabalho, se encontra atualmente disponível na primeira versão do Mezuro como plataforma independente, lançada no mês de novembro de 2013,  ilustrada na Figura \ref{mezuro}.
 
@@ -177,4 +177,65 @@ A Figura~\ref{fig:mezuro-info} exibe informações gerais do processamento do re
 \end{figure}
 
 Por fim, a Figura \ref{class-diagram} apresenta um diagrama de classes que representa as entidades já implementadas no Mezuro como plataforma independente. A classe \textit{Project} representa o projeto a ser analisado. Um projeto pode conter vários repositórios, de onde as métricas são extraídas.  Um repositório pode ser de vários tipos, Git\footnote{\url{http://git-scm.com/}}, Subversion\footnote{\url{http://subversion.apache.org/}}, Bazaar\footnote{\url{http://bazaar.canonical.com/en/}} e Mercurial\footnote{\url{http://mercurial.selenic.com/}}. A classe \textit{Processing} representa o processamento de um repositório para obter os resultados das métricas extraídas de acordo com a configuração selecionada. E finalmente, a classe \textit{Module-Result} representa o resultado do processamento de um repositório. Uma configuração representa um conjunto de métricas, um intervalo para cada uma delas, além da interpretação de cada métrica após o processamento de um repositório. Terminar de  migrar todas essas funcionalidades, que já estavam implementadas no Mezuro Plugin, é o ponto em que está esse processo de evolução do Mezuro.
+
+%
+Após uma primeira interação com a equipe e estando mais a par do projeto, iniciou-se um novo ciclo com foco na usabilidade a fim de apresentar esta será inserida no ciclo de desenvolvimento. Seguindo as técnicas de usabilidade adotas, descrita na seção \ref{usabilidade-sl}, as tarefas de usabilidade a serem realizadas no projeto Mezuro serão:
+\begin{itemize}
+\item Coletar requisitos de tarefas e necessidades dos usuários;
+\item Criar protótipos de tela;
+\item Testar protótipos com avaliações heurísticas;
+\item Testar a usabilidade de protótipos com usuários locais e remotos (manipulação de variáveis independentes);
+\item Coletar métricas (variáveis dependentes);
+\item Apresentar resultados das análises dos testes (tracking);
+\item Definição de histórias de usabilidade baseadas nos requisitos fornecidos pelos clientes e no resultado dos testes de usuário;
+\item Implementação das histórias definidas.
+\end{itemize}
+
+%
+A forma mais usual para avaliar usabilidade de uma tela propondo sua evolução em um ciclo ágil é através da avaliação heurística descrito na seção \ref{avaliacao-heuristica}, porém essa avaliação é realizada por especialistas em ergonomia, com base em sua experiência e competência no assunto~\cite{cybis2010}. A fim de melhorar e adquirir essa competência para as futuras avaliações, essa primeira interação de usabilidade foi realizada utilizando inspeções por listas de verificação conforme na seção \ref{inspeções-listas}. Como essas listas trazem os principais problemas que podem ser encontrados e uma padronização da avaliação, isso ajuda a conhecer os aspectos que devem ser observados com maior frequência em uma avaliação heurística.
+
+Os artefatos gerados nessa interação levam em consideração os seguinte aspectos de usabilidade que são encontrados nas listas do laboratório LabIUtil do projeto
+ErgoList~\footnote{\url{http:labiutil.inf.ufsc.br/ergolist/check.htm}}:
+
+\begin{description}
+\item[Presteza]
+verifica se o sistema informa e conduz o usuário durante a interação.
+\item[Agrupamento por localização]
+Verifica se a distribuição espacial dos itens traduz as relações entre as informações.
+\item[Agrupamento por formato]
+Verifica os formatos dos itens como meio de transmitir associações e diferenças.
+\item[Feedback]
+Avalia a qualidade do feedback imediato às ações do usuário.
+\item[Legibilidade]
+Verifica a legibilidade das informações apresentadas nas telas do sistema.
+\item[Concisão]
+Verifica o tamanho dos códigos e termos apresentados e introduzidos no sistema.
+\item[Ações Mínimas]
+Verifica a extensão dos diálogos estabelecidos para a realização dos objetivos do usuário.
+\item[Densidade Informacional]
+Avalia a densidade informacional das telas apresentadas pelo sistema.
+\item[Ações Explícitas]
+Verifica se é o usuário quem comanda explicitamente as ações do sistema.
+\item[Controle do Usuário]
+Avalia as possibilidades do usuário controlar o encadeamento e a realização das ações.
+\item[Flexibilidade]
+Verifica se o sistema permite personalizar as apresentações e os diálogos.
+\item[Experiência do Usuário]
+Avalia se usuários com diferentes níveis de experiência têm iguais possibilidades de obter sucesso em seus objetivos.
+\item[Proteção contra erros]
+Verifica se o sistema oferece as oportunidades para o usuário prevenir eventuais erros.
+\item[Mensagens de erro]
+Avalia a qualidade das mensagens de erro enviadas aos usuários em dificuldades.
+\item[Correção de erros]
+Verifica as facilidades oferecidas para que o usuário possa corrigir os erros cometidos.
+\item[Consistência]
+Avalia se é mantida uma coerência no projeto de códigos, telas e diálogos com o usuário.
+\item[Significados]
+Avalia se os códigos e denominações são claros e significativos para os usuários do sistema.
+\item[Compatibilidade]
+Verifica a compatibilidade do sistema com as expectativas e necessidades do usuário em sua tarefa.
+\begin{flushright}
+Aspectos de usabilidade retirado da ErgoList ~\cite{ergolist2013}
+\end{flushright}
+\end{description}
 
