@@ -246,6 +246,8 @@ Aspectos de usabilidade retirado da ErgoList ~\cite{ergolist2013}
 \end{flushright}
 \end{description}
 
+\subsubsection{Visualização de Software}
+
 Como retratado na seção \ref{sec-visualizacao}, a apresentação de informações relacionadas a softwares pode se tornar ineficiente conforme o tamanho e complexidade inerente ao código-fonte aumentam. Por esse motivo, para facilitar o entendimento e compreensão das informações apresentadas, é comum utilizar técnicas de visualização, empregadas cada vez mais em softwares, com o intuito de apoiar o processo de desenvolvimento.
 
 A plataforma Mezuro como plugin do Noosfero, contava com uma técnica de visualização, as coordenadas paralelas, presente na figura \ref{parallel-coordinate}, um tipo de projeção geométrica que representa bem dados multidimensionais ou com muitos atributos, como é o caso das informações geradas por um processamento do Mezuro.
@@ -262,11 +264,13 @@ Como foi decidido reescrever o código do Mezuro, transformando-o numa aplicaç�
 
 Pensando nisso, e já que que a técnica das coordenadas paralelas já é conhecida por parte da equipe, neste trabalho buscou-se uma técnica que, assim como as coordenadas paralelas, representasse bem um grande número de atributos. Optou-se então pela técnica do radar, que exibe os dados na forma de um gráfico bidimensional de três ou mais atributos, representados por eixos que iniciam do mesmo ponto como visto no gráfico radar da figura \ref{radar-chart}.
 
+Embora um sistema que tem como foco a interpretação de dados, visando maximizar a compreensão do usuário a respeito dos valores apresentados, tratar visualização de informação como uma funcionalidade, neste primeiro passo, rumo a aplicação de técnicas de visualização no Mezuro como aplicação independente, a visualização de software será tratada como um requisito não-funcional. 
+
 \graphicspath{{figuras/}}
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{radar_chart}
-\caption{Gráfico Radar}
+\caption{Gráfico Radar \cite{alvarograves2014}}
 \label{radar-chart}
 \end{figure}
 
@@ -304,6 +308,10 @@ Entre os possíveis gráficos gerados após sucessivas transformações dos dado
 \end{table}
 
 Optou-se por ler os respectivos dados de entrada a partir de um arquivo pois o Mezuro, no momento, passa por uma fase de melhoria de desempenho e não está processando nem mesmo um repositório por vez.
+
+As implementações básicas utilizando a D3.js inserem os dados de entrada no próprio \textit{script} (\textit{hard coding}), com um \textit{array} por exemplo, que apesar da separação de responsabilidades relacionadas a leitura de dados e geração do gráfico em sí, não oferece flexibilidade para alteração desses valores. Já utilizando um arquivo \textit{.tsv} permite alterar os valores com facilidade, aumentando a coesão do código (disponível no Anexo \ref{source-code-appendix}). 
+
+O arquivo \textit{.tsv} representado pela tabela \ref{data-tsv}, especificamente, representa os valores processados de um repositório, a partir de uma configuração, que conta com cinco métricas de configuração: Total Abstract Classes, Total Lines of Code, Total Number of Methods, Total Number Module/Classes, Average Method LOC, todas com escopo de software.
 
  
 
