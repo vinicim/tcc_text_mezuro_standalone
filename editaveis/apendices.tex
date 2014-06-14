@@ -1,3 +1,35 @@
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstset{
+   language=JavaScript,
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
+
 \newpage
 \appendix
 \section{Questionário} 
@@ -85,3 +117,84 @@ As mesmas funcionalidades, mais funcionalidades
 Ampliar o escopo para analisar código Ruby, melhorar a visualização dos gráficos e dos resultados, notificação de alerta quando uma métrica atingir certo valor considerado ruim, entre outras.
   \end{mdframed}
 \end{enumerate}
+
+\newpage
+\section{Código-Fonte}
+\label{source-code-appendix}
+
+\subsection{Gráfico Radar}
+
+Nesta subseção se encontra o código-fonte referente a aplicação da técnica de visualização do Radar. O script abaixo encontra-se na \textit{view} \textit{show.html} da entidade \textit{Repository}, a qual é responsável pela abertura do \textit{modal}, que é a estrutura visual gerada, por cima da \textit{view} principal, para apresentar o gráfico.
+
+\begin{lstlisting}
+
+<script type="text/javascript">
+
+$('#my-modal').on('show', function () {
+
+    $(this).find('.modal-body').css({
+      width:'auto',
+      height:'auto', 
+      'max-height':'100%'});
+});
+
+var w = 500,
+h = 500;
+
+var colorscale = d3.scale.category10();
+
+//Data
+var myData = new Array([]);
+
+d3.tsv("/data.tsv", type, function(error, data) {
+  
+  for (var i = 0; i < data.length; i++) { 
+    var map = {};
+    map["axis"] = data[i].axis;
+    map["value"] = data[i].value;   
+    myData[0][i] = map;
+  }
+  console.log(myData[0]);
+
+  //Call function to draw the Radar chart
+  RadarChart.draw("#chart", myData, mycfg);
+});
+
+function type(d) {
+  d.value = +d.value; // coerce to number
+  return d;
+}
+
+//Options for the Radar chart, other than default
+var mycfg = {
+  w: w,
+  h: h,
+  maxValue: 150,
+  levels: 5,
+  ExtraWidthX: 200
+}
+
+</script>
+
+\end{lstlisting}
+
+O código abaixo é referente a estrutura que contem o gráfico, o chamado \textit{modal}.
+
+\begin{lstlisting}
+<div class="modal hide fade" id="my-modal" title="Radar Chart">
+  <div class="modal-header">
+    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">x</button>
+    <h3 id="myModalLabel">Visualization</h3>
+  </div>
+  <div class="modal-body" id="chart">
+    <h4>Radar Chart</h4>
+  </div>
+  <div class="modal-footer">
+    <button aria-hidden="true" class="btn" data-dismiss="modal">Close</button>
+  </div>
+</div>
+\end{lstlisting}
+
+\begin{lstlisting}
+<%= link_to "Visualize", "#my-modal", :class => "btn", "data-toggle" => "modal" %>
+\end{lstlisting}
