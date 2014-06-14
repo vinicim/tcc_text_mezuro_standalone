@@ -271,6 +271,7 @@ Correção de erros           & 1         & 0             & 4              & 5  
 Consistência                & 10        & 1             & 0              & 11    \\ \hline
 Significados                & 7         & 2             & 3              & 12    \\ \hline
 \end{tabular}
+\caption{Resultado avaliação telas anteriores}
 \end{table}
 
 Como o checklist da ErgoList é utilizado para avaliar todos os âmbitos de um projeto e o trabalho é realizado em um conjunto específico de telas, então ao analisar os resultados foi encontrado muitas questões que não foram aplicáveis devido a esse domínio. Dentro desse mesmo domínio algumas questão não estão conforme, pois não é o objetivo do projeto, um exemplo é a utilização do campo piscante para destaque de uma informação que não convém com o padrão de aparência utilizado. Desconsiderando esses fatores é possível observar uma debilidade na presteza, agrupamento e concisão das telas o que foi pontuado nos protótipos de tela.
@@ -303,7 +304,87 @@ Tela SignUp reformulada levando em consideração as pontuações de usabilidade
 \label{parallel-coordinate}
 \end{figure}
 
-Tela New Project para apresentar outro contexto da aplicação, já que no contexto do projeto Mezuro foram reformuladas um total de 5 telas utilizando esse padrão.
+Tela New Project para apresentar outro contexto da aplicação, já que no contexto do projeto Mezuro foram reformuladas um total de 5 telas utilizando esse padrão. Com a implementação da melhoria proposta foi feita uma nova avaliação utilizando o mesmo checklist da ErgoList que apresentou os seguintes resultados
+
+\begin{table}[H]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\multicolumn{5}{|c|}{\textbf{Laudo Final}}                                       \\ \hline
+Aspectos-Questões           & Conformes & Não conformes & Não aplicáveis & Total \\ \hline
+Presteza                    & 8         & 3             & 6              & 17    \\ \hline
+Agrupamento por localização & 7         & 0             & 4              & 11    \\ \hline
+Agrupamento por formato     & 10        & 1             & 6              & 17    \\ \hline
+Feedback                    & 9         & 2             & 1              & 12    \\ \hline
+Legibilidade                & 14        & 1             & 12             & 27    \\ \hline
+Concisão                    & 7         & 2             & 5              & 14    \\ \hline
+Ações Mínimas               & 4         & 1             & 0              & 5     \\ \hline
+Densidade Informacional     & 6         & 0             & 3              & 9     \\ \hline
+Ações Explícitas            & 4         & 0             & 0              & 4     \\ \hline
+Controle do Usuário         & 2         & 0             & 2              & 4     \\ \hline
+Flexibilidade               & 0         & 2             & 1              & 3     \\ \hline
+Experiência do Usuário      & 4         & 1             & 1              & 6     \\ \hline
+Proteção contra erros       & 5         & 1             & 1              & 7     \\ \hline
+Mensagens de erro           & 7         & 2             & 0              & 9     \\ \hline
+Correção de erros           & 1         & 0             & 4              & 5     \\ \hline
+Consistência                & 11        & 0             & 0              & 11    \\ \hline
+Significados                & 9         & 0             & 3              & 12    \\ \hline
+\end{tabular}
+\caption{Resultado avaliação telas reformuladas}
+\end{table}
+
+Ao analisar os novos dados foi constatado uma melhoria na presteza, agrupamento e concisão conforme desejado, porém a melhoria também impactou em outros fatores como consistência e significados.
+
+Com um domínio de abrangência aos aspectos de usabilidade um pouco menor houve uma interação responsável pela tela de SignIn. Como essa tela difere das outras implementadas na primeira interação, então uma nova avaliação e protótipo foram realizados gerando os resultados a seguir.
+
+\begin{table}[H]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\multicolumn{5}{|c|}{\textbf{Laudo Final}}                                       \\ \hline
+Aspectos-Questões           & Conformes & Não conformes & Não aplicáveis & Total \\ \hline
+Legibilidade                & 11        & 4             & 12             & 27    \\ \hline
+Agrupamento por formato     & 8         & 2             & 7              & 17    \\ \hline
+Presteza                    & 5         & 3             & 9              & 17    \\ \hline
+Agrupamento por localização & 3         & 3             & 5              & 11    \\ \hline
+\end{tabular}
+\caption{Resultado avaliação tela SignIn anterior}
+\end{table}
+
+Com a analise dos dados e levando em consideração os mesmos porém levantados na interação anterior referente aos itens não aplicáveis e não conforme, gerou-se um protótipo de tela para avaliação pela equipe.
+
+\graphicspath{{figuras/}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{PrototipoSignIn}
+\caption{Protótipo de tela Sign In}
+\label{parallel-coordinate}
+\end{figure}
+
+Com o protótipo de tela a equipe pode refinar e opinar sobre como seria o resultado final e contribuir com a evolução das interfaces. A implementação dessas melhorias resultou na seguinte tela
+
+\graphicspath{{figuras/}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{TelaSignIn}
+\caption{Implementação tela Sign In}
+\label{parallel-coordinate}
+\end{figure}
+
+A avaliação utilizando o checklist da ErgoList foi refeita chegando aos seguintes resultados
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\multicolumn{5}{|c|}{\textbf{Laudo Final}}                                       \\ \hline
+Aspectos-Questões           & Conformes & Não conformes & Não aplicáveis & Total \\ \hline
+Legibilidade                & 14        & 1             & 12             & 27    \\ \hline
+Agrupamento por formato     & 9         & 1             & 7              & 17    \\ \hline
+Presteza                    & 5         & 3             & 9              & 17    \\ \hline
+Agrupamento por localização & 7         & 0             & 4              & 11    \\ \hline
+\end{tabular}
+\caption{Resultado avaliação implementação tela SignIn}
+\end{table}
+
+Com a implementação realizada na tela SignIn foi possível observar uma melhoria nos aspectos de usabilidade mais significativamente no agrupamento por localização devido ao um não agrupamento de informações que a versão anterior da tela de Sign In não possuía.
 
 %
 \subsubsection{Visualização de Software}
