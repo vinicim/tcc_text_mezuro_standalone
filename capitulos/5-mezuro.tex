@@ -246,6 +246,66 @@ Aspectos de usabilidade retirado da ErgoList ~\cite{ergolist2013}
 \end{flushright}
 \end{description}
 
+A avaliação foi realizada em um conjunto de telas que tinha como principal foco a informação e compreensão das mensagens pelo usuário que são as telas com entrada de dados através de formulários. As telas escolhidas foram: SignUp, New Project, Edit Account, New Configuration e New Reading Group. A avaliação das telas utilizando o checklist da ErgoList gerou o seguinte resultado
+
+\begin{table}[H]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\multicolumn{5}{c}{\textbf{Laudo Final}}                                         \\ \hline
+Aspectos-Questões           & Conformes & Não conformes & Não aplicáveis & Total \\ \hline
+Presteza                    & 4         & 7             & 6              & 17    \\ \hline
+Agrupamento por localização & 6         & 1             & 4              & 11    \\ \hline
+Agrupamento por formato     & 9         & 2             & 6              & 17    \\ \hline
+Feedback                    & 9         & 2             & 1              & 12    \\ \hline
+Legibilidade                & 14        & 1             & 12             & 27    \\ \hline
+Concisão                    & 6         & 3             & 5              & 14    \\ \hline
+Ações Mínimas               & 3         & 2             & 0              & 5     \\ \hline
+Densidade Informacional     & 5         & 1             & 3              & 9     \\ \hline
+Ações Explícitas            & 4         & 0             & 0              & 4     \\ \hline
+Controle do Usuário         & 2         & 0             & 2              & 4     \\ \hline
+Flexibilidade               & 0         & 2             & 1              & 3     \\ \hline
+Experiência do Usuário      & 4         & 1             & 1              & 6     \\ \hline
+Proteção contra erros       & 4         & 2             & 1              & 7     \\ \hline
+Mensagens de erro           & 7         & 2             & 0              & 9     \\ \hline
+Correção de erros           & 1         & 0             & 4              & 5     \\ \hline
+Consistência                & 10        & 1             & 0              & 11    \\ \hline
+Significados                & 7         & 2             & 3              & 12    \\ \hline
+\end{tabular}
+\end{table}
+
+Como o checklist da ErgoList é utilizado para avaliar todos os âmbitos de um projeto e o trabalho é realizado em um conjunto específico de telas, então ao analisar os resultados foi encontrado muitas questões que não foram aplicáveis devido a esse domínio. Dentro desse mesmo domínio algumas questão não estão conforme, pois não é o objetivo do projeto, um exemplo é a utilização do campo piscante para destaque de uma informação que não convém com o padrão de aparência utilizado. Desconsiderando esses fatores é possível observar uma debilidade na presteza, agrupamento e concisão das telas o que foi pontuado nos protótipos de tela.
+
+\graphicspath{{figuras/}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{PrototipoNewProject}
+\caption{Versão Avaliada x Protótipo de tela - New Project}
+\label{parallel-coordinate}
+\end{figure}
+
+Os protótipos de tela foram apresentados a equipe de desenvolvimento juntamente com uma descrição do comportamento para melhor entendimento do que seria realizado. Após refinamento da proposta foi realizado a implementação dentro da camada de front-end do projeto, ao replicar a funcionalidade as outras telas, percebeu-se um padrão o que possibilitou gerar um CSS encontrado na seção do apêndice \ref{css-form} denominado formwithtooltip.css que possui um conjunto de padrão com foco em suprir a debilidade dessas telas em relação a presteza, agrupamento e concisão, mas precisamente nos campos de descrição da tela. Esse CSS serviu como legado a equipe para aplicação em outros contexto, sendo já utilizado por uma equipe externa da disciplina LabXP da USP.
+
+\graphicspath{{figuras/}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{TelaSignUp}
+\caption{Resultado implementação tela SignUp}
+\label{parallel-coordinate}
+\end{figure}
+
+Tela SignUp reformulada levando em consideração as pontuações de usabilidade levantadas, uma das principais telas em relação a instrução da entrada correta de informações do usuário.
+
+\graphicspath{{figuras/}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{TelaNewProject}
+\caption{Resultado implementação tela New Project}
+\label{parallel-coordinate}
+\end{figure}
+
+Tela New Project para apresentar outro contexto da aplicação, já que no contexto do projeto Mezuro foram reformuladas um total de 5 telas utilizando esse padrão.
+
+%
 Como retratado na seção \ref{sec-visualizacao}, a apresentação de informações relacionadas a softwares pode se tornar ineficiente conforme o tamanho e complexidade inerente ao código-fonte aumentam. Por esse motivo, para facilitar o entendimento e compreensão das informações apresentadas, é comum utilizar técnicas de visualização, empregadas cada vez mais em softwares, com o intuito de apoiar o processo de desenvolvimento.
 
 A plataforma Mezuro como plugin do Noosfero, contava com uma técnica de visualização, as coordenadas paralelas, presente na figura \ref{parallel-coordinate}, um tipo de projeção geométrica que representa bem dados multidimensionais ou com muitos atributos, como é o caso das informações geradas por um processamento do Mezuro.
