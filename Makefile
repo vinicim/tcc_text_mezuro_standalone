@@ -1,4 +1,4 @@
-TARGET = TCC_Vinicius.pdf
+TARGET = TCC_Renan_Vinicius.pdf
 
 BIBTEX = bibtex
 LATEX = latex

@@ -355,7 +355,7 @@ Com a analise dos dados e levando em consideração os mesmos porém levantados 
 \begin{figure}[H]
 \centering
 \includegraphics[width=1.0\textwidth]{PrototipoSignIn}
-\caption{Protótipo de tela Sign In}
+\caption{Versão Avaliada x Protótipo de tela - Sign In}
 \label{parallel-coordinate}
 \end{figure}
 
@@ -385,6 +385,49 @@ Agrupamento por localização & 7         & 0             & 4              & 11 
 \end{table}
 
 Com a implementação realizada na tela SignIn foi possível observar uma melhoria nos aspectos de usabilidade mais significativamente no agrupamento por localização devido ao um não agrupamento de informações que a versão anterior da tela de Sign In não possuía.
+
+Com a primeira interação de usabilidade dentro do ciclo de desenvolvimento da equipe, foi possível adquirir experiência em relação a avaliação de usabilidade, o processo de trabalho da equipe, as tecnologias necessárias para a camada de front-end e a melhor forma de conduzir o entendimento da equipe quanto as melhorias propostas. Através desses conhecimentos obtidos uma próxima interação de usabilidade foi proposta seguindo o método de avaliação heurística para avaliar as telas e sugerir se necessário uma melhoria. Para essa etapa uma reunião foi montada junto a equipe que sugeriu o conjunto de telas da funcionalidade de configuração de métricas que apresentava um caminho muito exaustivo para o usuário.
+
+Analisando a funcionalidade Configuration foi percebido um fluxo massante que o usuário tinha que percorrer para executar a funcionalidade. Os prontos mais críticos levantados foram:
+
+\begin{enumerate}
+\item A escolha das métricas na tela Choose Metric: Não possibilita escolha múltipla de métricas forçando o usuário acessar diversas vezes a tela;
+\item Informações iniciais das métricas na tela New Metric: Preenchimento repetitivo dos dados e falta de sugestão para o campo Code, onde poderia definir um padrão;
+\item Excesso de passos: Quantidade excessiva de passos para termino da configuração de métricas do projeto.
+\item Preenchimento formulário: Devido ao processamento realizado em cima de cada métrica um meio dinâmico de edição do formulário torná-o mais eficiente ao longo do cadastro.
+\end{enumerate}
+
+Baseado nesses pontos críticos e pretendendo resolvê-los foi construído os protótipos de tela e apresentado a equipe para discussão já que o comportamento da funcionalidade Configuration foi alterado. Todos os pontos críticos foram classificados dentro da severidade 3 - problema importante de usabilidade conforme definido na seção \ref{avaliacao-heuristica}. A tela de configuração onde são listados os métodos passou a contar com mais campos de informação relevantes as métricas escolhidas.
+
+\graphicspath{{figuras/}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{PrototipoConfig}
+\caption{Versão Avaliada x Protótipo de tela - Configuration}
+\label{parallel-coordinate}
+\end{figure}
+
+A tela choose metric passou a contar com a múltipla escolha de métricas, sendo essa funcionalidade exercida por checkboxs que permitem a seleção das métricas desejadas e que serão adicionadas ao projeto.
+
+\graphicspath{{figuras/}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{PrototipoChooseMetric}
+\caption{Versão Avaliada x Protótipo de tela - Choose Metric}
+\label{parallel-coordinate}
+\end{figure}
+
+A tela de New Metric foi unificada a tela inicial de configuração, com isso não há mais a necessidade de outra tela, o preenchimento dos dados inicias passaram a ser dinâmico realizado na página que lista as métricas e o campo Code passou a ser pré-definido com preenchimento automático. 
+
+\graphicspath{{figuras/}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{PrototipoNewMetric}
+\caption{Versão Avaliada x Protótipo de tela - New Metric}
+\label{parallel-coordinate}
+\end{figure}
+
+Com os protótipos avaliados, iniciou-se a implementação do novo comportamento da funcionalidade Configuration, devido a funcionalidades dinâmicas na tela foi necessário o uso a mais das tecnologias JavaScript, Ajax e JQuery a fim de deixar a funcionalidade o mais transparente possível. 
 
 %
 \subsubsection{Visualização de Software}
