@@ -1,32 +1,5 @@
 \chapter{Introdução}
 \label{cap-introducao}
-%Atualmente as tecnologias da informação exercem cada vez mais influência na sociedade, seja na interação entre pessoas, ou nas relações que empresas possuem com o mercado. Nesse sentido, sistemas de software tem recebido mais atenção, dado que cada vez mais podem determinar o sucesso ou fracasso nessas relações.
-%
-%%Monopólio dos software proprietários e início dos softwares livre
-%Por volta da década de 60 o software era comercializado juntamente com hardware. O código-fonte era disponibilizado junto com o software e muitos usuários compartilhavam código e informações. O software era dito livre até a década de 70, quando a IBM\footnote{Internacional Business Machines é uma empresa americana da área de tecnologia da informação. Comercializa hardware e software além de serviços de hospedagem e infra-estrutura.} decidiu comercializar seus programas separados do hardware. Com isso as restrições de acesso ao código-fonte se tornaram comuns, assim seu compartilhamento se tornava cada vez mais escasso, surgiram assim os softwares proprietários.
-%%TODO: faltou uma referência para sustentar este parágrafo. Ver isso para o TCC 2.
-%
-%Durante a década de 80, porém, o contexto de software livre que permeava o início do software ressurgiu, em suma, por iniciativa Richard Stallman. Em 1983, após uma experiência negativa com softwares proprietários, ele deu origem ao Projeto GNU\footnote{Projeto que tem como objetivo a criação de um sistema operacional livre}. Stalman objetivava criar um mecanismo para garantir direitos de cópia, modificação e redistribuição de software. Com isso surgiu a Licença GPL\footnote{General Public Lincense ou Licensa Pública Geral}.
-%%TODO: faltou uma referência para sustentar este parágrafo. Ver isso para o TCC 2.
-%
-%A definição de software é a mesma, seja ele proprietário ou livre. Softwares são constituídos por um conjunto de procedimentos, dados, possível documentação, e satisfazem necessidades específicas de determinados usuários. Além da definição, os dois tipo de software mencionados aqui possuem também a necessidade de serem mantidos e evoluídos.
-%%TODO: Falou de definição sem referenciar - corrigir no TCC 2.
-%% Trocar proprietário por restrito (colocar nota de rodapé falando que restrito, privativo ou proprietário são os termos mais usados)
-%
-%A evolução de software começou a receber mais atenção a partir dos estudos realizados por Meir M. Lehman no final da década de 60, assim se tornou uma área de conhecimento da engenharia de software. A partir de seus estudos Lehman elaborou um conjunto de oito leis que são conhecidas "Leis de Lehman", as quais definem um padrão para evolução de softwares.
-%%TODO: referenciar Lehman
-%
-%A evolução de software é importante para manter o software consistente com seu ambiente, competitivo em relação a softwares concorrentes e manter os usuários interessados. Além disso, quando tratamos de software livre a evolução é essencial para manter a comunidade estabelecida ao seu redor, contribuindo para manter esse projeto ativo.
-%%TODO: referenciar a mim ou a Terceiro. 
-%
-%Um dos desafios inerentes ao desenvolvimento de software é a manutenção e aumento da qualidade do sistema desenvolvido. Muitos indícios da qualidade de um software são encontrados no seu código-fonte através de suas métricas.
-%%TODO: referenciar a mim
-%Porém, extrair métricas de código-fonte manualmente não é uma tarefa considerada pelas equipes de desenvolvimento dado o esforço necessário para tal. Para isso existem ferramentas que auxiliam as equipes de desenvolvimento. Entre essas ferramentas está a plataforma Mezuro, utilizada para o monitoramento de códigos-fonte.
-%%TODO: referenciar artigos sobre Mezuro e Kalibro.
-%
-%O Mezuro é desenvolvido como um projeto de software livre, que a princípio era um plugin de uma plataforma de desenvolvimento de redes sociais denominada Noosfero.
-%%TODO: nota de rodapé com a URL do Noosfero.
-%Porém, o Mezuro cresceu em tamanho e complexidade. Por isso, a equipe de desenvolvimento do Mezuro decidiu pela reescrita de seu código, transformando-o em uma plataforma independente fora do Noosfero, visando mantê-la consistente com seu ambiente e com seus propósitos, competitivo em relação às ferramentas semelhantes e ampliar o interesse de utilização por parte de usuários.
 
 Atualmente as tecnologias da informação exercem cada vez mais influência na sociedade, seja na interação entre pessoas, ou nas relações que empresas possuem com o mercado. Nesse sentido, sistemas de software tem recebido mais atenção, dado que cada vez mais podem determinar o sucesso ou fracasso nessas relações.
 
@@ -66,22 +39,21 @@ Como objetivos específicos este trabalho visa:
 \end{enumerate}
 
 \section{Metodologia}
+
 A pesquisa é utilizada para a melhoria da qualidade do contexto pesquisado através do novo conhecimento adquirido, assim nesse trabalho quanto a natureza da pesquisa foi abordado a pesquisa aplicada ou tecnológica. De acordo com Barros e Lehfeld \citeyear{barros2000}, a pesquisa aplicada possui como motivação a necessidade de gerar conhecimento para aplicação de seus resultados, com o objetivo de “contribuir para fins práticos, visando à solução mais ou menos imediata do problema encontrado na realidade”. Já que um estopim já havia sido dado pelo trabalho de pesquisa Fundamental realizado na dissertação de mestrado "Aplicação de práticas de usabilidade ágil em software livre” \cite{santos2012} e com esse conhecimento gerado resolveu-se aplicá-lo a fim de se obter uma melhoria na evolução do projeto Mezuro.
 
 Quanto aos objetivos a pesquisa exploratória vai em conjunto com a necessidade de se verificar um padrão e/ou ideias em relação a introdução de um ciclo de usabilidade dentro de um projeto de desenvolvimento de software livre com práticas ágeis, já que esse é um assunto com poucos estudos a respeito. Associado a pesquisa exploratória foi realizado uma revisão sistemática a fim de se verificar os padrões existentes que poderiam ser aplicados para inserir a perspectiva de usabilidade em um contexto de projetos ágeis e de software livre.
 
 Quanto aos procedimentos foi realizado um estudo de caso, esse um dos focos principais motivado pela evolução da plataforma Mezuro, onde se poderia aplicar as ideias propostas. A pesquisa foi realizado em associação aos laboratórios da USP e UnB-Gama. Os resultados desse estudo forneceram dados qualitativos para a análise.
 
-\section{Questões de Pesquisa}
+O primeiro passo para realização deste trabalho foi o contato com a equipe que mantém a plataforma Mezuro, que se deu através do professor Dr. Paulo Meirelles, um dos mantenedores. Como muitos projetos de software livre contam com desenvolvedores distantes geograficamente, com o Mezuro não foi diferente. Após o contato com o primeiro mantenedor, iniciou-se os pareamentos remotos, através de vídeo-conferências, para maior familiaridade com o código e funcionalidades fornecidas pela ferramenta.
 
-Questões
+Após a apresentação geral de todo o código e funcionalidades do Mezuro, iniciou-se o treinamento na ferramenta utilizada no desenvolvimento do Mezuro, o arcabouço \textit{Ruby on Rails}. Essa fase aconteceu simultaneamente ao desenvolvimentos das funcionalidades reservadas a equipe da Universidade de Brasília.
+
+Para o desenvolvimento dessas funcionalidades foram utilizadas práticas ágeis como \textit{pair programming}\footnote{Dois programadores, piloto e co-piloto, trabalham juntos na mesma estação de trabalho. O piloto codifica, enquanto o co-piloto acompanha e auxilia o piloto na tomada das melhores decisões}, divisão das iterações em \textit{sprints}, definição das unidades de trabalho em \textit{backlog}, reuniões de retrospectiva para análise dos resultados produzidos ao fim de uma \textit{sprint}, além das reuniões constantes que satisfazem um dos princípios básicos da metodologia ágil que é a comunicação.
 
 \section{Organização do Trabalho}
 
-O primeiro passo para realização deste trabalho foi o contato com a equipe que mantém a plataforma Mezuro, que se deu através do professor Dr. Paulo Meirelles, um dos mantenedores. Como muitos projetos de software livre contam com desenvolvedores distantes geograficamente, com o Mezuro não foi diferente. Após o contato com o primeiro mantenedor, iniciou-se os pareamentos remotos, através de vídeo-conferências, para maior familiaridade com o código e funcionalidades fornecidas pela ferramenta.
-
-Após a apresentação geral de todo o código e funcionalidades do Mezuro, iniciou-se o treinamento na ferramenta utilizada no desenvolvimento do Mezuro, o framework Ruby on Rails. Essa fase aconteceu em paralelo com os pareamentos, onde começaram-se a implementar a primeira funcionalidade como colaboração da plataforma Mezuro.
-
-Em paralelo, houve a escrita deste trabalho que está organizado em capítulos. O Capítulo 2 apresenta os principais conceitos de software livre, métodos ágeis, padrões de software livre e processo de desenvolvimento de software. O Capítulo 3 trás os principais, dos diversos conceitos, de evolução de projeto de software divido em duas partes, evolução de software e evolução da arquitetura. No Capítulo 4 é introduzido a abordagem da experiência do usuário focada na usabilidade com aspectos de melhoria da interface e na visualização de software sendo essas requisitos não funcionais dentro do projeto. Finalmente, o Capítulo 5 apresenta com mais detalhes a plataforma Mezuro, seu processo de desenvolvimento, fatores que motivaram a reescrita de seu código, assim como o processo e resultados gerados da aplicação de um ciclo de evolução de software focado na usabilidade tanto em front-end quanto em back-end na plataforma Mezuro. O Capítulo 6 é a conclusão do trabalho, trazendo limitações, trabalhos futuros e como a plataforma mezuro poderá continuar com o legado deixado pelo trabalho realizado.
+Em paralelo a interação e colaborações ao código do Mezuro, houve a escrita deste trabalho que está organizado em capítulos. O Capítulo 2 apresenta os principais conceitos de software livre, métodos ágeis, padrões de software livre e processo de desenvolvimento de software. O Capítulo 3 trás os principais, dos diversos conceitos, de evolução de projeto de software divido em duas partes, evolução de software e evolução da arquitetura. No Capítulo 4 é introduzido a abordagem da experiência do usuário focada na usabilidade com aspectos de melhoria da interface e na visualização de software sendo essas requisitos não funcionais dentro do projeto. Finalmente, o Capítulo 5 apresenta com mais detalhes a plataforma Mezuro, seu processo de desenvolvimento, fatores que motivaram a reescrita de seu código, assim como o processo e resultados gerados da aplicação de um ciclo de evolução de software focado na usabilidade tanto em front-end quanto em back-end na plataforma Mezuro. O Capítulo 6 é a conclusão do trabalho, trazendo limitações, trabalhos futuros e como a plataforma mezuro poderá continuar com o legado deixado pelo trabalho realizado.
 
 % A introdução ficou boa.
