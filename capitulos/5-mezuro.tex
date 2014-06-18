@@ -427,7 +427,31 @@ A tela de New Metric foi unificada a tela inicial de configuração, com isso n�
 \label{parallel-coordinate}
 \end{figure}
 
-Com os protótipos avaliados, iniciou-se a implementação do novo comportamento da funcionalidade Configuration, devido a funcionalidades dinâmicas na tela foi necessário o uso a mais das tecnologias JavaScript, Ajax e JQuery a fim de deixar a funcionalidade o mais transparente possível. 
+Com os protótipos avaliados, iniciou-se a implementação do novo comportamento da funcionalidade Configuration, devido as funcionalidades dinâmicas na tela foi necessário o uso a mais das tecnologias JavaScript, Ajax e JQuery a fim de deixar a funcionalidade o mais transparente possível. A implementação do Configuration resultou nas seguintes telas.
+
+A tela implementada apresenta uma lista dinâmica para a alteração das informações das métricas, sem a necessidade de passar por um novo fluxo. O code das métricas são gerados automaticamente como uma proposta que pode ser seguida ou alterada pelo usuário diminuindo o tempo de configuração das métricas.
+
+\graphicspath{{figuras/}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{configuration}
+\caption{Implementação tela}
+\label{parallel-coordinate}
+\end{figure}
+
+A implementação da tela choose metric possibilitou a múltipla escolha de métricas evitando um loop no fluxo para cadastro de mais de uma métrica que gerava uma exaustão ao usuário já que normalmente um projeto possui mais de 4 a 5 tipos de métricas.
+
+\graphicspath{{figuras/}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{select_metrics}
+\caption{Implementação tela}
+\label{parallel-coordinate}
+\end{figure}
+
+O resultado quanto ao nível da melhoria de usabilidade foi avaliado pela equipe core do Mezuro, já que a ferramenta ainda está em um ciclo de desenvolvimento e não se encontra totalmente em produção, levando em consideração todas as melhorias realizadas pelo trabalho na plataforma. Para essa avaliação foi aplicado o questionário PSSUQ (Psychometric Evaluation Of The Post-Study System Usability Questionnaire). O PSSUQ foi publicado em 1992 por James R. Lewis, composto inicialmente por 18 questões e atualizado para 19 questões em 1995, esse questionário avalia a satisfação do usuário após a participação em estudos de usabilidade baseadas em cenários \cite{lewis1992}. O PSSUQ possui questões intuitivas e de fácil compreensão, possibilitando uma resposta mais precisa juntamente com a escala de 1 a 7 de satisfação. O questionário encontra-se no apêndice na seção /ref{questionario-pssuq}.
+
+
 
 %
 \subsubsection{Visualização de Software}
