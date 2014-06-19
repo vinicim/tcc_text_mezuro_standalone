@@ -39,7 +39,7 @@ O GNU\footnote{GNU é um acrônimo para Gnu is Not Unix, além de ser o nome de 
 \section{Processo de Desenvolvimento de Software Livre}
 \label{sec-proc-sl}
 
-O aspecto mais importante de um software livre, sob a perspectiva da Engenharia de Software é o seu processo de desenvolvimento. Um projeto de software livre começa quando um desenvolvedor individual ou uma organização decidem tornar um projeto de software acessível ao público. Seu código-fonte é licenciado de forma a permitir seu acesso e alterações subsequentes por qualquer pessoa. Tipicamente, qualquer pessoa pode contribuir com o desenvolvimento, mas mantenedores ou líderes decidem quais contribuições serão incorporadas à release oficial. Não é uma regra, mas projetos de software livre, muitas vezes, recebem colaboração de pessoas geograficamente distantes que se organizam ao redor de um ou mais líderes \cite{corbucci2011freemethods}. 
+O aspecto mais importante de um software livre, sob a perspectiva da Engenharia de Software é o seu processo de desenvolvimento. Um projeto de software livre começa quando um desenvolvedor individual ou uma organização decidem tornar um projeto de software acessível ao público. Seu código-fonte é licenciado de forma a permitir seu acesso e alterações subsequentes por qualquer pessoa. Tipicamente, qualquer pessoa pode contribuir com o desenvolvimento, mas mantenedores ou líderes decidem quais contribuições serão incorporadas à \textit{release} oficial. Não é uma regra, mas projetos de software livre, muitas vezes, recebem colaboração de pessoas geograficamente distantes que se organizam ao redor de um ou mais líderes \cite{corbucci2011freemethods}. 
 
 Há características presentes no software livre que, a princípio, tornam incompatível a aplicação de métodos ágeis em seu desenvolvimento. Entre essas características estão a distância entre os desenvolvedores e a diversidade entre suas culturas, que dificultam a comunicação, um dos principais valores dos métodos ágeis. Entretanto, o sucesso resultante de alguns projetos de software livre, como é o caso do Kernel do Linux \footnote{\url{https://www.kernel.org/}}, fizeram surgir estudos com foco na união dessas duas vertentes.
 
@@ -126,7 +126,7 @@ Um software livre é concebido através de um processo de contribuições, o qua
 
 		\begin{itemize}
 
-			\item O primeiro padrão de seleção recomenda colaboradores novatos a "caminhar sobre terreno conhecido", ou seja, se deseja contribuir, começar por algum software que seja familiar, como por exemplo, um browser, editor de texto, IDE\footnote{Integrated Development Environment, um ambiente integrado para desenvolvimento de software}, ou qualquer outro software que já se utiliza.
+			\item O primeiro padrão de seleção recomenda colaboradores novatos a "caminhar sobre terreno conhecido", ou seja, se deseja contribuir, começar por algum software que seja familiar, como por exemplo, um \textit{browser}, editor de texto, IDE\footnote{Integrated Development Environment, um ambiente integrado para desenvolvimento de software}, ou qualquer outro software que já se utiliza.
 
 			\item O segundo padrão é similar ao primeiro, porém ao invés da ferramenta ser familiar, esse padrão recomenda que o colaborador tenha conhecimentos na linguagem ou tecnologia utilizada no projeto.
 
@@ -163,15 +163,15 @@ No contexto deste trabalho, muitos dos padrões desse grupo foram inseridos ao p
 
 		\item Muitos softwares livres não suportam o idioma de diversos colaboradores. Um bom ponto de partida seria a internacionalização do sistema, incluindo a própria linguagem no sistema.
 
-		\item Reportar bugs eficientemente, pois é comum que colaboradores identifiquem bugs mas ao reporta-los não são claros com respeito ao seu contexto, dificultado sua correção.
+		\item Reportar \textit{bugs} eficientemente, pois é comum que colaboradores identifiquem bugs mas ao reporta-los não são claros com respeito ao seu contexto, dificultado sua correção.
 
-		\item Utilizar a versão correta para tarefas. Durante o desenvolvimento de software há diferentes versões, onde há no mínimo uma versão estável e uma versão desenvolvimento. É recomendado utilizar a versão estável para reportar bugs e a versão de desenvolvimento para implementar novas funcionalidades e tudo que não está relacionado com correção de defeitos existentes.
+		\item Utilizar a versão correta para tarefas. Durante o desenvolvimento de software há diferentes versões, onde há no mínimo uma versão estável e uma versão desenvolvimento. É recomendado utilizar a versão estável para reportar \textit{bugs} e a versão de desenvolvimento para implementar novas funcionalidades e tudo que não está relacionado com correção de defeitos existentes.
 
-		\item Separar alterações não relacionadas. Se tratando de sistemas de controle de versão\footnote{SCM - Source Code Management - GIT, SVN, Baazar, Mercurial, entre outros} há uma ação conhecida como commit, onde as alterações realizadas são agrupadas e gravadas. É recomendado que num mesmo commit as alterações sejam relacionadas.
+		\item Separar alterações não relacionadas. Se tratando de sistemas de controle de versão\footnote{SCM - Source Code Management - GIT, SVN, Baazar, Mercurial, entre outros} há uma ação conhecida como \textit{commit}, onde as alterações realizadas são agrupadas e gravadas. É recomendado que num mesmo \textit{commit} as alterações sejam relacionadas.
 
-		\item Mensagens de commit explicativas para facilitar o entendimento e identificação do que foi desenvolvido ou alterado para o restante dos colaboradores.
+		\item Mensagens de \textit{commit} explicativas para facilitar o entendimento e identificação do que foi desenvolvido ou alterado para o restante dos colaboradores.
 
-		\item Documentar as próprias modificações. Desenvolvedores, geralmente, alteram o código, corrigem bugs, adicionam novas funcionalidades, mas não atualizam a documentação, a qual se torna desatualizada. Por isso é recomendado documentar as alterações antes de submete-as ao repositório.
+		\item Documentar as próprias modificações. Desenvolvedores, geralmente, alteram o código, corrigem \textit{bugs}, adicionam novas funcionalidades, mas não atualizam a documentação, a qual se torna desatualizada. Por isso é recomendado documentar as alterações antes de submete-as ao repositório.
 
 		\item Manter-se atualizado com o estado atual do projeto, ajudando a evitar duplicação de esforços e identificar oportunidades de colaboração. Isso é importante pois um projeto de software livre é um esforço coletivo, mas às vezes é difícil coordenar o esforço de pessoas com diferentes horários e prioridades.
 
@@ -199,7 +199,7 @@ mentas.
 \textbf{Software executável} ao invés de documentação.
 \textbf{Colaboração do cliente} ao invés de negociação de contratos.
 \textbf{Respostas rápidas a mudanças} ao invés de seguir planos.
-O Manifesto Ágil não discrimina processos, ferramentas, documentação, negociação de contratos ou o planejamento, mas simplesmente mostra que eles têm importância secundária quando comparado com os indivíduos, interações, software executável, participação do cliente e feedback rápido a mudanças e alterações.
+O Manifesto Ágil não discrimina processos, ferramentas, documentação, negociação de contratos ou o planejamento, mas simplesmente mostra que eles têm importância secundária quando comparado com os indivíduos, interações, software executável, participação do cliente e \textit{feedback} rápido a mudanças e alterações.
 
 %
 Tory Dyba (\citeyear{dyba2008}) em uma revisão sistemática elenca seis dos principais métodos ágeis presente em 2008 e trás uma breve descrição de cada um, o que ajuda a observar características das comunidades ágeis já que os principais especialistas desses métodos ajudaram a escrever o manifesto ágil. Eles são:
@@ -222,7 +222,7 @@ divide projetos em três fases: pré-projeto, o ciclo de vida do projeto  e pós
             
 \item [3. Feature-driven development]
 %
-combina desenvolvimento model-driven e ágil, com ênfase  em modelo inicial de objeto, a divisão do trabalho em funções  e design iterativo para cada recurso. Afirma ser adequado para  o desenvolvimento de sistemas críticos. Uma iteração de um  recurso é composto de duas fases: concepção e desenvolvimento
+combina desenvolvimento \textit{model-driven} e ágil, com ênfase  em modelo inicial de objeto, a divisão do trabalho em funções  e design iterativo para cada recurso. Afirma ser adequado para  o desenvolvimento de sistemas críticos. Uma iteração de um  recurso é composto de duas fases: concepção e desenvolvimento
        
 \item [4. Lean software development]
 %
@@ -230,7 +230,7 @@ uma adaptação de princípios de produção de carne magra e,  em particular, o
                     
 \item [5. Scrum]
 %
-centra-se na gestão de projetos em situações em que é difícil  planejar o futuro, com mecanismos de '' controle de processos  empíricos ", onde loops de feedback constituem o elemento central.  Software é desenvolvido por uma equipa de auto-organização  em incrementos (chamado sprints), começando com o planejamento  e terminando com uma retrospectiva. Recursos a serem implementadas  no sistema estão registrados em um backlog . Em seguida,  o proprietário do produto decide quais itens do backlog deve ser  desenvolvido da seguinte sprint. Coordenar membros da equipe  de seu trabalho em uma reunião diária de stand-up. Um membro  da equipe, o scrum master, é responsável pela resolução de  problemas que impedem a equipe de trabalho de forma eficaz.
+centra-se na gestão de projetos em situações em que é difícil  planejar o futuro, com mecanismos de '' controle de processos  empíricos ", onde \textit{loops} de \textit{feedback} constituem o elemento central.  Software é desenvolvido por uma equipa de auto-organização  em incrementos (chamado \textit{sprints}), começando com o planejamento  e terminando com uma retrospectiva. Recursos a serem implementadas  no sistema estão registrados em um \textit{backlog} . Em seguida,  o proprietário do produto decide quais itens do \textit{backlog} deve ser  desenvolvido da seguinte \textit{sprint}. Coordenar membros da equipe  de seu trabalho em uma reunião diária de \textit{stand-up}. Um membro  da equipe, o \textit{scrum master}, é responsável pela resolução de  problemas que impedem a equipe de trabalho de forma eficaz.
  
 \item [6. Extreme programming (XP)]
 concentra-se nas melhores práticas para o desenvolvimento.  Consiste em doze práticas: o jogo de planejamento, pequenos lançamentos,  metáfora, design simples, testes, refatoração, programação em pares,  propriedade coletiva, integração contínua, 40 h semana, os clientes no local,  e os padrões de codificação. A revista XP2 consiste nas seguintes  ''práticas primárias": sentar-se juntos, toda a equipe, trabalho informativo,  o trabalho energizado, programação em pares, histórias, ciclo semanal,  ciclo trimestral, slack, construção de 10 minutos, integração contínua,  testes primeiro que programação e design incremental.  Há também 11 ``corollary practices''.
@@ -263,6 +263,3 @@ O manifesto ágil define 12 princípios que devem ser seguidos~\cite{manifesto20
 \end{enumerate}
 
 Os princípios ágeis devem ser vividos pela equipe e é o principal motivador e base para o desenvolvimento ágil. As práticas ágeis adotadas serão de acordo com o método escolhido e ajudarão a obter os objetivos propostos pelo método, sempre levando em consideração os princípios ágeis definidos pelo manifesto ágil.
-
-
-

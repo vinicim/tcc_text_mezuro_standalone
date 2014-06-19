@@ -29,7 +29,7 @@ Durante esses estudos, Lehman formulou as três primeiras, de um total de oito l
     5 (1991) & Conservação da Familiaridade & De maneira geral, a taxa de crescimento incremental e taxa crescimento a longo prazo tende a declinar. \\ \hline
     6 (1991) & Crescimento contínuo & O conteúdo funcional de um software deve ser continuamente aumentado durante seu tempo de vida para para manter a satisfação do usuário. \\ \hline
     7 (1996) & Qualidade decrescente & A qualidade do software será entendida como declinante a menos que o software seja rigorosamente adaptado às mudanças no ambiente operacional. \\ \hline
-    8 (1971/96) & Sistema de Retro-alimentação & Processos de evolução de software são sistemas de retro-alimentação em múltiplos níveis, em múltiplos laços (loops) e envolvendo múltiplos agentes. \\ \hline
+    8 (1971/96) & Sistema de Retro-alimentação & Processos de evolução de software são sistemas de retro-alimentação em múltiplos níveis, em múltiplos laços (\textit{loops}) e envolvendo múltiplos agentes. \\ \hline
     \end{tabular}
     \caption{Leis de Lehman, extraído de \cite{fernandez2008empirical}}
     \label{tab-leis-lehman}
@@ -48,16 +48,16 @@ Ao contrário das engenharias tradicionais, a engenharia de software tem em mão
 \end{itemize}
 
 %importancia
-Quando inserida ou considerada nos processos de desenvolvimento, ela resulta numa excelente alternativa para evitar os sintomas do envelhecimento e inconsistencias entre o próprio software e o ambiente onde está inserido \cite{mens2005challenges}.
+Quando inserida ou considerada nos processos de desenvolvimento, ela resulta numa excelente alternativa para evitar os sintomas do envelhecimento e inconsistências entre o próprio software e o ambiente onde está inserido \cite{mens2005challenges}.
 %\subsection{Evolução de Software Livre}
 %grande crescimento dos softwares livres em geral, a exemplo do linux
 Dessa forma, argumentamos que o desenvolvimento de projetos de software livre têm colaborado para a produção de softwares de alta qualidade com grande número de funcionalidades. Um exemplo disso é o sistema operacional Linux, que nas últimas décadas, entre outro pontos, tem experimentado um grande sucesso comercial.
 
-Em geral, sistemas desenvolvidos por meio de projetos de software livre tendem a crescer com o passar do tempo, após sucessivas releases. Esse comportamento sugere consistência com a sexta lei de Lehman, que se refere ao crescimento contínuo. Nesse sentido, além de um comportamento necessário para manter a satisfação do usuário, o crescimento contínuo de um software livre é importante para manter a motivação da comunidade estabelecida ao seu redor.
+Em geral, sistemas desenvolvidos por meio de projetos de software livre tendem a crescer com o passar do tempo, após sucessivas \textit{releases}. Esse comportamento sugere consistência com a sexta lei de Lehman, que se refere ao crescimento contínuo. Nesse sentido, além de um comportamento necessário para manter a satisfação do usuário, o crescimento contínuo de um software livre é importante para manter a motivação da comunidade estabelecida ao seu redor.
 
 Por exemplo, para avaliar esse comportamento de contínuo crescimento em softwares livres, \citeonline{godfrey2000evolution} realizaram pesquisas, do tipo estudo de caso, baseados no sistema operacional Linux.
 %
-A Figura \ref{fig-evolucaolinux} mostra o crescimento do sistema operacional Linux desde sua primeira release, no ano de 1994. Desde então, ele é mantido por centenas de desenvolvedores que o desenvolvem em dois ramos paralelos: stable releases contendo as principais atualizações e correções de defeitos, e \textit{development releases} com funcionalidades experimentais e porções de código não testado.
+A Figura \ref{fig-evolucaolinux} mostra o crescimento do sistema operacional Linux desde sua primeira \textit{release}, no ano de 1994. Desde então, ele é mantido por centenas de desenvolvedores que o desenvolvem em dois ramos paralelos: \textit{stable releases} contendo as principais atualizações e correções de defeitos, e \textit{development releases} com funcionalidades experimentais e porções de código não testado.
 
 \graphicspath{{figuras/}}
 \begin{figure}[H]
@@ -67,7 +67,7 @@ A Figura \ref{fig-evolucaolinux} mostra o crescimento do sistema operacional Lin
 \label{fig-evolucaolinux}
 \end{figure}
 
-Os dados presentes no gráfico, até o início dos anos 2000, vão de encontro à quinta lei de Lehman, citada na Tabela \ref{tab-leis-lehman}. No gráfico, o número de linhas de código (LOC) do kernel do sistema, possui taxa de crescimento positiva, enquanto a lei afirma que ao longo do tempo a taxa de crescimento tende a diminuir.
+Os dados presentes no gráfico, até o início dos anos 2000, vão de encontro à quinta lei de Lehman, citada na Tabela \ref{tab-leis-lehman}. No gráfico, o número de linhas de código (LOC) do \textit{kernel} do sistema, possui taxa de crescimento positiva, enquanto a lei afirma que ao longo do tempo a taxa de crescimento tende a diminuir.
 %
 Por outro lado, neste trabalho, não estamos tratando a evolução de software apenas do ponto de vista da inserção de novas funcionalidades, o que pode levar ao crescimento de número de linhas de código, como exemplificado acima. Estamos tratando a evolução de um software livre real, do ponto de vista da sua arquitetura, de acordo com as decisões julgadas pelo seus principais desenvolvedores, conforme descrito nas respostas ao questionário apresentado no Apêndice \ref{form-pesquisa}, para poderem evoluir o projeto de uma forma mais rápida e objetivando formação de uma comunidade de desenvolvedores.
 
@@ -83,8 +83,9 @@ Por outro lado, neste trabalho, não estamos tratando a evolução de software a
 Desde a primeira referência em um relatório técnico intitulado \textit{Software Engineering Tecnhiques} \cite{buxton1970software}, na década de 1970, diversos autores buscaram definir o termo arquitetura de software de software.
 %
 Mary Shaw e David Garlan \cite{shaw1996software}, Philippe Kruchten, Grady Booch, Kurt Bittner, e Rich Reitman afirmam que: Arquitetura de Software engloba o conjunto de decisões significativas sobre a organização de um sistema de software incluindo: i) seleção de elementos estruturais e suas interfaces pelos quais um sistema é composto; ii) comportamento como especificado em colaboração entre esses elementos; iii) composição dos elementos estruturais e comportamentais dentro de um subsistema maior; iv) um estilo arquitetural que orienta essa organização. Arquitetura de Software também envolve funcionalidade, usabilidade, flexibilidade, desempenho, reuso, compreensibilidade, restrições econômicas e tecnológicas, vantagens e desvantagens, além de preocupações estéticas.
+
 %Definição da ISO 1471
-Com o intuito de estabelecer um padrão sobre o que é e para que serve a arquitetura de software, a ISO 1471 estabelece que Arquitetura de Software é a organização fundamental de um sistema incorporada em seus componentes, seus relacionamentos com o ambiente, e os princípios que conduzem seu design e evolução.
+Com o intuito de estabelecer um padrão sobre o que é e para que serve a arquitetura de software, a International Organization for Standardization (ISO) 1471 estabelece que Arquitetura de Software é a organização fundamental de um sistema incorporada em seus componentes, seus relacionamentos com o ambiente, e os princípios que conduzem seu design e evolução.
 %Elementos básicos
 Em suma, há três conceitos citados por todos os autores quando se trata de arquitetura de software \cite{dias2000software}:
 
@@ -203,13 +204,13 @@ Entre os novos recursos oferecidos pela versão 4 do Rails, que é a versão usa
 
 	\item Suporte para a expiração de cache baseado em chave, que automatiza a invalidação do cache e deixa mais fácil a implementação de estruturas de cache sofisticadas.
 
-	\item Streaming de vídeo ao vivo em conexões persistentes.
+	\item \textit{Streaming} de vídeo ao vivo em conexões persistentes.
 
 	\item Melhorias no ActiveRecord para aprimorar a consistência do escopo e da estrutura das queries.
 
-	\item Padrões de segurança locked-down.
+	\item Padrões de segurança \textit{locked-down}.
 
-	\item Threads seguras por padrão e a eliminação da necessidade de configurar servidores com thread.
+	\item \textit{Threads} seguras por padrão e a eliminação da necessidade de configurar servidores com \textit{thread}.
 
 \end{itemize}
 
@@ -221,7 +222,7 @@ Entre os novos recursos oferecidos pela versão 4 do Rails, que é a versão usa
 
 \textbf{Padrão Arquitetural MVC}
 
-O padrão \textbf{MVC} começou como um arcabouço desenvolvido por Trygve Reenskaug para a plataforma SmallTalk, no final dos anos 70. Desde então, ele exerce grande influência sobre diversos arcabouços que promovem interação com usuário, como é o caso do Ruby on Rails.
+O padrão Model View Controller (MVC) começou como um arcabouço desenvolvido por Trygve Reenskaug para a plataforma SmallTalk, no final dos anos 70. Desde então, ele exerce grande influência sobre diversos arcabouços que promovem interação com usuário, como é o caso do Ruby on Rails.
 %
 O MVC visa separar a representação da informação da interação com o usuário. Para atingir esse objetivo são utilizados três ``papéis'', conforme apresentado do na Figura~\ref{fig:mvc}:
 %
@@ -275,16 +276,16 @@ Já os elementos dinâmicos definem o comportamento do sistema e representa o si
 
 \begin{enumerate}
 
-	\item \textbf{Action Mailer} fornece a capacidade de criação de serviços de e-mail. Podendo enviar e-mails baseados em templates adaptáveis ou receber e processar um e-mail;
+	\item \textbf{Action Mailer} fornece a capacidade de criação de serviços de e-mail. Podendo enviar e-mails baseados em \textit{templates} adaptáveis ou receber e processar um e-mail;
 
 	\item \textbf{Action Pack} é composto por: \\
 
 	\begin{description}
  
-	\item [Action Controller] é o componente que gerencia os controllers em uma aplicação Rails. Ele processa as requisições que chegam de uma aplicação Rails, recebe seus
+	\item [Action Controller] é o componente que gerencia os \textit{controllers} em uma aplicação Rails. Ele processa as requisições que chegam de uma aplicação Rails, recebe seus
 parâmetros e os envia para as ações pretendidas;
 
-	\item [Action View] gerencia as views da aplicação. Isto é, as saídas HTML e XML por 	padrão. Gerencia a renderização de templates aninhados ou parciais , e inclui suporte
+	\item [Action View] gerencia as \textit{views} da aplicação. Isto é, as saídas HTML e XML por 	padrão. Gerencia a renderização de \textit{templates} aninhados ou parciais , e inclui suporte
 embutido para AJAX;
 
 	\end{description}
@@ -304,17 +305,3 @@ Ruby que são utilizadas pelo Rails, tanto em seu núcleo quanto para suas aplic
 
 
 %TODO: concluir algo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
