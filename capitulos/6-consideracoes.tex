@@ -25,9 +25,36 @@ O código presente no apêndice \ref{radar-chart-code}, referente a técnica de 
 A avaliação de satisfação de usabilidade não pôde ser aplicada aos usuários devido ao fato da plataforma Mezuro estar em um ciclo de desenvolvimento (melhoria) e apesar de estar acessível\footnote{Plataforma Mezuro: http://mezuro.org/}, não é possível completar um ciclo de utilização devido ao módulo de análise do código estar em estado de refatoração em uma mudança de linguagem java para Ruby on Rails.
 
 A quantidade de tecnologias envolvidas para geração de uma nova funcionalidade ou melhoria de um módulo gera uma deadline de aprendizado numa primeira contribuição ao projeto. Porem essa dificuldade é minimizada com a colaboração da equipe para a disseminação de conhecimento.
+
 %continuação
 %trabalhos futuros
 As funcionalidade e melhorias realizadas no projeto possuem um intuito de continuidade e propagação dos seus benefícios ao longo de outras interfaces pela comunidade da plataforma Mezuro. O padrão gerado na primeira interação foi utilizado por desenvolvedores externos da equipe core a fim de aplicar o comportamento em outras telas que não sofreram a interação conforme citado na subseção \ref{evolucao-usabilidade}. O comportamento dinâmico e com a diminuição de fluxo da funcionalidade Configuration deverá ser aplicado nas funcionalidades New Project, New Configuration e New Repository, por necessitarem de um comportamento similar. Enquanto a visualização, essa deverá ser aplicada para as métricas do projeto ao termino da fase de melhoria de desempenho da análise de código conforme na subseção \ref{visualizacao-software}. Com o termino dessas aplicações, a contribuição dessas melhorias deverá afetar diretamente ou indiretamente aproximadamente 80\% da interface da plataforma.
+
+Pensando em deixar uma perspectiva de trabalhos com foco em usabilidade para uma possível nova interação da comunidade Mezuro uma nova avaliação heurística foi realizada com foco em levantar pontos de melhoria. Os pontos de melhorias levantados foram
+\begin{itemize}
+\item Feedback ao usuário fixo
+
+Os feedbacks implementados na plataforma conforme Figura \ref{feedback}, modificam a estrutura da tela dificultando ao usuário o que diz respeito a facilidade de memorização, algumas das mensagens necessitam ser encerradas e com o acumulo dessas mensagens o agrupamento e a legibilidade da tela vai se perdendo.
+
+\graphicspath{{figuras/}}
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{FeedBack}
+\caption{Feedback ao usuário}
+\label{feedback}
+\end{figure}
+
+O esperado seria mensagens que não alterasse o agrupamento e legibilidade da tela, sem necessitar uma interação do usuário para encerramento dessas mensagens, tendo uma exibição limitada pelo tempo;
+
+\item Feedback com tempo mínimo 
+
+Os feedbacks que não são fixos na tela apresentam tempo inapropriado, pois estão baseados no tempo de processamento das funcionalidades, em um máquina com maior processamentos as mensagens praticamente não são percebidas e a leitura delas não são possíveis. Esse tempo deve ser prefixado para um tempo médio da leitura da mensagem;
+
+\item Internacionalização da plataforma
+
+A plataforma Mezuro é apresentada totalmente na língua inglesa, por ser uma língua amplamente conhecida, porém há uma necessidade de se possibilitar a criação de internacionalização para que a comunidade possa desenvolver dicionários das mensagens em outras línguas e assim aumentar a abrangência do software.
+
+\end{itemize}
 
 %\section{Cronograma}
 %
