@@ -185,6 +185,7 @@ Por fim, a Figura \ref{class-diagram} apresenta um diagrama de classes que repre
 
 %
 \subsection{Evolução com foco na usabilidade}
+\label{evolucao-usabilidade}
 
 Após uma primeira interação com a equipe e estando mais a par do projeto, iniciou-se um novo ciclo com foco na usabilidade a fim de apresentar esta será inserida no ciclo de desenvolvimento. Seguindo as técnicas de usabilidade adotas, descrita na seção \ref{usabilidade-sl}, as tarefas de usabilidade a serem realizadas no projeto Mezuro serão:
 \begin{itemize}
@@ -512,6 +513,7 @@ O questionário encontra-se no apêndice na seção \ref{questionario-pssuq}.
 
 %
 \subsubsection{Visualização de Software}
+\label{visualizacao-software}
 
 Como retratado na seção \ref{sec-visualizacao}, a apresentação de informações relacionadas a softwares pode se tornar ineficiente conforme o tamanho e complexidade inerente ao código-fonte aumentam. Por esse motivo, para facilitar o entendimento e compreensão das informações apresentadas, é comum utilizar técnicas de visualização, empregadas cada vez mais em softwares, com o intuito de apoiar o processo de desenvolvimento.
 
@@ -525,7 +527,7 @@ A plataforma Mezuro como plugin do Noosfero, contava com uma técnica de visuali
 \label{parallel-coordinate}
 \end{figure}
 
-Como foi decidido reescrever o código do Mezuro, transformando-o numa aplicação independente, durante boa parte do período de desenvlvimento não havia nenhuma técnica para visulização definida. Como um primeiro passo sobre a visualização de informações no Mezuro, uma possibilidade seria aplicar a técnica das coordenadas paralelas novamente. Porém, assim como no desenvolvimento de software, em visualização e análise de dados, não existe solução para todos os problemas. É necessário analisar o contexto ou problema e encontrar e julgar a solução que melhor se encaixa.
+Como foi decidido reescrever o código do Mezuro, transformando-o numa aplicação independente, durante boa parte do período de desenvolvimento não havia nenhuma técnica para visualização definida. Como um primeiro passo sobre a visualização de informações no Mezuro, uma possibilidade seria aplicar a técnica das coordenadas paralelas novamente. Porém, assim como no desenvolvimento de software, em visualização e análise de dados, não existe solução para todos os problemas. É necessário analisar o contexto ou problema e encontrar e julgar a solução que melhor se encaixa.
 
 Pensando nisso, e já que que a técnica das coordenadas paralelas já é conhecida por parte da equipe, neste trabalho buscou-se uma técnica que, assim como as coordenadas paralelas, representasse bem um grande número de atributos. Optou-se então pela técnica do radar, que exibe os dados na forma de um gráfico bidimensional de três ou mais atributos, representados por eixos que iniciam do mesmo ponto como visto no gráfico radar da figura \ref{radar-chart}.
 
@@ -539,7 +541,7 @@ Embora um sistema que tem como foco a interpretação de dados, visando maximiza
 \label{radar-chart}
 \end{figure}
 
-Para aplicar essa técnica ao Mezuro, foi utilizada a biblioteca \textit{D3.js Data-Driven Documents}. D3.js é uma biblioteca Javascript para manipulação de documentos baseados em dados. Ela auxilia na representação dos dados através de tecnologias bem difundidas como o HTML\footnote{Linguagem de marcação de hipertexto, do inglês HyperText Markup Language. É uma linguagem de marcação para construir páginas na web}, SVG\footnote{Gráficos vetoriais escaláveis, do inglês Scalable Vector Graphics. Linguagem que descreve vetorialmente gráficos bidimensionais} e CSS\footnote{Cascading Style Sheets. Linguagem utilizada para definir a apresentação de documentos escritos em linguagens de marcação}. Além disso, a preocupação dessa biblioteaca com \textit{web standards} posssibilita que o usuário usufrua de todos os recursos dos navegadores web mais modernos, sem amarra-lo a nenhum \textit{framework} proprietário \cite{d3js2014info}.
+Para aplicar essa técnica ao Mezuro, foi utilizada a biblioteca \textit{D3.js Data-Driven Documents}. D3.js é uma biblioteca Javascript para manipulação de documentos baseados em dados. Ela auxilia na representação dos dados através de tecnologias bem difundidas como o HTML\footnote{Linguagem de marcação de hipertexto, do inglês HyperText Markup Language. É uma linguagem de marcação para construir páginas na web}, SVG\footnote{Gráficos vetoriais escaláveis, do inglês Scalable Vector Graphics. Linguagem que descreve vetorialmente gráficos bidimensionais} e CSS\footnote{Cascading Style Sheets. Linguagem utilizada para definir a apresentação de documentos escritos em linguagens de marcação}. Além disso, a preocupação dessa biblioteca com \textit{web standards} possibilita que o usuário usufrua de todos os recursos dos navegadores web mais modernos, sem amarra-lo a nenhum \textit{framework} proprietário \cite{d3js2014info}.
 
 D3.js, assim como JQuery e o Prototype, é baseado na especificação DOM\footnote{Document Object Model. Especifição para uma interface, independente de linguagem ou plataforma, onde é possível alterar um documento ou objeto.}, onde é possível modificar o objeto dinamicamente, ou seja, os dados a serem representados são relacionados a um objeto e consecutivas transformações podem ser aplicadas a esse objeto para satisfazer as necessidades do usuário. 
 
