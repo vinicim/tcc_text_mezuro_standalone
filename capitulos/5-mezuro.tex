@@ -57,11 +57,11 @@ Em particular, o projeto Mezuro surgiu antes do CodeClimate, que provê serviço
 %Consumo dos serviços do Kalibro - webService (http://www.teses.usp.br/teses/disponiveis/45/45134/tde-25092013-142158/)
 %----------------------------------------------------------------------------%
 
-O Mezuro utiliza o Kalibro Metrics~\footnote{\url{http://kalibro.org}} para fornecer a funcionalidade de análise e avaliação de métricas de código-fonte. O Mezuro e o Kalibro se comunicam através da interface do Kalibro em forma de web service conhecida como Kalibro Service.
+O Mezuro utiliza o Kalibro Metrics~\footnote{\url{http://kalibro.org}} para fornecer a funcionalidade de análise e avaliação de métricas de código-fonte. O Mezuro e o Kalibro se comunicam através da interface do Kalibro em forma de \textit{web service} conhecida como Kalibro Service.
 %
-Os criadores do projeto Mezuro argumentam que serviços web são uma boa solução de interoperabilidade, com popularidade crescente na última década. O Mezuro se comunica com este web service através de um protocolo conhecido como SOAP\footnote{Simple Object Access Protocol}, baseado em XML\footnote{Linguagem de Marcação Extensível} para o formato de mensagens.
+Os criadores do projeto Mezuro argumentam que serviços web são uma boa solução de interoperabilidade, com popularidade crescente na última década. O Mezuro se comunica com este \textit{web service} através de um protocolo conhecido como SOAP\footnote{Simple Object Access Protocol}, baseado em XML\footnote{Linguagem de Marcação Extensível} para o formato de mensagens.
 %
-Por meio de requisições SOAP, o Mezuro acessa os \textit{end-points}\footnote{Métodos disponibilizado pelo web service, onde cada método define uma funcionalidade} do Kalibro Service. Em resumo, isso permite ao Mezuro prover aos seus usuários as seguintes funcionalidades:
+Por meio de requisições SOAP, o Mezuro acessa os \textit{end-points}\footnote{Métodos disponibilizado pelo \textit{web service}, onde cada método define uma funcionalidade} do Kalibro Service. Em resumo, isso permite ao Mezuro prover aos seus usuários as seguintes funcionalidades:
 
 \begin{enumerate}
 \item Baixar códigos-fonte de repositórios dos tipos GIT, Subversion, Baazar e CVS
@@ -81,7 +81,7 @@ Por meio de requisições SOAP, o Mezuro acessa os \textit{end-points}\footnote{
 %O que é o Noosfero
 O Mezuro foi concebido como instância de uma plataforma web conhecida como Noosfero, com o plugin Mezuro ativado. O Noosfero é um software livre para criação de redes sociais, que está disponível sob licença AGPL\footnote{Licença de software GNU Affero General Public License} V3, com o intuito de permitir que os usuários criem sua própria rede social livre e personalizada de acordo com suas necessidades.
 
-A linguagem de programação Ruby e o arcabouço\textit{ MVC Ruby on Rails} foram utilizados para desenvolver o Noosfero. Essas tecnologias foram escolhidas pois a linguagem Ruby possui uma sintaxe simples, que facilita a manutenibilidade do sistema, característica importante em projetos de software livre que tendem a atrair colaboradores externos a equipe. Já o arcabouço \textit{Ruby on Rails} influencia em maior produtividade graças a conceitos como \textit{convention over configuration} e DRY. Por esse motivo o Noosfero ``herda'' sua arquitetura, a qual é baseada no padrão arquitetural MVC, assim como os plugins que estendem suas funcionalidades.
+A linguagem de programação Ruby e o arcabouço\textit{ MVC Ruby on Rails} foram utilizados para desenvolver o Noosfero. Essas tecnologias foram escolhidas pois a linguagem Ruby possui uma sintaxe simples, que facilita a manutenibilidade do sistema, característica importante em projetos de software livre que tendem a atrair colaboradores externos a equipe. Já o arcabouço \textit{Ruby on Rails} influencia em maior produtividade graças a conceitos como \textit{convention over configuration} e DRY . Por esse motivo o Noosfero ``herda'' sua arquitetura, a qual é baseada no padrão arquitetural MVC, assim como os plugins que estendem suas funcionalidades.
 
 %Arquitetura de plugins do Noosfero
 A arquitetura do Noosfero permite a adição de novas funcionalidades através de plugins. Essa característica é interessante, pois colaboradores podem incorporar novas funcionalidades ao Noosfero, já que os plugins possuem o código isolado, mantendo o baixo acoplamento e alta coesão dos módulos do sistema.
@@ -141,7 +141,7 @@ A implementação da configuração iniciou-se após a conclusão das funcionali
 
 %Uma configuração contem várias métricas de configuraçãoApós a implementação dos repositórios, a segunda funcionalidade a desenvolvida foi a criação de configurações e relacionar um repositório a uma configuração. Uma configuração representa todas as métricas que serão apresentadas após o processamento de um repositório.
 
-Essas funcionalidades, relacionadas as entidade Repositório e Configuração, desenvolvidas durante este trabalho, se encontram disponíveis no ambiente de produção da plataforma Mezuro como aplicaçao independente\footnote{\url{http://mezuro.org/}},  ilustrada na Figura \ref{mezuro}.
+Essas funcionalidades, relacionadas as entidade Repositório e Configuração, desenvolvidas durante este trabalho, se encontram disponíveis no ambiente de produção da plataforma Mezuro como aplicação independente\footnote{\url{http://mezuro.org/}},  ilustrada na Figura \ref{mezuro}.
 
 \graphicspath{{figuras/}}
 \begin{figure}[h]
@@ -194,7 +194,7 @@ Após uma primeira interação com a equipe e estando mais a par do projeto, ini
 \item Testar protótipos com avaliações heurísticas;
 \item Testar a usabilidade de protótipos com usuários locais e remotos (manipulação de variáveis independentes);
 \item Coletar métricas (variáveis dependentes);
-\item Apresentar resultados das análises dos testes (tracking);
+\item Apresentar resultados das análises dos testes (\textit{tracking});
 \item Definição de histórias de usabilidade baseadas nos requisitos fornecidos pelos clientes e no resultado dos testes de usuário;
 \item Implementação das histórias definidas.
 \end{itemize}
@@ -213,7 +213,7 @@ Verifica se a distribuição espacial dos itens traduz as relações entre as in
 \item[Agrupamento por formato]
 Verifica os formatos dos itens como meio de transmitir associações e diferenças.
 \item[Feedback]
-Avalia a qualidade do feedback imediato às ações do usuário.
+Avalia a qualidade do \textit{feedback} imediato às ações do usuário.
 \item[Legibilidade]
 Verifica a legibilidade das informações apresentadas nas telas do sistema.
 \item[Concisão]
@@ -247,7 +247,7 @@ Aspectos de usabilidade retirado da ErgoList ~\cite{ergolist2013}
 \end{flushright}
 \end{description}
 
-A avaliação foi realizada em um conjunto de telas que tinha como principal foco a informação e compreensão das mensagens pelo usuário que são as telas com entrada de dados através de formulários. As telas escolhidas foram: SignUp, New Project, Edit Account, New Configuration e New Reading Group. A avaliação das telas utilizando o checklist da ErgoList gerou o seguinte resultado
+A avaliação foi realizada em um conjunto de telas que tinha como principal foco a informação e compreensão das mensagens pelo usuário que são as telas com entrada de dados através de formulários. As telas escolhidas foram: \textit{SignUp}, \textit{New Project}, \textit{Edit Account}, \textit{New Configuration} e \textit{New Reading Group}. A avaliação das telas utilizando o \textit{checklist} da ErgoList gerou o seguinte resultado
 
 \begin{table}[H]
 \begin{tabular}{|l|l|l|l|l|}
@@ -275,7 +275,7 @@ Significados                & 7         & 2             & 3              & 12   
 \caption{Resultado avaliação telas anteriores}
 \end{table}
 
-Como o checklist da ErgoList é utilizado para avaliar todos os âmbitos de um projeto e o trabalho é realizado em um conjunto específico de telas, então ao analisar os resultados foi encontrado muitas questões que não foram aplicáveis devido a esse domínio. Dentro desse mesmo domínio algumas questão não estão conforme, pois não é o objetivo do projeto, um exemplo é a utilização do campo piscante para destaque de uma informação que não convém com o padrão de aparência utilizado. Desconsiderando esses fatores é possível observar uma debilidade na presteza, agrupamento e concisão das telas o que foi pontuado nos protótipos de tela.
+Como o \textit{checklist} da ErgoList é utilizado para avaliar todos os âmbitos de um projeto e o trabalho é realizado em um conjunto específico de telas, então ao analisar os resultados foi encontrado muitas questões que não foram aplicáveis devido a esse domínio. Dentro desse mesmo domínio algumas questão não estão conforme, pois não é o objetivo do projeto, um exemplo é a utilização do campo piscante para destaque de uma informação que não convém com o padrão de aparência utilizado. Desconsiderando esses fatores é possível observar uma debilidade na presteza, agrupamento e concisão das telas o que foi pontuado nos protótipos de tela.
 
 \graphicspath{{figuras/}}
 \begin{figure}[H]
@@ -295,7 +295,7 @@ Os protótipos de tela foram apresentados a equipe de desenvolvimento juntamente
 \label{parallel-coordinate}
 \end{figure}
 
-Tela SignUp reformulada levando em consideração as pontuações de usabilidade levantadas, uma das principais telas em relação a instrução da entrada correta de informações do usuário.
+Tela \textit{SignUp} reformulada levando em consideração as pontuações de usabilidade levantadas, uma das principais telas em relação a instrução da entrada correta de informações do usuário.
 
 \graphicspath{{figuras/}}
 \begin{figure}[H]
@@ -305,7 +305,7 @@ Tela SignUp reformulada levando em consideração as pontuações de usabilidade
 \label{parallel-coordinate}
 \end{figure}
 
-Tela New Project para apresentar outro contexto da aplicação, já que no contexto do projeto Mezuro foram reformuladas um total de 5 telas utilizando esse padrão. Com a implementação da melhoria proposta foi feita uma nova avaliação utilizando o mesmo checklist da ErgoList que apresentou os seguintes resultados
+Tela \textit{New Project} para apresentar outro contexto da aplicação, já que no contexto do projeto Mezuro foram reformuladas um total de 5 telas utilizando esse padrão. Com a implementação da melhoria proposta foi feita uma nova avaliação utilizando o mesmo \textit{checklist} da ErgoList que apresentou os seguintes resultados
 
 \begin{table}[H]
 \begin{tabular}{|l|l|l|l|l|}
@@ -335,7 +335,7 @@ Significados                & 9         & 0             & 3              & 12   
 
 Ao analisar os novos dados foi constatado uma melhoria na presteza, agrupamento e concisão conforme desejado, porém a melhoria também impactou em outros fatores como consistência e significados.
 
-Com um domínio de abrangência aos aspectos de usabilidade um pouco menor houve uma interação responsável pela tela de SignIn. Como essa tela difere das outras implementadas na primeira interação, então uma nova avaliação e protótipo foram realizados gerando os resultados a seguir.
+Com um domínio de abrangência aos aspectos de usabilidade um pouco menor houve uma interação responsável pela tela de \textit{SignIn}. Como essa tela difere das outras implementadas na primeira interação, então uma nova avaliação e protótipo foram realizados gerando os resultados a seguir.
 
 \begin{table}[H]
 \begin{tabular}{|l|l|l|l|l|}
@@ -370,7 +370,7 @@ Com o protótipo de tela a equipe pode refinar e opinar sobre como seria o resul
 \label{parallel-coordinate}
 \end{figure}
 
-A avaliação utilizando o checklist da ErgoList foi refeita chegando aos seguintes resultados
+A avaliação utilizando o \textit{checklist} da ErgoList foi refeita chegando aos seguintes resultados
 
 \begin{table}[H]
 \begin{tabular}{|l|l|l|l|l|}
@@ -385,20 +385,20 @@ Agrupamento por localização & 7         & 0             & 4              & 11 
 \caption{Resultado avaliação implementação tela SignIn}
 \end{table}
 
-Com a implementação realizada na tela SignIn foi possível observar uma melhoria nos aspectos de usabilidade mais significativamente no agrupamento por localização devido ao um não agrupamento de informações que a versão anterior da tela de Sign In não possuía.
+Com a implementação realizada na tela \textit{Sign In} foi possível observar uma melhoria nos aspectos de usabilidade mais significativamente no agrupamento por localização devido ao um não agrupamento de informações que a versão anterior da tela de \textit{Sign In} não possuía.
 
-Com a primeira interação de usabilidade dentro do ciclo de desenvolvimento da equipe, foi possível adquirir experiência em relação a avaliação de usabilidade, o processo de trabalho da equipe, as tecnologias necessárias para a camada de front-end e a melhor forma de conduzir o entendimento da equipe quanto as melhorias propostas. Através desses conhecimentos obtidos uma próxima interação de usabilidade foi proposta seguindo o método de avaliação heurística para avaliar as telas e sugerir se necessário uma melhoria. Para essa etapa uma reunião foi montada junto a equipe que sugeriu o conjunto de telas da funcionalidade de configuração de métricas que apresentava um caminho muito exaustivo para o usuário.
+Com a primeira interação de usabilidade dentro do ciclo de desenvolvimento da equipe, foi possível adquirir experiência em relação a avaliação de usabilidade, o processo de trabalho da equipe, as tecnologias necessárias para a camada de \textit{front-end} e a melhor forma de conduzir o entendimento da equipe quanto as melhorias propostas. Através desses conhecimentos obtidos uma próxima interação de usabilidade foi proposta seguindo o método de avaliação heurística para avaliar as telas e sugerir se necessário uma melhoria. Para essa etapa uma reunião foi montada junto a equipe que sugeriu o conjunto de telas da funcionalidade de configuração de métricas que apresentava um caminho muito exaustivo para o usuário.
 
-Analisando a funcionalidade Configuration foi percebido um fluxo massante que o usuário tinha que percorrer para executar a funcionalidade. Os prontos mais críticos levantados foram:
+Analisando a funcionalidade \textit{Configuration} foi percebido um fluxo massante que o usuário tinha que percorrer para executar a funcionalidade. Os prontos mais críticos levantados foram:
 
 \begin{enumerate}
-\item A escolha das métricas na tela Choose Metric: Não possibilita escolha múltipla de métricas forçando o usuário acessar diversas vezes a tela;
-\item Informações iniciais das métricas na tela New Metric: Preenchimento repetitivo dos dados e falta de sugestão para o campo Code, onde poderia definir um padrão;
+\item A escolha das métricas na tela \textit{Choose Metric}: Não possibilita escolha múltipla de métricas forçando o usuário acessar diversas vezes a tela;
+\item Informações iniciais das métricas na tela \textit{New Metric}: Preenchimento repetitivo dos dados e falta de sugestão para o campo \textit{Code}, onde poderia definir um padrão;
 \item Excesso de passos: Quantidade excessiva de passos para termino da configuração de métricas do projeto.
 \item Preenchimento formulário: Devido ao processamento realizado em cima de cada métrica um meio dinâmico de edição do formulário torná-o mais eficiente ao longo do cadastro.
 \end{enumerate}
 
-Baseado nesses pontos críticos e pretendendo resolvê-los foi construído os protótipos de tela e apresentado a equipe para discussão já que o comportamento da funcionalidade Configuration foi alterado. Todos os pontos críticos foram classificados dentro da severidade 3 - problema importante de usabilidade conforme definido na seção \ref{avaliacao-heuristica}. A tela de configuração onde são listados os métodos passou a contar com mais campos de informação relevantes as métricas escolhidas.
+Baseado nesses pontos críticos e pretendendo resolvê-los foi construído os protótipos de tela e apresentado a equipe para discussão já que o comportamento da funcionalidade \textit{Configuration} foi alterado. Todos os pontos críticos foram classificados dentro da severidade 3 - problema importante de usabilidade conforme definido na seção \ref{avaliacao-heuristica}. A tela de configuração onde são listados os métodos passou a contar com mais campos de informação relevantes as métricas escolhidas.
 
 \graphicspath{{figuras/}}
 \begin{figure}[H]
@@ -408,7 +408,7 @@ Baseado nesses pontos críticos e pretendendo resolvê-los foi construído os pr
 \label{parallel-coordinate}
 \end{figure}
 
-A tela choose metric passou a contar com a múltipla escolha de métricas, sendo essa funcionalidade exercida por checkboxs que permitem a seleção das métricas desejadas e que serão adicionadas ao projeto.
+A tela \textit{Choose metric} passou a contar com a múltipla escolha de métricas, sendo essa funcionalidade exercida por \textit{checkboxs} que permitem a seleção das métricas desejadas e que serão adicionadas ao projeto.
 
 \graphicspath{{figuras/}}
 \begin{figure}[H]
@@ -418,7 +418,7 @@ A tela choose metric passou a contar com a múltipla escolha de métricas, sendo
 \label{parallel-coordinate}
 \end{figure}
 
-A tela de New Metric foi unificada a tela inicial de configuração, com isso não há mais a necessidade de outra tela, o preenchimento dos dados inicias passaram a ser dinâmico realizado na página que lista as métricas e o campo Code passou a ser pré-definido com preenchimento automático. 
+A tela de \textit{New Metric} foi unificada a tela inicial de configuração, com isso não há mais a necessidade de outra tela, o preenchimento dos dados inicias passaram a ser dinâmico realizado na página que lista as métricas e o campo \textit{Code} passou a ser pré-definido com preenchimento automático. 
 
 \graphicspath{{figuras/}}
 \begin{figure}[H]
@@ -428,7 +428,7 @@ A tela de New Metric foi unificada a tela inicial de configuração, com isso n�
 \label{parallel-coordinate}
 \end{figure}
 
-Com os protótipos avaliados, iniciou-se a implementação do novo comportamento da funcionalidade Configuration, devido as funcionalidades dinâmicas na tela foi necessário o uso a mais das tecnologias JavaScript, Ajax e JQuery a fim de deixar a funcionalidade o mais transparente possível. A implementação do Configuration resultou nas seguintes telas.
+Com os protótipos avaliados, iniciou-se a implementação do novo comportamento da funcionalidade \textit{Configuration}, devido as funcionalidades dinâmicas na tela foi necessário o uso a mais das tecnologias JavaScript, Ajax e JQuery a fim de deixar a funcionalidade o mais transparente possível. A implementação do \textit{Configuration} resultou nas seguintes telas.
 
 A tela implementada apresenta uma lista dinâmica para a alteração das informações das métricas, sem a necessidade de passar por um novo fluxo. O code das métricas são gerados automaticamente como uma proposta que pode ser seguida ou alterada pelo usuário diminuindo o tempo de configuração das métricas.
 
@@ -440,7 +440,7 @@ A tela implementada apresenta uma lista dinâmica para a alteração das informa
 \label{parallel-coordinate}
 \end{figure}
 
-A implementação da tela choose metric possibilitou a múltipla escolha de métricas evitando um loop no fluxo para cadastro de mais de uma métrica que gerava uma exaustão ao usuário já que normalmente um projeto possui mais de 4 a 5 tipos de métricas.
+A implementação da tela \textit{Choose metric} possibilitou a múltipla escolha de métricas evitando um \textit{loop} no fluxo para cadastro de mais de uma métrica que gerava uma exaustão ao usuário já que normalmente um projeto possui mais de 4 a 5 tipos de métricas.
 
 \graphicspath{{figuras/}}
 \begin{figure}[H]
@@ -452,7 +452,7 @@ A implementação da tela choose metric possibilitou a múltipla escolha de mét
 
 O resultado quanto ao nível da melhoria de usabilidade foi avaliado pela equipe core do Mezuro, já que a ferramenta ainda está em um ciclo de desenvolvimento e não se encontra totalmente em produção, levando em consideração todas as melhorias realizadas pelo trabalho na plataforma.
 
-Para essa avaliação foi aplicado o questionário PSSUQ (Psychometric Evaluation Of The Post-Study System Usability Questionnaire). O PSSUQ foi publicado em 1992 por James R. Lewis, composto inicialmente por 18 questões e atualizado para 19 questões em 1995, esse questionário avalia a satisfação do usuário após a participação em estudos de usabilidade baseadas em cenários \cite{lewis1992}. As características avaliada são facilidade de uso e de aprendizado, simplicidade, eficácia, informação e a interface com o usuário. O PSSUQ possui questões intuitivas, de fácil compreensão e um tempo em média de 10 minutos para completar todo o questionário, juntamente com a escala de 1 a 7 de satisfação. As respostas são classificadas quanto ao:
+Para essa avaliação foi aplicado o questionário Psychometric Evaluation Of The Post-Study System Usability Questionnaire (PSSUQ). O PSSUQ foi publicado em 1992 por James R. Lewis, composto inicialmente por 18 questões e atualizado para 19 questões em 1995, esse questionário avalia a satisfação do usuário após a participação em estudos de usabilidade baseadas em cenários \cite{lewis1992}. As características avaliada são facilidade de uso e de aprendizado, simplicidade, eficácia, informação e a interface com o usuário. O PSSUQ possui questões intuitivas, de fácil compreensão e um tempo em média de 10 minutos para completar todo o questionário, juntamente com a escala de 1 a 7 de satisfação. As respostas são classificadas quanto ao:
 \begin{itemize}
 \item Escore da satisfação geral (OVERALL): Avalia os itens de 1 a 19;
 \item Utilidade do sistema (SYSUSE): Avalia os itens de 1 a 8;
@@ -507,7 +507,7 @@ Para melhor evidenciar os resultados estes foram apresentados em modelos gráfic
 \label{parallel-coordinate}
 \end{figure}
 
-Com a análise dos dados foi observado que as 4 classificações mantém uma média similar com desvio padrão e variância baixos. Com isso, foi percebido uma tendencia aproximada ao resultado 2.45, onde levando em consideração que o projeto avaliado teve apenas 2 interações com foco em usabilidade, foi obtido bons resultados já que a escala vai de 1 a 7 de concordo fortemente a discordo fortemente. Levando em consideração os resultados também do checklist realizado anteriormente foi observado uma melhoria progressiva com as interações de usabilidade sem impactar fortemente na rotina da equipe do projeto. As contribuições foram tanto em nível de front-end quanto de back-end e os membros com o foco de usabilidade participaram ativamente do desenvolvimento do código-fonte do projeto. 
+Com a análise dos dados foi observado que as 4 classificações mantém uma média similar com desvio padrão e variância baixos. Com isso, foi percebido uma tendencia aproximada ao resultado 2.45, onde levando em consideração que o projeto avaliado teve apenas 2 interações com foco em usabilidade, foi obtido bons resultados já que a escala vai de 1 a 7 de concordo fortemente a discordo fortemente. Levando em consideração os resultados também do \textit{checklist} realizado anteriormente foi observado uma melhoria progressiva com as interações de usabilidade sem impactar fortemente na rotina da equipe do projeto. As contribuições foram tanto em nível de \textit{front-end} quanto de \textit{back-end} e os membros com o foco de usabilidade participaram ativamente do desenvolvimento do código-fonte do projeto. 
 
 O questionário encontra-se no apêndice na seção \ref{questionario-pssuq}.
 
@@ -543,9 +543,9 @@ Embora um sistema que tem como foco a interpretação de dados, visando maximiza
 
 Para aplicar essa técnica ao Mezuro, foi utilizada a biblioteca \textit{D3.js Data-Driven Documents}. D3.js é uma biblioteca Javascript para manipulação de documentos baseados em dados. Ela auxilia na representação dos dados através de tecnologias bem difundidas como o HTML\footnote{Linguagem de marcação de hipertexto, do inglês HyperText Markup Language. É uma linguagem de marcação para construir páginas na web}, SVG\footnote{Gráficos vetoriais escaláveis, do inglês Scalable Vector Graphics. Linguagem que descreve vetorialmente gráficos bidimensionais} e CSS\footnote{Cascading Style Sheets. Linguagem utilizada para definir a apresentação de documentos escritos em linguagens de marcação}. Além disso, a preocupação dessa biblioteca com \textit{web standards} possibilita que o usuário usufrua de todos os recursos dos navegadores web mais modernos, sem amarra-lo a nenhum \textit{framework} proprietário \cite{d3js2014info}.
 
-D3.js, assim como JQuery e o Prototype, é baseado na especificação DOM\footnote{Document Object Model. Especifição para uma interface, independente de linguagem ou plataforma, onde é possível alterar um documento ou objeto.}, onde é possível modificar o objeto dinamicamente, ou seja, os dados a serem representados são relacionados a um objeto e consecutivas transformações podem ser aplicadas a esse objeto para satisfazer as necessidades do usuário. 
+D3.js, assim como JQuery e o Prototype, é baseado na especificação DOM\footnote{Document Object Model. Especificação para uma interface, independente de linguagem ou plataforma, onde é possível alterar um documento ou objeto.}, onde é possível modificar o objeto dinamicamente, ou seja, os dados a serem representados são relacionados a um objeto e consecutivas transformações podem ser aplicadas a esse objeto para satisfazer as necessidades do usuário. 
 
-D3.js otimiza a manipulação de documentos em comparação com a especificação DOM, já que essa última utiliza uma abordagem imperativa, a qual requer iterações manuais entre os elementos e armazenamento do estado temporário de cada transformação. D3.js utiliza uma aboradagem declarativa, que reduz o número de linhas de código e aumenta a legibilidade.
+D3.js otimiza a manipulação de documentos em comparação com a especificação DOM, já que essa última utiliza uma abordagem imperativa, a qual requer iterações manuais entre os elementos e armazenamento do estado temporário de cada transformação. D3.js utiliza uma abordagem declarativa, que reduz o número de linhas de código e aumenta a legibilidade.
 
 Além da enorme quantidade de exemplos da utilização dessa biblioteca aplicadas a técnicas de visualização\footnote{\url{https://github.com/mbostock/d3/wiki/Gallery}} a D3.js está licenciada sob \textit{BSD 3-Clause License}\footnote{\url{http://opensource.org/licenses/BSD-3-Clause}} que a torna compatível com a licensa na qual o Mezuro é distribuído, a AGPL V3\footnote{\url{http://www.gnu.org/licenses/agpl-3.0.html}}, pois em caso de incompatibilidade não seria possível utilizar os componentes por conta de restrições de distribuição.
 
@@ -576,13 +576,6 @@ Entre os possíveis gráficos gerados após sucessivas transformações dos dado
 
 Optou-se por ler os respectivos dados de entrada a partir de um arquivo pois o Mezuro, no momento, passa por uma fase de melhoria de desempenho e não está processando nem mesmo um repositório por vez.
 
-As implementações básicas utilizando a D3.js inserem os dados de entrada no próprio \textit{script} (\textit{hard coding}), com um \textit{array} por exemplo, que apesar da separação de responsabilidades relacionadas a leitura de dados e geração do gráfico em sí, não oferece flexibilidade para alteração desses valores. Já utilizando um arquivo \textit{.tsv} permite alterar os valores com facilidade, aumentando a coesão do código (disponível no Anexo \ref{source-code-appendix}). 
+As implementações básicas utilizando a D3.js inserem os dados de entrada no próprio \textit{script} (\textit{hard coding}), com um \textit{array} por exemplo, que apesar da separação de responsabilidades relacionadas a leitura de dados e geração do gráfico em si, não oferece flexibilidade para alteração desses valores. Já utilizando um arquivo \textit{.tsv} permite alterar os valores com facilidade, aumentando a coesão do código (disponível no Anexo \ref{source-code-appendix}). 
 
 O arquivo \textit{.tsv} representado pela tabela \ref{data-tsv}, especificamente, representa os valores processados de um repositório, a partir de uma configuração, que conta com cinco métricas de configuração: Total Abstract Classes, Total Lines of Code, Total Number of Methods, Total Number Module/Classes, Average Method LOC, todas com escopo de software.
-
- 
-
-
-
-
-
