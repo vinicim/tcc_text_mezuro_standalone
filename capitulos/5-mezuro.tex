@@ -449,9 +449,66 @@ A implementação da tela choose metric possibilitou a múltipla escolha de mét
 \label{parallel-coordinate}
 \end{figure}
 
-O resultado quanto ao nível da melhoria de usabilidade foi avaliado pela equipe core do Mezuro, já que a ferramenta ainda está em um ciclo de desenvolvimento e não se encontra totalmente em produção, levando em consideração todas as melhorias realizadas pelo trabalho na plataforma. Para essa avaliação foi aplicado o questionário PSSUQ (Psychometric Evaluation Of The Post-Study System Usability Questionnaire). O PSSUQ foi publicado em 1992 por James R. Lewis, composto inicialmente por 18 questões e atualizado para 19 questões em 1995, esse questionário avalia a satisfação do usuário após a participação em estudos de usabilidade baseadas em cenários \cite{lewis1992}. O PSSUQ possui questões intuitivas e de fácil compreensão, possibilitando uma resposta mais precisa juntamente com a escala de 1 a 7 de satisfação. O questionário encontra-se no apêndice na seção /ref{questionario-pssuq}.
+O resultado quanto ao nível da melhoria de usabilidade foi avaliado pela equipe core do Mezuro, já que a ferramenta ainda está em um ciclo de desenvolvimento e não se encontra totalmente em produção, levando em consideração todas as melhorias realizadas pelo trabalho na plataforma.
 
+Para essa avaliação foi aplicado o questionário PSSUQ (Psychometric Evaluation Of The Post-Study System Usability Questionnaire). O PSSUQ foi publicado em 1992 por James R. Lewis, composto inicialmente por 18 questões e atualizado para 19 questões em 1995, esse questionário avalia a satisfação do usuário após a participação em estudos de usabilidade baseadas em cenários \cite{lewis1992}. As características avaliada são facilidade de uso e de aprendizado, simplicidade, eficácia, informação e a interface com o usuário. O PSSUQ possui questões intuitivas, de fácil compreensão e um tempo em média de 10 minutos para completar todo o questionário, juntamente com a escala de 1 a 7 de satisfação. As respostas são classificadas quanto ao:
+\begin{itemize}
+\item Escore da satisfação geral (OVERALL): Avalia os itens de 1 a 19;
+\item Utilidade do sistema (SYSUSE): Avalia os itens de 1 a 8;
+\item Qualidade da informação (INFOQUAL): Avalia os itens de 9 a 15;
+\item Qualidade da interface (INTERQUAL): Avalia os itens 16 até 18.
+\end{itemize}
 
+A tabela a baixo representa todos os dados coletados na pesquisa realizada com a equipe core do Mezuro.
+
+\begin{table}[H]
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{1}{|l|}{} & \multicolumn{19}{c|}{Questões}                                                                         \\ \hline
+Usuários& 1. & 2. & 3. & 4. & 5. & 6. & 7. & 8. & 9. & 10. & 11. & 12. & 13. & 14. & 15. & 16. & 17. & 18. & 19. \\ \hline
+A                      & 3  & 3  & 2  & 4  & 3  & 3  & 4  & 3  & 3  & 3   & 4   & 4   & 4   & 4   & 4   & 2   & 2   & 2   & 2   \\ \hline
+B                      & 2  & 2  & 1  & 3  & 2  & 2  & 3  & 2  & 2  & 1   & 3   & 3   & 2   & 4   & 2   & 1   & 1   & 1   & 2   \\ \hline
+C                      & 1  & 1  & 1  & 2  & 2  & 1  & 2  & 1  & 2  & 2   & 2   & 1   & 3   & 2   & 2   & 3   & 3   & 2   & 1   \\ \hline
+D                      & 3  & 3  & 3  & 3  & 2  & 2  & 1  & 3  & 2  & 2   & 2   & 2   & 3   & 5   & 3   & 2   & 2   & 5   & 2   \\ \hline
+E                      & 6  & 2  & 4  & 2  & 2  & 1  & 2  & 4  & 3  & 2   & 3   & 4   & 2   & 4   & 2   & 2   & 1   & 1   & 1   \\ \hline
+F                      & 3  & 3  & 3  & 3  & 3  & 3  & 3  & 2  & 3  & 2   & 3   & 3   & 3   & 3   & 4   & 2   & 3   & 4   & 3   \\ \hline
+\end{tabular}
+\caption{Dados coletados de 6 participantes}
+\end{table}
+
+Com a coleta dos dados foram levantados a média, desvio padrão e variância de acordo com a classificação das respostas. 
+
+\begin{table}[H]
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{1}{|l|}{}              & \multicolumn{4}{c|}{Classificação}                                                                             \\ \hline
+Participantes                       & OVERALL                    & SYSUSE                    & INFOQUAL                  & INTERQUAL                 \\ \hline
+A                                   & 3.11                       & 3.13                      & 3.71                      & 2                         \\ \hline
+B                                   & 2.05                       & 2.13                      & 2.43                      & 1                         \\ \hline
+C                                   & 1.79                       & 1.38                      & 2                         & 2.67                      \\ \hline
+D                                   & 2.63                       & 2.5                       & 2.71                      & 3                         \\ \hline
+E                                   & 2.32                       & 2.38                      & 2.86                      & 1.34                      \\ \hline
+F                                   & 2.95                       & 2.88                      & 3                         & 3                         \\ \hline
+\multicolumn{1}{|l|}{Média}         & \multicolumn{1}{r|}{2.47}  & \multicolumn{1}{r|}{2.40} & \multicolumn{1}{r|}{2.79} & \multicolumn{1}{r|}{2.17} \\ \hline
+\multicolumn{1}{|l|}{Variância}     & \multicolumn{1}{r|}{0.514} & \multicolumn{1}{r|}{0.61} & \multicolumn{1}{r|}{0.58} & \multicolumn{1}{r|}{0.86} \\ \hline
+\multicolumn{1}{|l|}{Desvio Padrão} & \multicolumn{1}{r|}{0.26}  & \multicolumn{1}{r|}{0.38} & \multicolumn{1}{r|}{0.33} & \multicolumn{1}{r|}{0.74} \\ \hline
+\end{tabular}
+\caption{Média, Variância e Desvio Padrão dos dados}
+\end{table}
+
+Para melhor evidenciar os resultados estes foram apresentados em modelos gráficos.
+
+\graphicspath{{figuras/}}
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{GraficoResultados}
+\caption{Gráfico resultados dentro da classificação das respostas.}
+\label{parallel-coordinate}
+\end{figure}
+
+Com a análise dos dados foi observado que as 4 classificações mantém uma média similar com desvio padrão e variância baixos. Com isso, foi percebido uma tendencia aproximada ao resultado 2.45, onde levando em consideração que o projeto avaliado teve apenas 2 interações com foco em usabilidade, foi obtido bons resultados já que a escala vai de 1 a 7 de concordo fortemente a discordo fortemente. Levando em consideração os resultados também do checklist realizado anteriormente foi observado uma melhoria progressiva com as interações de usabilidade sem impactar fortemente na rotina da equipe do projeto. As contribuições foram tanto em nível de front-end quanto de back-end e os membros com o foco de usabilidade participaram ativamente do desenvolvimento do código-fonte do projeto. 
+
+O questionário encontra-se no apêndice na seção \ref{questionario-pssuq}.
 
 %
 \subsubsection{Visualização de Software}
