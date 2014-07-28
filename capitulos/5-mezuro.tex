@@ -580,3 +580,97 @@ Optou-se por ler os respectivos dados de entrada a partir de um arquivo pois o M
 As implementações básicas utilizando a D3.js inserem os dados de entrada no próprio \textit{script} (\textit{hard coding}), com um \textit{array} por exemplo, que apesar da separação de responsabilidades relacionadas a leitura de dados e geração do gráfico em si, não oferece flexibilidade para alteração desses valores. Já utilizando um arquivo \textit{.tsv} permite alterar os valores com facilidade, aumentando a coesão do código (disponível no Anexo \ref{source-code-appendix}). 
 
 O arquivo \textit{.tsv} representado pela tabela \ref{data-tsv}, especificamente, representa os valores processados de um repositório, a partir de uma configuração, que conta com cinco métricas de configuração: Total Abstract Classes, Total Lines of Code, Total Number of Methods, Total Number Module/Classes, Average Method LOC, todas com escopo de software.
+
+\section{Desenvolvimento}
+
+O objetivo desta seção é descrever o desenvolvimento das funcionalidades, ou contribuições relacionadas a este trabalho. Serão relatadas as dificuldades encontradas, os métodos utilizados, assim como os processos envolvidos em cada funcionalidade.
+
+\subsection{Funcionalidade 1: Manter Repositórios}
+\label{functionality-1}
+
+\textbf{Descrição:} Funcionalidade de baixa complexidade, foi a primeira contribuição da equipe à plataforma Mezuro. Essas características fizeram com que a equipe core a selecionasse por ser o primeiro contato dos integrantes da equipe UnB com a tecnologia envolvida, além da baixa familiridade com o código-fonte já desenvolvido (apesar de poucas entidades implementadas, a gem do Kalibro já era utilizada)
+
+\textbf{Objetivos:} Entre os objetivos dessa funcionalidade estão o registro de um novo repositório (sempre associado a um projeto), edição do repositório criado, visualização e exclusão do mesmo. Além desses objetivos funcionais estão os objetivos de interação com o projeto, como aumento da familiaridade com o código-fonte, interação com a equipe core, a qual é remota (cituada no laboratório CCSL IME/USP), e introdução ao treinamento nas tecnologias envolvidas (arcabouço Ruby on Rails, política de commits no sistema de gestão de configuração GIT).
+
+\textbf{Relevância para o Mezuro:} Apesar de sua simples implementação, os repositórios são importantes para o funcionamento do Mezuro, pois os processamentos que extram as métricas são feitas a partir de um repositório. A relevância dessa funcionalidade não está limitada apenas na sua implementação, mas também porque essa funcionalidade representa um marco para o projeto Mezuro, já que foi a primeira funcionalidade a ser desenvolvida por co-desenvolvedores, ou seja, houve uma descentralização do desenvolvimento da equipe core.
+
+\textbf{Principais dificuldades:} As dificuldades relacionadas a essa funcionalidade estão relacionadas aos problemas comuns que todo desenvolvedor encontra ao interagir com um novo sistema já em desenvolvimento e com uma nova tecnologia. Porém os problemas relacionados ao conhecimento do sistema em sí foram rapidamente suprimidos em função do padrão de codificação já adotado pela equipe core do Mezuro, isso acelerou o entendimento e familiaridade com sistema.
+
+Entre as metodologias utilizadas para essa funcionalidade estão:
+
+\subsubsection{Divisão das Iterações em Sprints, Sprint Plannig Meeting, Sprint Review Meeting}
+
+\textbf{Descrição:} Um ciclo de trabalho de trabalho é organizado em sprint, assim como propõe so Scrum. O tempo de um ciclo pode variar entre uma semana ou duas, dependendo da complexidade e tamanho das atividades a serem desenvolviddas. No início de cada sprint há uma reunião de planejamento (Sprint Planning Meeting) onde são selecionadas estórias de usuários, as quais representam unidades de trabalho a serem desenvolvidas. Se a complexidade da estória for muito alta, ela pode ser quebrada em tarefas, com granularidade mais baixa. No caso da funcionalidade de Manter Reposiórios a sprint foi de pouco mais de duas semanas, pois foi levado em consideração o treinamento na tecnologias utilizadas. Ao final da sprint houve nova reunião (sprint review meeting), para revisar o que foi produzido e avaliar se os objetivos propostos foram alcançados.
+
+\textbf{Relevância:} O planejamento da sprint foi importante para selecionar a melhor funcionalidade a ser desenvolvida pela equipe naquele momento, levando em consideração a familiaridade com o projeto e conhencimento da tecnologia. O tempo para o desenvolvimento das atividades propostas mais flexível foi importante para conciliar o treinamento com implementação. Já a reunião ao final foi relevante para avaliar o progresso durante o ciclo de trabalho e auxiliar o planejaemento do próximo ciclo.
+
+\subsubsection{Daily Meeting}
+
+\textbf{Descrição:} No caso do projeto Mezuro, formado pela sua equipe core e equipe de co-desenvolvedores, é inviável a realização de daily meetings com os integrantes de todas as equipes todos os dias, asssim como propõe o scrum. Por isso as reuniões eram semanais, sempre no mesmo horário, com objetivo de superação de algum obstáculo encontrado durante a semana.
+
+\textbf{Relevância:} Importante para superação de impasses que surgiram durante o desenvolvimento, além de ampliar a interação com a equipe.
+
+\textbf{Limitação:} O intervalo de uma semana, muitas vezes pareceia muito grande. Com isso os integrantes recorriam a lista de emails para tirar dúvidas, não tão eficientes quanto reuniões.
+
+\subsection{Funcionalidade 2: Manter Configurações}
+\label{functionality-2}
+
+\textbf{Descrição:} Assim como a funcionalidade de Manter Repositórios, esta funcionalidade também possui baixa complexidade. Seu fluxo de execução e propósitos são similares a funcionalidade descrita anteriormente.
+
+\textbf{Objetivos:} Entre os objetivos dessa funcionalidade estão o registro de uma nova configuração (associação de um para um com a entidade projeto, diferente dos dos repositórios, onde a relação é de muitos para um), edição da configuração criada, visualização e exclusão da mesma.
+
+\textbf{Relevância para o Mezuro:} Como os repositórios, as configurações são importantes para o funcionamento do Mezuro, pois os resultados dos processamentos são baseados na configuração associada ao repositório. Essa entidade é um \textit{container} de outra entidade, as métricas de configuração, as quais representam uma métrica de código-fonte.
+
+\textbf{Principais dificuldades:} As dificuldades encontradas durante o desenvolvimento desta funcionalidade foram menores que a funcionalidade \ref{functionality-1}. Isso pois o grau de complexidada das duas são similares e a familiaridade e conhecimento técnico das tecnologias eram maiores nesse ponto do desenvolvimento, comparando com o início das contribuições.
+
+As metodologias utilizadas nesta contribuição foram basicamente as mesmas da funcionalidade \ref{functionality-1}.
+
+\subsection{Funcionalidade 3: Refatoração do Fluxo de Adição de Métricas a uma Configuração}
+\label{functionality-3}
+
+\textbf{Descrição:} Esta funcionalidade teve complexidade de implementação maior em relação às duas funcionalidades citadas nas seções \ref{functionality-1} e \ref{functionality-2}. Isso pois surgiram novas tecnologias, como o AJAX\footnote{Conjunto metodológico de tecnologias utilizadas para fazer requisições assíncronas, tornando as páginas mais interativas} e JQuery\footnote{Biblioteca \textit{Javascript. \url{http://jquery.com/}}} além das já utilizadas no projeto Mezuro. 
+
+\textbf{Objetivos:} Essas novas tecnologias foram importantes pois era necessário melhorar a forma como métricas eram adicionadas a uma configuração. Anteriormente só era possível adicionar uma métrica a cada instante, prencheendo um formulário para cada métrica. Ou seja, se numa dada configuração fossem necessárias oito métricas, por exemplo, o usuário iria levar entre cinco e dez minutos aproximadante para adequar essa configuração. Atualmente, essas novas tecnologias permitem adicionar múltiplas métricas ao mesmo tempo, tornando o fluxo de adição mais eficiente.
+
+\textbf{Relevância para o Mezuro:} Essa refatoração, apesar de não ser crucial para o funcionamento do Mezuro, pode ser considerada uma otimização importante já que melhora a experiência do usuário ao adicionar novas métricas. O estado anterior poderia desestimular o uso do sistema pelos usuários finais. 
+
+\textbf{Principais dificuldades:} As dificuldades encontradas durante a refatoração estavam restritas à tecnologia utilizada, pois o fluxo pretendido estava muito bem definido graças aos protótipos de tela desenvolvidos como resultado do ciclos de usabilidade que aconteciam em paralelo às demais contribuições.
+
+\subsubsection{\textit{Pair Programming}}
+
+Para lidar com as dificuldades, durante o desenvolvimento dessa funcionalidade, foi utilizada com mais rigor a prática do \textit{pair programming}, uma prática ágil onde dois programadores trabalham juntos num mesmo computador.
+
+\textbf{Descrição:} Enquanto um programador, piloto, desenvolve o código, o outro, chamado de co-piloto, observa as linhas escritas e palpita sobre melhores soluções. A dupla revesa o posto de piloto a cada intervalo de tempo definido. 
+
+\textbf{Relevância:} Além de diminuir a chance de erros, tanto de sintaxe quanto erros lógicos, as chances de obter uma melhor solução são maiores, além do conhecimento das novas tecnologias ser repassado do piloto para o co-piloto e vice-versa durante o pareamento.
+
+\subsection{Funcionalidade 4: Inserir uma Técnica de Visualização de Software}
+\label{functionality-4}
+
+\textbf{Descrição:}  Técnicas de visualização de software são meios ou recursos utilizados para facilitar o entendimento de grande quantiade informação. Geralmente são empregados gráficos, cores, posições e tamanhos diversos para aumentar o poder cognitvo do usuário.
+
+\textbf{Objetivos:} Afim de facilitar o entendimento das informações, as métricas extraídas, e a análise do código são aplicadas técnicas de visualização de informação. Na figura \ref{radar-chart-mezuro} se encontra a técnica aplicada ao Mezuro, neste primeiro momento.
+
+\textbf{Relevância para o Mezuro:} A aplicação de visualização de informação por meio de técnicas de visualização de software é crucial para o Mezuro. Isso pois a plataforma Mezuro lida com um grande número de informações que são difíceis de interpretar sem uma técnica aplicada.
+
+\textbf{Principais dificuldades:} As dificuldades encontradas nesta funcionalidade são relativas aos conceitos relacionados a visualização de software, e ,num primeiro momento, a biblioteca para manipulação de documentos baseados em dados, a D3.js\footnote{\url{http://d3js.org/}} . A definição da melhor técnica está entre essas dificuldades, já que uma técnica não se encaixa bem em todos os casos, necessitando a análise do contexto para a seleção da melhor técnica.
+
+Além das metodologias já utilizadas nas funcionalidades anteriores
+
+\subsection{Processos}
+
+Os processos utilizados durante os ciclos de desenvolvimento foram os mesmos em todas as funcionalidades. Entre eles estão: 
+
+\begin{itemize}
+\item Engenharia de Requisitos de Software: De maneira macro, esse processo é responsável por traduzir as necessidades dos envolvidos, em especificações bem definidas do sistema, os requisitos. Para levantar os requisitos podem ser utilizadas várias técnicas\footnote{Entrevistas e questionários, \textit{brainstorming}, prototipagem, cenários}, entre elas foram utilizadas o \textit{brainstorming}\footnote{Dinâmica de grupo onde ideias hipotéticas são sugeridas} e a prototipagem de telas.
+\item Implementação: Transformação da especificação em código, a principal saída deste processo.
+\item Gerencia de configuração: Processo de apoio ao desenvolvimento de software, fornece controle de versões, controle de mudanças, e auditoria das configurações, ou produtos de trabalho \ref{pressman2011engenharia}.
+\item Manutenção e evolução de software: Como definido no capítulo \ref{chapter-3} a manutenção e evolução de software tem os objetivos de manter a satisfação dos usuários, a disponibilidade, além de levar o sistema a um estado superior, tanto em relação a requisitos funcionais como não-funcionais.
+\end{itemize}
+
+
+
+
+
+
+
