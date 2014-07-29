@@ -114,9 +114,9 @@ Em suma, pensando no desempenho e na evolução do desenvolvimento do Mezuro, co
 Do ponto de vista do desenvolvimento, a Figura \ref{mezuro-design} representa o projeto de alto-nível da plataforma Mezuro como uma aplicação independente. Como mencionado anteriormente, ele funciona como a camada de visualização do Kalibro Metrics, que por sua vez utiliza coletores de métricas (Analizo, CheckStyle e CVSAnalY) para executar suas funcionalidades.
 
 \graphicspath{{figuras/}}
-\begin{figure}[h]
+\begin{figure}[htpb]
 \centering
-\includegraphics[width=0.6\textwidth]{mezuro-standalone-design}
+\includegraphics[width=0.4\textwidth]{mezuro-standalone-design}
 \caption{Design de alto-nível do Mezuro. Editado de \cite{meirelles2010mezuro}}
 \label{mezuro-design}
 \end{figure}
@@ -124,7 +124,7 @@ Do ponto de vista do desenvolvimento, a Figura \ref{mezuro-design} representa o 
 Sem as restrições impostas pelo desenvolvimento do Noosfero, uma importante decisão arquitetural tomada pela equipe do Mezuro foi o desenvolvimento de uma \textit{gem} (equivalente a uma \textit{Library} do Java) do Kalibro Metrics. Anteriormente, quando o Mezuro estava incorporado ao Noosfero, toda a interface de utilização do serviço do Kalibro estava implementada no próprio Mezuro. Com o desenvolvimento dessa \textit{gem}, esse serviço se torna mais reutilizável, resultando numa contribuição a toda a comunidade do Rails, já que projetos desenvolvidos com esse arcabouço que necessitarem utilizar serviços do Kalibro, bastam instalar e utilizar a \textit{gem}, sem a necessidade de reimplementar a interface do serviço.
 
 \graphicspath{{figuras/}}
-\begin{figure}[h]
+\begin{figure}[htpb]
 \centering
 \includegraphics[width=0.7\textwidth]{mezuro-standalone}
 \caption{Tela principal do Mezuro. Disponível em \url{http://mezuro.org/}}
@@ -141,7 +141,7 @@ A implementação da configuração iniciou-se após a conclusão das funcionali
 
 %Uma configuração contem várias métricas de configuraçãoApós a implementação dos repositórios, a segunda funcionalidade a desenvolvida foi a criação de configurações e relacionar um repositório a uma configuração. Uma configuração representa todas as métricas que serão apresentadas após o processamento de um repositório.
 
-Essas funcionalidades, relacionadas as entidade Repositório e Configuração, desenvolvidas durante este trabalho, se encontram disponíveis no ambiente de produção da plataforma Mezuro como aplicação independente\footnote{\url{http://mezuro.org/}},  ilustrada na Figura \ref{mezuro}.
+Essas funcionalidades, relacionadas as entidade Repositório e Configuração, desenvolvidas durante este trabalho, se encontram disponíveis no ambiente de produção da plataforma Mezuro como aplicação independente\footnote{\url{http://mezuro.org/}},  ilustrada na Figura \ref{fig:mezuro-repositories}.
 
 \graphicspath{{figuras/}}
 \begin{figure}[h]
@@ -156,7 +156,7 @@ Ao clicar em algum projeto disponível no Mezuro, sua tela de visualização é 
 \graphicspath{{figuras/}}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{mezuro-info}
+\includegraphics[width=0.6\textwidth]{mezuro-info}
 \caption{Tela de informações do repositório}
 \label{fig:mezuro-info}
 \end{figure}
@@ -164,7 +164,7 @@ Ao clicar em algum projeto disponível no Mezuro, sua tela de visualização é 
 \graphicspath{{figuras/}}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{mezuro-result}
+\includegraphics[width=0.6\textwidth]{mezuro-result}
 \caption{Métricas do repositório após processamento}
 \label{fig:mezuro-result}
 \end{figure}
@@ -364,7 +364,7 @@ Com a analise dos dados e levando em consideração os mesmos porém levantados 
 Com o protótipo de tela a equipe pode refinar e opinar sobre como seria o resultado final e contribuir com a evolução das interfaces. A implementação dessas melhorias resultou na seguinte tela
 
 \graphicspath{{figuras/}}
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=1.0\textwidth]{TelaSignIn}
 \caption{Implementação tela Sign In}
@@ -404,7 +404,7 @@ Baseado nesses pontos críticos e pretendendo resolvê-los foi construído os pr
 \graphicspath{{figuras/}}
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{PrototipoConfig}
+\includegraphics[width=0.8\textwidth]{PrototipoConfig}
 \caption{Versão Avaliada x Protótipo de tela - Configuration}
 \label{parallel-coordinate}
 \end{figure}
@@ -414,7 +414,7 @@ A tela \textit{Choose metric} passou a contar com a múltipla escolha de métric
 \graphicspath{{figuras/}}
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{PrototipoChooseMetric}
+\includegraphics[width=0.8\textwidth]{PrototipoChooseMetric}
 \caption{Versão Avaliada x Protótipo de tela - Choose Metric}
 \label{parallel-coordinate}
 \end{figure}
@@ -436,7 +436,7 @@ A tela implementada apresenta uma lista dinâmica para a alteração das informa
 \graphicspath{{figuras/}}
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{configuration}
+\includegraphics[width=0.8\textwidth]{configuration}
 \caption{Implementação tela}
 \label{parallel-coordinate}
 \end{figure}
@@ -467,7 +467,7 @@ A tabela a baixo representa todos os dados coletados na pesquisa realizada com a
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
 \multicolumn{1}{|l|}{} & \multicolumn{19}{c|}{Questões}                                                                         \\ \hline
-Usuários& 1. & 2. & 3. & 4. & 5. & 6. & 7. & 8. & 9. & 10. & 11. & 12. & 13. & 14. & 15. & 16. & 17. & 18. & 19. \\ \hline
+Usuários& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 \\ \hline
 A                      & 3  & 3  & 2  & 4  & 3  & 3  & 4  & 3  & 3  & 3   & 4   & 4   & 4   & 4   & 4   & 2   & 2   & 2   & 2   \\ \hline
 B                      & 2  & 2  & 1  & 3  & 2  & 2  & 3  & 2  & 2  & 1   & 3   & 3   & 2   & 4   & 2   & 1   & 1   & 1   & 2   \\ \hline
 C                      & 1  & 1  & 1  & 2  & 2  & 1  & 2  & 1  & 2  & 2   & 2   & 1   & 3   & 2   & 2   & 3   & 3   & 2   & 1   \\ \hline
@@ -503,7 +503,7 @@ Para melhor evidenciar os resultados estes foram apresentados em modelos gráfic
 \graphicspath{{figuras/}}
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{GraficoResultados}
+\includegraphics[width=0.5\textwidth]{GraficoResultados}
 \caption{Gráfico resultados dentro da classificação das respostas.}
 \label{parallel-coordinate}
 \end{figure}
@@ -555,7 +555,7 @@ Entre os possíveis gráficos gerados após sucessivas transformações dos dado
 \graphicspath{{figuras/}}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{radar_chart_mezuro}
+\includegraphics[width=0.7\textwidth]{radar_chart_mezuro}
 \caption{Gráfico Radar aplicado no Mezuro}
 \label{radar-chart-mezuro}
 \end{figure}
