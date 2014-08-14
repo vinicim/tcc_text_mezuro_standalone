@@ -10,7 +10,7 @@ Levando em conta todos esses fatores, a equipe do Mezuro decidiu retirá-lo do N
 
 \section{Contribuições}
 
-A contribuição deste trabalho inclui os seguintes tópicos relacionados a implementação:
+A contribuição deste trabalho inclui os seguintes tópicos relacionados a implementação do Mezuro:
 \begin{enumerate}
 \item ``Manter Repositórios'';
 \item ``Manter Configurações'';
@@ -20,6 +20,19 @@ A contribuição deste trabalho inclui os seguintes tópicos relacionados a impl
 \end{enumerate}
 
 Os aspectos relevantes deste trabalho não estão restritos apenas aos  pontos práticos ou de implementação citados. A colaboração com um software livre, de acordo com os padrões de contribuição destacados na seção \ref{sec-padroes-sl}, passando por vários dos processos\footnote{Implementação, gerencia de configuração, requisitos e manutenção e evolução de software} que compõem a engenharia de software, além da aplicação de princípios ágeis\footnote{\textit{Pair programming}, divisão de iterações em \textit{sprints}, definição das unidades de trabalho dentro de \textit{backlog}}, interação e envolvimento com uma equipe remota também são pontos notáveis deste trabalho.
+
+%
+A técnica aplicada para a inserção do ciclo de usabilidade foi implementada seguindo as práticas de usabilidade para software livre proposto na dissertação de mestrado de Ana Paula Oliveira dos Santos. O grupo de desenvolvimento era composto por 15 membros, divididos em 8 membros da equipe Core, 5 co-desenvolvedores e 2 usuários ativos. Dentro do trabalho realizado foram abordadas todas as fases propostas de forma completa ou parcial das práticas de usabilidade para software livre.
+
+\begin{itemize}
+\item Identificar necessidades para design centrado em humano: Membro da equipe de desenvolvimento com foco em usabilidade a fim de coletar requisitos de tarefas e necessidades dos usuários;
+\item Especificar contexto de uso: Realizado através de reuniões diárias e no planejamento da interação. As práticas definidas foram: Criar protótipos de tela, Coletar métricas (variáveis dependentes), Apresentar resultados das análises dos testes e Definição de histórias de usabilidade baseadas nos requisitos fornecidos pelos clientes
+e no resultado dos testes de usuário;
+\item Especificar requisitos: Testar protótipos com avaliações heurísticas;
+\item Avaliar designs: Testar a usabilidade de protótipos com usuários locais e remotos (manipulação de variáveis independentes)
+\end{itemize}
+
+Os resultados obtidos através dos métodos de avaliação heurística, questionário PSSUQ e Checklist foram descritos na subseção \ref{evolucao-usabilidade}. Levando em consideração todos esses resultados realizado anteriormente foi possível observar uma melhoria progressiva com as interações de usabilidade sem impactar fortemente na rotina da equipe do projeto. As contribuições foram tanto em nível de \textit{front-end} quanto de \textit{back-end} e os membros com o foco de usabilidade participaram ativamente do desenvolvimento do código-fonte do projeto sem gerar nenhum tipo de deadlock. Isso possibilitou uma melhoria da usabilidade dentro da evolução de uma ferramenta da comunidade de software livre sem uma desestruturação de uma equipe tradicional das comunidades livres e sem a necessidade de gastos adicionais com uma equipe externa.  
 
 \subsection{Limitações}
 O código presente no apêndice \ref{radar-chart-code}, referente a técnica de visualização aplicada, o gráfico do radar, se encaixa bem na solução atual que o Mezuro fornece para o processamento de repositórios, que é o processamento de um repositório a cada instante. Porém é desejável que seja apresentado ao usuário o resultado de um ou mais processamentos, para possíveis comparações. Para a visualização dos resultados de mais de um processamento a solução atual não é satisfatória dado que os dados são lidos de um arquivo de extensão \textit{.tsv} onde não é possível separar os dados em grupos que representariam os resultados de cada processamento.
