@@ -42,7 +42,7 @@ No contexto do trabalho desenvolvido com o Mezuro, o principal projeto com carac
 	\item \textbf{Duplicação} - Estruturas sintáticas repetidas ou similares no projeto.
 	\item \textbf{Método complexo} - Alta complexidade para a definição de um método.
 	\item \textbf{Classe complexa} - Quando há classes muito grandes no projeto, o que pode ser um sinal de baixa coesão\footnote{Representa o grau de especialização de uma classe para desempenhar papeis em um contexto. Quanto menos responsabilidades tiver uma classe, mais coesa ela será.}.
-	\item \textbf{Alta complexidade total em classes} - Mesmo que os métodos da classe sejam simples, se a classe for muito grande é sinal que ela possibilitando o monitoramento de características específicas do software tem muitas responsabilidades.
+	\item \textbf{Alta complexidade total em classes} - Mesmo que os métodos da classe sejam simples, se a classe for muito grande é sinal que ela tem muitas responsabilidades.
 	\end{itemize}
     
 Em particular, o projeto Mezuro surgiu antes do CodeClimate, que provê serviços similares aos pretendidos pelo Mezuro, mas monitorando apenas três métricas para códigos Ruby. Diferentemente do Mezuro, que hoje, suporta dezenas de métricas (apresentadas na seção \ref{sec-visualizacao}) providas pelos coletores de métricas:
@@ -188,7 +188,7 @@ Por fim, a Figura \ref{class-diagram} apresenta um diagrama de classes que repre
 \subsection{Evolução com foco na usabilidade}
 \label{evolucao-usabilidade}
 
-Após uma primeira interação com a equipe e estando mais a par do projeto, iniciou-se um novo ciclo com foco na usabilidade a fim de apresentar esta será inserida no ciclo de desenvolvimento. Seguindo as técnicas de usabilidade adotas, descrita na seção \ref{usabilidade-sl}, as tarefas de usabilidade a serem realizadas no projeto Mezuro serão:
+Após uma primeira interação com a equipe e estando mais a par do projeto, iniciou-se um novo ciclo com foco na usabilidade a fim de inseri-la no ciclo de desenvolvimento. Seguindo as técnicas de usabilidade adotas, descrita na seção \ref{usabilidade-sl}, as tarefas de usabilidade a serem realizadas no projeto Mezuro serão:
 \begin{itemize}
 \item Coletar requisitos de tarefas e necessidades dos usuários;
 \item Criar protótipos de tela;
@@ -273,10 +273,10 @@ Correção de erros           & 1         & 0             & 4              & 5  
 Consistência                & 10        & 1             & 0              & 11    \\ \hline
 Significados                & 7         & 2             & 3              & 12    \\ \hline
 \end{tabular}
-\caption{Resultado avaliação telas anteriores}
+\caption{Resultado da avaliação de telas do Mezuro}
 \end{table}
 
-Como o \textit{checklist} da ErgoList é utilizado para avaliar todos os âmbitos de um projeto e o trabalho é realizado em um conjunto específico de telas, então ao analisar os resultados foi encontrado muitas questões que não foram aplicáveis devido a esse domínio. Dentro desse mesmo domínio algumas questão não estão conforme, pois não é o objetivo do projeto, um exemplo é a utilização do campo piscante para destaque de uma informação que não convém com o padrão de aparência utilizado. Desconsiderando esses fatores é possível observar uma debilidade na presteza, agrupamento e concisão das telas o que foi pontuado nos protótipos de tela.
+Como o \textit{checklist} da ErgoList é utilizado para avaliar todos os âmbitos de um projeto e o trabalho é realizado em um conjunto específico de telas, então ao analisar os resultados foram encontradas muitas questões que não foram aplicáveis devido a esse domínio. Dentro desse mesmo domínio algumas questões não estão conforme, pois não é o objetivo do projeto, um exemplo é a utilização do campo piscante para destaque de uma informação que não convém com o padrão de aparência utilizado. Desconsiderando esses fatores é possível observar uma debilidade na presteza, agrupamento e concisão das telas o que foi pontuado nos protótipos de tela.
 
 \graphicspath{{figuras/}}
 \begin{figure}[h]
@@ -286,7 +286,7 @@ Como o \textit{checklist} da ErgoList é utilizado para avaliar todos os âmbito
 \label{parallel-coordinate}
 \end{figure}
 
-Os protótipos de tela foram apresentados a equipe de desenvolvimento juntamente com uma descrição do comportamento para melhor entendimento do que seria realizado. Após refinamento da proposta foi realizado a implementação dentro da camada de front-end do projeto, ao replicar a funcionalidade as outras telas, percebeu-se um padrão o que possibilitou gerar um CSS encontrado na seção do apêndice \ref{css-form} denominado formwithtooltip.css que possui um conjunto de padrão com foco em suprir a debilidade dessas telas em relação a presteza, agrupamento e concisão, mas precisamente nos campos de descrição da tela. Esse CSS serviu como legado a equipe para aplicação em outros contexto, sendo já utilizado por uma equipe externa da disciplina LabXP da USP.
+Os protótipos de tela foram apresentados a equipe de desenvolvimento juntamente com uma descrição do comportamento para melhor entendimento do que seria realizado. Após refinamento da proposta foi realizado a implementação dentro da camada de front-end do projeto, ao replicar a funcionalidade as outras telas, percebeu-se um padrão o que possibilitou gerar um CSS encontrado na seção do apêndice \ref{css-form} denominado formwithtooltip.css que possui um conjunto de padrões com foco em suprir a debilidade dessas telas em relação a presteza, agrupamento e concisão, mas precisamente nos campos de descrição da tela. Esse CSS serviu como legado a equipe para aplicação em outros contexto, sendo já utilizado por uma equipe externa da disciplina LabXP da USP.
 
 \graphicspath{{figuras/}}
 \begin{figure}[h]
@@ -396,7 +396,7 @@ Analisando a funcionalidade \textit{Configuration} foi percebido um fluxo massan
 \item A escolha das métricas na tela \textit{Choose Metric}: Não possibilita escolha múltipla de métricas forçando o usuário acessar diversas vezes a tela;
 \item Informações iniciais das métricas na tela \textit{New Metric}: Preenchimento repetitivo dos dados e falta de sugestão para o campo \textit{Code}, onde poderia definir um padrão;
 \item Excesso de passos: Quantidade excessiva de passos para termino da configuração de métricas do projeto.
-\item Preenchimento formulário: Devido ao processamento realizado em cima de cada métrica um meio dinâmico de edição do formulário torná-o mais eficiente ao longo do cadastro.
+\item Preenchimento do formulário: Devido ao processamento realizado em cima de cada métrica um meio dinâmico de edição do formulário torná-o mais eficiente ao longo do cadastro.
 \end{enumerate}
 
 Baseado nesses pontos críticos e pretendendo resolvê-los foi construído os protótipos de tela e apresentado a equipe para discussão já que o comportamento da funcionalidade \textit{Configuration} foi alterado. Todos os pontos críticos foram classificados dentro da severidade 3 - problema importante de usabilidade conforme definido na seção \ref{avaliacao-heuristica}. A tela de configuração onde são listados os métodos passou a contar com mais campos de informação relevantes as métricas escolhidas.
@@ -455,7 +455,7 @@ O resultado quanto ao nível da melhoria de usabilidade foi avaliado pela equipe
 
 Para essa avaliação foi aplicado o questionário Psychometric Evaluation Of The Post-Study System Usability Questionnaire (PSSUQ). O PSSUQ foi publicado em 1992 por James R. Lewis, composto inicialmente por 18 questões e atualizado para 19 questões em 1995, esse questionário avalia a satisfação do usuário após a participação em estudos de usabilidade baseadas em cenários \cite{lewis1992}. As características avaliada são facilidade de uso e de aprendizado, simplicidade, eficácia, informação e a interface com o usuário. O PSSUQ possui questões intuitivas, de fácil compreensão e um tempo em média de 10 minutos para completar todo o questionário, juntamente com a escala de 1 a 7 de satisfação. As respostas são classificadas quanto ao:
 \begin{itemize}
-\item Escore da satisfação geral (OVERALL): Avalia os itens de 1 a 19;
+\item Pontuação da satisfação geral (OVERALL): Avalia os itens de 1 a 19;
 \item Utilidade do sistema (SYSUSE): Avalia os itens de 1 a 8;
 \item Qualidade da informação (INFOQUAL): Avalia os itens de 9 a 15;
 \item Qualidade da interface (INTERQUAL): Avalia os itens 16 até 18.
