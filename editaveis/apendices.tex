@@ -228,6 +228,98 @@ Problema: Possibilitar a identificação e correção de problemas de usabilidad
 Solução: O método RITE pode ser aplicado por membros da equipe-núcleo do projeto, não sendo
 necessário utilizar laboratórios de usabilidade com a aplicação de testes formais. Os desenvolvedores da equipe-núcleo podem observar os usuários utilizando um pequeno conjunto de funcionalidades do sistema e solicitar que falem em voz alta o que estão pensando, enquanto o utilizam (Protocolo Pensando em voz alta). Não seria necessária a criação de relatórios e análises de vídeo dos testes, pois os desenvolvedores que estarão envolvidos na correção dos problemas encontrados podem participar do teste como moderadores ou observadores, de modo que possam obter o conhecimento das melhorias necessárias que precisam ser implementadas. Para documentar problemas referentes a um comportamento esperado do sistema, os testes de aceitação automáticos, utilizados pela comunidade de métodos ágeis, podem servir como forma de documentação, como também, para verificar se o sistema está realizando a tarefa do modo que se espera. Nesse caso, o relatório de teste de usabilidade seria substituído por testes de aceitação automáticos. A criação dos testes de aceitação, nesse caso, seria feita pelos próprios desenvolvedores que participaram do teste e conhecem o problema a ser resolvido. Um breve brainstorming após a sessão de teste serviria para consolidar as impressões dos membros da equipe envolvidos, possibilitando definir como os problemas serão corrigidos. A correção dos problemas encontrados seria realizada na sequência da realização do teste. Dessa forma, os testes de aceitação serviriam para registrar como corrigir um problema de usabilidade, detectado no teste com usuários típicos, para um determinado cenário de uso do sistema.
 
+\newpage
+\section{Revisão Sistemática: Técnicas de usabilidade em projetos ágeis aplicadas no desenvolvimento de software livre}\footnote{Seção retirada da revisão sistemática realizada no processo de desenvolvimento do trabalho}
+\label{revisao-tecnicas-usabilidade}
+
+O objetivo desta revisão sistemática é analisar relatos de experiência da abordagem de
+usabilidade nas comunidades ágeis que possam ser aplicadas na comunidade de software
+livre, com o propósito de identificar e analisar técnicas de usabilidade, com relação à
+forma que a usabilidade é abordada em projetos ágeis, do ponto de vista de organizações
+que implementam técnicas de usabilidade no processo de desenvolvimento envolvidas nas
+iniciativas e no contexto de projetos e estudos de caso reais.
+
+Questão de pesquisa definida para alcançar o objetivo descrito:
+
+1. Quais técnicas de usabilidade são abordadas nas comunidades ágeis e software
+livre?
+
+Em relação ao escopo da pesquisa, os critérios adotados para selecionar as fontes
+de busca foram: bases com renome e difundidas na área de TI; que grande quantidade
+de material publicado e engenhos de busca intuitivos para filtrar os resultados; e possuir
+relação com o tema a ser pesquisado. Outro ponto levantado foi selecionar bases que
+pudessem evidenciar o cenário das universidades brasileiras em relação ao tema.
+
+Foram selecionadas as bases de busca Google Academic e Springer Link que possuem máquinas de busca com bom funcionamento e abrangência, além das bibliotecas digitais da UnB e USP.
+
+Foram utilizados os termos em inglês e uma tradução em português. Uma primeira
+ string de busca foi formulada, porém por mais que abordasse aspectos da hipótese continha termos muito genéricos como palavras chave (Usability, Free Software e Agile Method). Obteve assim resultados demasiados, chegando a encontrar mais de mil artigos em apenas uma única base, dificultando a filtragem e busca de artigos adequados e relevantes ao tema.
+
+A fim de obter um resultado mais expressivo em relação a questão levantada, em
+ um domínio mais específico criou-se uma nova String: ((”technical usability” or ”usability practices” or ”interaction design” and usability) and (“free software” or ”open source”)
+ and “agile software development”) com uma variação de sintaxe para se adequar a todas as bases selecionadas: ((”technical usability” OR ”usability practices” OR ”interaction
+ design” AND usability) AND (“free software” OR ”open source”) AND “agile software
+ development”). Os termos da expressão relacionados a usabilidade estão voltados para implementação, aplicação e parte prática. Os outros termos restringem os resultados para as abordagens das comunidades e projetos ágeis e de software livre.
+
+A seleção dos artigos foi realizada em 5 etapas:
+1. Seleção e catalogação preliminar dos artigos coletadas nas fontes a partir da expressão de busca;
+2. Filtro de seleção dos artigos relevantes - 1, verificar data de publicação aplicando
+o critério de seleção ”CS1 – ter sido publicado entre 2007 até 2013”;
+3. Filtro de seleção dos artigos relevantes - 2, por meio da ferramenta de busca filtrar
+resultados por relevância (critérios definidos pela base de busca) e selecionar os
+20 primeiros da lista;
+4. Filtro de seleção dos artigos relevantes - 3, por meio de análise do resumo (abstract) e aplicando o critério de seleção ”CS2 - possuir informações sobre técnicas de usabilidade na comunidade ágil ou software livre”;
+5. Filtro de seleção dos artigos relevantes - 4, por meio da leitura completa dos artigos e aplicando os critérios de seleção ”CS3- possuir evidência de técnicas que
+ foram praticadas, utilizadas, discutidas dentro de um projeto ágil ou de software livre”.
+
+Para os artigos considerados relevantes, os seguintes dados foram extraídos: dados do artigo (título, autor(es), data da publicação, fonte de publicação), resumo do artigo, listagem de como as técnicas de usabilidade foram adotadas e quais técnicas de usabilidade foram abordadas em projetos ágeis ou de software livre.
+
+Os dados coletados nos artigos selecionados foram analisados quantitativa e qualitativamente. A análise qualitativa se deu através de um mapeamento das técnicas encontradas e como elas interagiram. A análise quantitativa resultou em uma lista das técnicas que podem ser aplicadas pelas comunidades de software livre.
+
+\textbf{Resultado da Revisão sistemática}
+
+Com o estabelecimento do protocolo da revisão sistemática, a pesquisa foi executada em
+Outubro de 2013. Na primeira etapa de seleção dos artigos, a expressão de busca foi
+executada nas máquinas de buscas Google Academic e Springer Link e verificada nos arquivos das bibliotecas digitais das universidades USP e UnB. No Google Academic,
+165 artigos foram obtidas e no Springer Link foram retornadas 55, sendo 19 comuns com
+o Google Academic. Nas universidades nacionais, a USP retornou 6 resultados e na UnB
+nenhum artigo que atendesse à expressão de busca foi encontrada.
+
+Na primeira etapa de seleção dos artigos, o critério de seleção CS1, foi aplicado
+filtrando os artigos de entre o período de 2007 até 2013. No Google Academic, 118
+resultados foram obtidos, porém 12 destes eram livros ficando 106 artigos e no Springer
+Link foram retornadas 52, sendo 16 comuns com o Google Academic e na USP 3 dos
+resultados eram apenas links sem referência a artigos, restando assim 3 artigos.
+
+Na segunda etapa de seleção dos artigos, os artigos foram filtradas de acordo com
+a relevância e foram selecionados os 20 primeiros resultando em um total de 43 artigos
+selecionados.
+
+Na terceira etapa de seleção dos artigos, o resumo (abstract) de cada artigo foi lido.
+Seguindo o critério de seleção CS2, os artigos que não apresentavam o resumo (abstract)
+via engenho de busca foram descartadas automaticamente, assim selecionando dez artigos
+conforme apresentado na Figura \ref{fig-revisao1}.
+
+\graphicspath{{figuras/}}
+\begin{figure}[htpb]
+\centering
+\includegraphics[width=0.8\textwidth]{tabela2}
+\caption{Terceira etapa de seleção dos artigos}
+\label{fig-revisao1}
+\end{figure}
+
+Durante a obtenção dos artigos 3 foram eliminados devido a falta de acesso e um
+por não conter seu desenvolvimento apenas breve descrição e resumo. Na quarta etapa
+de seleção dos artigos com os 7 artigos remanescentes, foi realizada a leitura completa
+dos artigos aplicando o critério de seleção CS3 para verificar a adequação junto a questão
+levantada.
+
+Os artigos selecionados levaram a seleção de 8 técnicas de usabilidade utilizadas na comunidade ágil que podem ser aplicadas na comunidade de software livre. Essas técnicas
+foram propostas visando os princípios e práticas ágeis e algumas validadas em projetos
+ágeis, elas podem ser agrupas em 3 tipos, histórias de usabilidade, design centrado no
+usuário e outros.
+
+
 
 \newpage
 \section{Código-Fonte}
