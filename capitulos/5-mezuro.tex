@@ -564,18 +564,16 @@ Entre os possíveis gráficos gerados após sucessivas transformações dos dado
 \begin{center}
     \begin{tabular}{ll}
 	axis & values \\
-	Total Abstract Classes & 20 \\
-	Total Lines of Code & 120 \\
-	Total Number of Methods & 40 \\
-	Total Number Module/Classes & 12 \\
-	Average Method LOC & 3 \\
+	Number of Public Methods & 32 \\
+	Number of Methods & 45 \\
+	Number of Modules/Classes & 12 \\
 	\end{tabular}
     \caption{Dados de entrada}
     \label{data-tsv}
 \end{center}
 \end{table}
 
-Optou-se por ler os respectivos dados de entrada a partir de um arquivo pois o Mezuro, no momento, passa por uma fase de melhoria de desempenho e não está processando nem mesmo um repositório por vez.
+Optou-se por ler os respectivos dados de entrada a partir de um arquivo pois o Mezuro, no momento, passa por uma fase de melhoria de desempenho e não está processando nem mesmo um repositório por vez. Esses dados representam métricas de mesma natureza, o tamanho do software.
 
 As implementações básicas utilizando a D3.js inserem os dados de entrada no próprio \textit{script} (\textit{hard coding}), com um \textit{array} por exemplo, que apesar da separação de responsabilidades relacionadas a leitura de dados e geração do gráfico em si, não oferece flexibilidade para alteração desses valores. Já utilizando um arquivo \textit{.tsv} permite alterar os valores com facilidade, aumentando a coesão do código (disponível no Anexo \ref{source-code-appendix}). 
 
